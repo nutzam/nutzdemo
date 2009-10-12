@@ -35,7 +35,7 @@ import org.nutz.mvc.annotation.Param;
  * 我假设你是了解 Nutz.Ioc 的，如果不了解，并且想用注入的办法组织的你应用程序，请起码先从 Demo 项目中找找 HelloIoc 来看看
  * <p>
  * 本模块类的 '@Ok' 注解说明了某模块所有函数执行成功后默认的渲染方式，如果模块内的入口函数没有声明自己的 @Ok， 那么将使用 Json
- * 的方式默认进行渲染 
+ * 的方式默认进行渲染
  * <p>
  * <p>
  * 延伸阅读，建议大家阅读一下 org.nutz.mvc.ViewMaker 的 JDoc， 上面写的很清楚。 尤其是告诉你如何自己动手
@@ -52,7 +52,7 @@ public class HellowWorld {
 	 * <p>
 	 * 当然，如果你在整个模块类上也声明了 '@At' 注解，那么显然你当前的函数挂接的 URL 就得和模块的 Url 合并了。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/map</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/say</i>
 	 */
 	@At
 	public String say() {
@@ -63,7 +63,7 @@ public class HellowWorld {
 	 * 这个函数显示了更多的配置。 你可以随意定义你的函数所要挂接的 URL。 在默认的适配方式下（名值对的方式）你也可以通过 '@Param'
 	 * 注解将你的函数任意的参数对应到 HTTP 的参数上。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/map</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/yousay?word=xxx</i>
 	 * 
 	 * @param word
 	 *            : 这个参数是从浏览器传上来的 '@Param' 注解声明了它的 HTTP 参数名
@@ -115,6 +115,8 @@ public class HellowWorld {
 	 * </ul>
 	 * 很简单，你直接在入口函数中声明它们就是了，框架会自动为你设置值的。并且不限顺序，不限个数。 比如下面的例子中，我们就需要一个
 	 * HttpServletRequest，声明了，你就会得到它。
+	 * <p>
+	 * <i>网址示意： http://localhost:8080/hellomvc/params</i>
 	 * 
 	 * @param request
 	 *            : 这个参数会被正确设置
