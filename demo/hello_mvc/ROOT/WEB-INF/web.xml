@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
-	<display-name>weboo</display-name>
+	<display-name>Nutz demo:: hello Mvc</display-name>
 
 	<!--
 		将 Nutz.Mvc 框架挂接在任何 JSP/Servlet 容器中的办法之一就是显示的声明它。 它提供了一个 HttpServlet
