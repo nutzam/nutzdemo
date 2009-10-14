@@ -17,7 +17,7 @@
 		<servlet-class>org.nutz.mvc.NutzServlet</servlet-class>
 		<init-param>
 			<param-name>modules</param-name>
-			<param-value>nutz.demo.mvc.HelloModules</param-value>
+			<param-value>nutz.demo.mvc.MainModule</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
