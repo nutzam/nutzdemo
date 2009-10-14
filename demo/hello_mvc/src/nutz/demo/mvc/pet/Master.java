@@ -14,7 +14,11 @@ public class Master {
 
 	@Column
 	@Name
-	private int name;
+	private String name;
+
+	@Column("pwd")
+	@NotNull
+	private String password;
 
 	@Column
 	private Timestamp birthday;
@@ -30,12 +34,20 @@ public class Master {
 		this.id = id;
 	}
 
-	public int getName() {
+	String getName() {
 		return name;
 	}
 
-	public void setName(int name) {
+	void setName(String name) {
 		this.name = name;
+	}
+
+	String getPassword() {
+		return password;
+	}
+
+	void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Timestamp getBirthday() {

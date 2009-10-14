@@ -6,6 +6,7 @@ import nutz.demo.mvc.pet.PetModule;
 import org.nutz.mvc.annotation.Fail;
 import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Modules;
+import org.nutz.mvc.annotation.SetupBy;
 import org.nutz.mvc.init.JsonIocProvider;
 
 /**
@@ -23,6 +24,7 @@ import org.nutz.mvc.init.JsonIocProvider;
  * 
  */
 @Modules( { HellowWorld.class, PetModule.class })
-@IocBy(provider = JsonIocProvider.class, args = { "ioc/dao.js", "ioc/pets.js" })
+@IocBy(type = JsonIocProvider.class, args = { "ioc/dao.js", "ioc/pets.js" })
+@SetupBy(HelloMvcSetup.class)
 @Fail("json")
 public class MainModule {}

@@ -1,6 +1,12 @@
 package nutz.demo.mvc.pet;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.nutz.dao.Cnd;
 import org.nutz.mvc.annotation.*;
+import org.nutz.mvc.filter.CheckSession;
 
 /**
  * 本模块，使用了 Ioc 注入，Nutz.Ioc 将为本模块注入两个属性 "pets" 和 "masters"。 请参看 properties 目录下的
@@ -16,6 +22,7 @@ import org.nutz.mvc.annotation.*;
 @InjectName("petModule")
 @At("/pet")
 @Fail("json")
+@Filters( { @By(type = CheckSession.class, args = { "account", "/login.jsp" }) })
 public class PetModule {
 
 	/*
@@ -23,6 +30,22 @@ public class PetModule {
 	 */
 	private PetService pets;
 	private MasterService masters;
+
+	@At
+	@Filters
+	@Ok("redirect:/index.jsp")
+	@Fail("redirect:/wrong_account.jsp")
+	public void login(@Param("name") String name, @Param("pwd") String password) {
+		Master m = masters.fetch(Cnd.where("name", "=", name).and("password", "=", password));
+		if (null == m)
+			throw new RuntimeException("Error username or password");
+	}
+
+	@At
+	@Ok("redirect:/login.jsp")
+	public void logout(HttpSession session) {
+		session.removeAttribute("account");
+	}
 
 	/**
 	 * 增 ： /pet/addpet
@@ -47,4 +70,17 @@ public class PetModule {
 	public Master addMaster(@Param("..") Master master) {
 		return masters.dao().insert(master);
 	}
+
+	/**
+	 * 查： /pet/listpets
+	 * 
+	 * @param pageNumber
+	 * @param pageSize
+	 * @return
+	 */
+	@At
+	public List<Pet> listPets(@Param("pn") int pageNumber, @Param("size") int pageSize) {
+		return pets.query(null, pets.dao().createPager(pageNumber, pageSize));
+	}
+
 }

@@ -24,7 +24,7 @@
 
 	<servlet-mapping>
 		<servlet-name>nutz</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.o</url-pattern>
 	</servlet-mapping>
 
 </web-app>

@@ -10,5 +10,6 @@ t_pet {
 t_master {
   id  INT +PK,
   name VARCHAR(20) !UNIQUE,
+  pwd VARCHAR(20) !,
   birthday TIMESTAMP 
 }
