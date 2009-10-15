@@ -63,7 +63,7 @@ public class HellowWorld {
 	 * 这个函数显示了更多的配置。 你可以随意定义你的函数所要挂接的 URL。 在默认的适配方式下（名值对的方式）你也可以通过 '@Param'
 	 * 注解将你的函数任意的参数对应到 HTTP 的参数上。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/yousay?word=xxx.o</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/yousay.o?word=xxx</i>
 	 * 
 	 * @param word
 	 *            : 这个参数是从浏览器传上来的 '@Param' 注解声明了它的 HTTP 参数名

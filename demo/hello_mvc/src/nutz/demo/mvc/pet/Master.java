@@ -34,19 +34,19 @@ public class Master {
 		this.id = id;
 	}
 
-	String getName() {
+	public String getName() {
 		return name;
 	}
 
-	void setName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	String getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	void setPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
