@@ -7,12 +7,11 @@ var ioc = {
 	 */
 	dataSource : {
 		type :"org.apache.commons.dbcp.BasicDataSource",
-		// 当应用关闭时，整个 Ioc 会被释放，这个函数会被调用
 		lifecycle : {
 			depose :"close"
 		},
 		fields : {
-			driverClassName :"org.postgredsql.Dirver",
+			driverClassName :"org.postgresql.Driver",
 			url :"jdbc:postgresql://localhost:5432/hellomvc",
 			username :"demo",
 			password :"123456"

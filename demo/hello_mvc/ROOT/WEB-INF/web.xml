@@ -9,12 +9,15 @@
 		将 Nutz.Mvc 框架挂接在任何 JSP/Servlet 容器中的办法之一就是显示的声明它。 它提供了一个 HttpServlet
 		(org.nutz.mvc.NutzServlet) 的实现，你需要为它 声明一个参数，这个参数指出一个类名，这个类就是你的应用的唯一配置。
 
-		这个类就是一个普通的 POJO，上面声明了一些特殊的注解。详细情况，请打开 nutz.demo.mvc.HelloModules
+		这个类可以是一个普通的 POJO，上面声明了一些特殊的注解。详细情况，请打开 nutz.demo.mvc.HelloModules
 		的源文件，里面有详细的注释。
+		
+		当然，因为多数情况，你都是使用 /* 作为 pattern 的。为了能正确的处理图片，视频等 MIME类型，最省力的办法，就是让你的
+		POJO 继承  org.nutz.mvc.module.NutModule。  这个类提供了一些默认的 MIME 类型的处理方法。 以及某些缓存规则。 
 	-->
 	<servlet>
 		<servlet-name>nutz</servlet-name>
-		<servlet-class>org.nutz.mvc.NutzServlet</servlet-class>
+		<servlet-class>org.nutz.mvc.NutServlet</servlet-class>
 		<init-param>
 			<param-name>modules</param-name>
 			<param-value>nutz.demo.mvc.MainModule</param-value>
@@ -24,7 +27,7 @@
 
 	<servlet-mapping>
 		<servlet-name>nutz</servlet-name>
-		<url-pattern>*.o</url-pattern>
+		<url-pattern>/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>
