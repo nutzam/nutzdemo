@@ -43,16 +43,13 @@ public class PetModule {
 	private MasterService masters;
 
 	/**
-	 * 用户登陆 : http://localhost:8080/hellomvc/pet/login.o
+	 * 用户登陆 : http://localhost:8080/hellomvc/pet/login.nut
 	 * <p>
 	 * 根据参数 "name" 和 "pwd" 来验证帐户。 如果成功，跳转到 /index.jsp ，否则跳转到 /wrong_master.jsp
-	 * 
-	 * @param name
-	 * @param password
 	 */
 	@At
 	@Filters
-	@Ok("redirect:/index.jsp")
+	@Ok("redirect:/pet/all.nut")
 	@Fail("redirect:/wrong_master.jsp")
 	public void login(@Param("name") String name, @Param("pwd") String password, HttpSession session) {
 		Master m = masters.fetch(Cnd.where("name", "=", name).and("password", "=", password));
@@ -62,38 +59,32 @@ public class PetModule {
 	}
 
 	/**
-	 * 用户登出 : http://localhost:8080/hellomvc/pet/logout.o
-	 * <p>
-	 * 执行完，跳转至 /login.jsp
+	 * 用户登出 : http://localhost:8080/hellomvc/pet/logout.nut
 	 */
 	@At
-	@Ok("redirect:/login.jsp")
+	@Ok("redirect:/index.jsp")
 	public void logout(HttpSession session) {
 		session.removeAttribute("account");
 	}
 
 	/**
-	 * 增 ： http://localhost:8080/hellomvc/pet/add.o
-	 * <p>
-	 * 执行完，跳转至 /pet/allpets.o
+	 * 增 ： http://localhost:8080/hellomvc/pet/add.nut
 	 * <p>
 	 * 声明了 '@Param("..")' 表示，这个参数 Pet 将按照名值对的方式，从整个 Request 加载。 request 中的参数名将 与
 	 * pet 的字段名对应。如果你想为 pet 的某一个字段指定特殊的参数名，请用 '@Param' 注解为其指定特殊名称
 	 * 
 	 */
 	@At
-	@Ok("redirect:/pet/all.o")
+	@Ok("redirect:/pet/all.nut")
 	public Pet add(@Param("..") Pet pet) {
 		return pets.dao().insert(pet);
 	}
 
 	/**
-	 * 删 : http://localhost:8080/hellomvc/pet/remove.o
-	 * <p>
-	 * 执行完，跳转至 /pet/allpets.o
+	 * 删 : http://localhost:8080/hellomvc/pet/remove.nut
 	 */
 	@At
-	@Ok("redirect:/pet/all.o")
+	@Ok("redirect:/pet/all.nut")
 	public List<Pet> remove(@Param("id") int id, HttpSession session) {
 		pets.delete(id);
 		return all(session);
@@ -101,8 +92,6 @@ public class PetModule {
 
 	/**
 	 * 改 : http://localhost:8080/hellomvc/pet/update.o
-	 * <p>
-	 * 执行完，跳转至 /pet/petdetail.o
 	 * <p>
 	 * 跳转的目标地址支持模板写法，这个 ${id} 会被本函数的返回值填充
 	 * <p>
@@ -116,14 +105,14 @@ public class PetModule {
 	 */
 	@At
 	@AdaptBy(type = JsonHttpAdaptor.class)
-	@Ok("redirect:/pet/detail.o?id=${id}")
+	@Ok("redirect:/pet/detail.nut?id=${id}")
 	public int update(Pet pet) {
 		pets.dao().update(pet);
 		return pet.getId();
 	}
 
 	/**
-	 * 查 : http://localhost:8080/hellomvc/pet/all.o
+	 * 查 : http://localhost:8080/hellomvc/pet/all.nut
 	 * <p>
 	 * 将只查看当前登陆的 Master 的所有 Pet。本入口函数已经被 CheckSession 保护，所以 Session 中一定有 master
 	 * 对象。
@@ -144,7 +133,7 @@ public class PetModule {
 	}
 
 	/**
-	 * 查看单条记录 : http://localhost:8080/hellomvc/pet/detail.o
+	 * 查看单条记录 : http://localhost:8080/hellomvc/pet/detail.nut
 	 * <p>
 	 * 将使用 /WEB-INF/jsp/pet/detail.jsp 来渲染 Pet 对象
 	 */

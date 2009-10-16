@@ -1,26 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Hello Mvc</title>
+<link type="text/css" rel="stylesheet" href="${base}/css/hello.css"/>
 </head>
 <body>
-<form name="pet">
+<h1>${msg.title}</h1>
+<form action="${base}/pet/login.nut" method="POST">
 <table>
 	<tr>
-		<td>Name:</td>
-		<td><input name="name" /></td>
+		<td>${msg.login_name}:</td>
+		<td><input name="name"></td>
 	</tr>
 	<tr>
-		<td>Age:</td>
-		<td><input name="age" /></td>
+		<td>${msg.login_password}:</td>
+		<td><input name="pwd"></td>
 	</tr>
 	<tr>
-		<td>Race:</td>
-		<td><input name="race" /></td>
-	</tr>
-	<tr>
-		<td>Color:</td>
-		<td><input name="color" /></td>
+		<td>&nbsp;</td>
+		<td><input type="submit" value="${msg.login_submit}" /></td>
 	</tr>
 </table>
 </form>

@@ -1,13 +1,11 @@
 package nutz.demo.mvc;
 
-import javax.servlet.http.HttpServletRequest;
-
 import nutz.demo.mvc.helloworld.HellowWorld;
 import nutz.demo.mvc.pet.PetModule;
 
-import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Fail;
 import org.nutz.mvc.annotation.IocBy;
+import org.nutz.mvc.annotation.Localization;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.SetupBy;
 import org.nutz.mvc.init.JsonIocProvider;
@@ -29,12 +27,6 @@ import org.nutz.mvc.init.JsonIocProvider;
 @Modules( { HellowWorld.class, PetModule.class })
 @IocBy(type = JsonIocProvider.class, args = { "ioc/dao.js", "ioc/pets.js" })
 @SetupBy(HelloMvcSetup.class)
+@Localization("msg")
 @Fail("json")
-public class MainModule {
-
-	@At("*.*")
-	public void image(HttpServletRequest request) {
-
-	}
-
-}
+public class MainModule {}

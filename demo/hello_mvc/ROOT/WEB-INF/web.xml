@@ -11,9 +11,6 @@
 
 		这个类可以是一个普通的 POJO，上面声明了一些特殊的注解。详细情况，请打开 nutz.demo.mvc.HelloModules
 		的源文件，里面有详细的注释。
-		
-		当然，因为多数情况，你都是使用 /* 作为 pattern 的。为了能正确的处理图片，视频等 MIME类型，最省力的办法，就是让你的
-		POJO 继承  org.nutz.mvc.module.NutModule。  这个类提供了一些默认的 MIME 类型的处理方法。 以及某些缓存规则。 
 	-->
 	<servlet>
 		<servlet-name>nutz</servlet-name>
@@ -27,7 +24,25 @@
 
 	<servlet-mapping>
 		<servlet-name>nutz</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>*.nut</url-pattern>
 	</servlet-mapping>
 
+	<!--
+		Nutz.Mvc 还提供了一个过滤器，你可以用这个过滤器为所有的直接访问的 jsp 设置必要的 Request 属性。 比如 ${base}
+		以及 ${msg}
+	-->
+	<filter>
+		<filter-name>msgs</filter-name>
+		<filter-class>org.nutz.mvc.NutFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>msgs</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>msgs</filter-name>
+		<url-pattern>*.jspx</url-pattern>
+	</filter-mapping>
 </web-app>
