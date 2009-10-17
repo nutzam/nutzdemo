@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.nutz.dao.Cnd;
 import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
-import org.nutz.mvc.param.JsonHttpAdaptor;
 
 /**
  * 本模块，使用了 Ioc 注入，Nutz.Ioc 将为本模块注入两个属性 "pets" 和 "masters"。 请参看 properties 目录下的
@@ -33,7 +32,7 @@ import org.nutz.mvc.param.JsonHttpAdaptor;
 @InjectName("petModule")
 @At("/pet")
 @Fail("json")
-@Filters( { @By(type = CheckSession.class, args = { "master", "/login.jsp" }) })
+@Filters( { @By(type = CheckSession.class, args = { "master", "/index.jsp" }) })
 public class PetModule {
 
 	/*
@@ -69,14 +68,14 @@ public class PetModule {
 
 	/**
 	 * 增 ： http://localhost:8080/hellomvc/pet/add.nut
-	 * <p>
-	 * 声明了 '@Param("..")' 表示，这个参数 Pet 将按照名值对的方式，从整个 Request 加载。 request 中的参数名将 与
-	 * pet 的字段名对应。如果你想为 pet 的某一个字段指定特殊的参数名，请用 '@Param' 注解为其指定特殊名称
-	 * 
 	 */
 	@At
 	@Ok("redirect:/pet/all.nut")
-	public Pet add(@Param("..") Pet pet) {
+	public Pet add(@Param("nm") String name, HttpSession session) {
+		Master m = (Master) session.getAttribute("master");
+		Pet pet = new Pet();
+		pet.setName(name);
+		pet.setMasterId(m.getId());
 		return pets.dao().insert(pet);
 	}
 
@@ -91,7 +90,10 @@ public class PetModule {
 	}
 
 	/**
-	 * 改 : http://localhost:8080/hellomvc/pet/update.o
+	 * 改 : http://localhost:8080/hellomvc/pet/update.nut
+	 * <p>
+	 * 声明了 '@Param("..")' 表示，这个参数 Pet 将按照名值对的方式，从整个 Request 加载。 request 中的参数名将 与
+	 * pet 的字段名对应。如果你想为 pet 的某一个字段指定特殊的参数名，请用 '@Param' 注解为其指定特殊名称
 	 * <p>
 	 * 跳转的目标地址支持模板写法，这个 ${id} 会被本函数的返回值填充
 	 * <p>
@@ -104,9 +106,8 @@ public class PetModule {
 	 * </ul>
 	 */
 	@At
-	@AdaptBy(type = JsonHttpAdaptor.class)
 	@Ok("redirect:/pet/detail.nut?id=${id}")
-	public int update(Pet pet) {
+	public int update(@Param("..") Pet pet) {
 		pets.dao().update(pet);
 		return pet.getId();
 	}
@@ -129,7 +130,7 @@ public class PetModule {
 		// Get master
 		Master m = (Master) session.getAttribute("master");
 		// Do query
-		return pets.query(Cnd.where("masterId", "=", m.getId()), null);
+		return pets.query(Cnd.where("masterId", "=", m.getId()).asc("name"), null);
 	}
 
 	/**

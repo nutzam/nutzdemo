@@ -1,13 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld"%>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Hello Mvc</title>
-</head>
-<body>
-<form name="pet">
+<%@include file="/WEB-INF/jsp/head.jsp"%>
+<%@include file="sky.jsp"%>
+<div id="menu">
+	<a href="${base}/pet/all.nut">&lt;&lt;${msg.back_to_list }</a>
+</div>
+<h2>${msg.edit } : ${obj.name }</h2>
+<form action="${base}/pet/update.nut"  name="pet" method="POST">
+<input type="hidden" name="id" value="${obj.id}"/>
+<input type="hidden" name="masterId" value="${obj.masterId}"/>
 <table>
 	<tr>
 		<td>${msg.pet_name }:</td>
@@ -25,7 +24,10 @@
 		<td>${msg.pet_color }:</td>
 		<td><input name="color" value="${obj.color }" /></td>
 	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><input type="submit" value="${msg.save}"/></td>
+	</tr>
 </table>
 </form>
-</body>
-</html>
+<%@include file="/WEB-INF/jsp/tail.jsp"%>

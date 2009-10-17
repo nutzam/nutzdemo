@@ -1,14 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="/WEB-INF/tld/c.tld"%>
-<html>
-<head>
-<title>Hello Mvc</title>
-<link type="text/css" rel="stylesheet" href="${base}/css/hello.css"/>
-</head>
-<body>
+<%@include file="/WEB-INF/jsp/head.jsp"%>
 <h1>${msg.title}</h1>
+<br><br>
 <form action="${base}/pet/login.nut" method="POST">
-<table>
+<table border="0" align="center" cellspacing="4" cellpadding="4">
 	<tr>
 		<td>${msg.login_name}:</td>
 		<td><input name="name"></td>
@@ -19,9 +13,8 @@
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td><input type="submit" value="${msg.login_submit}" /></td>
+		<td><input type="submit" value="&nbsp;&nbsp;${msg.login_submit}&nbsp;&nbsp;" /></td>
 	</tr>
 </table>
 </form>
-</body>
-</html>
+<%@include file="/WEB-INF/jsp/tail.jsp"%>
