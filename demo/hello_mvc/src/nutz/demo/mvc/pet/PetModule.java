@@ -1,12 +1,16 @@
 package nutz.demo.mvc.pet;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.nutz.dao.Cnd;
 import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
+import org.nutz.mvc.upload.UploadAdaptor;
 
 /**
  * 本模块，使用了 Ioc 注入，Nutz.Ioc 将为本模块注入两个属性 "pets" 和 "masters"。 请参看 properties 目录下的
@@ -97,7 +101,7 @@ public class PetModule {
 	 * <p>
 	 * 跳转的目标地址支持模板写法，这个 ${id} 会被本函数的返回值填充
 	 * <p>
-	 * 如果你的目标地址串带有 ${XXX} 占位符，更多的关于跳转的规则为：
+	 * 如果你的目标地址串带有 ${XXXX} 占位符，更多的关于跳转的规则为：
 	 * <ul>
 	 * <li>返回值为类字符串（CharSequence 的子类），数字，布尔，字符，则所有的占位符将被该值替代
 	 * <li>返回值类 Map ，占位符将按名称被这个 Map 填充
@@ -142,6 +146,28 @@ public class PetModule {
 	@Ok("jsp:jsp.pet.detail")
 	public Pet detail(@Param("id") int id) {
 		return pets.fetch(id);
+	}
+
+	/**
+	 * 文件上传: http://localhost:8080/hellomvc/pet/uploadphoto.nut
+	 * <p>
+	 * 利用注解 '@AdaptBy' 可以切换当前入口函数默认的适配适配器。 Nutz.Mvc 提供了 UploadAdaptor 专门处理 HTTP
+	 * 方式的文件上传。它的工作机理，请参看 UploadAdaptor 的 JDoc 文档。
+	 * <p>
+	 * 这个入口函数将所有上传的文件，存放在目录 "D:/tmp/demo/upload" 中，这个临时目录中最对有 10 个临时文件
+	 * 
+	 * @throws IOException
+	 * 
+	 * @see org.nutz.mvc.upload.UploadAdaptor
+	 * @see org.nutz.mvc.annotation.AdaptBy
+	 */
+	@At
+	@AdaptBy(type = UploadAdaptor.class, args = { "D:/tmp/demo/upload", "10" })
+	@Ok("jsp:jsp.upload.done")
+	@Fail("jsp:jsp.upload.fail")
+	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)
+			throws IOException {
+		pets.uploadPhoto(id, f, context.getRealPath("/"));
 	}
 
 }

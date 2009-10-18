@@ -4,7 +4,8 @@ t_pet {
 	race VARCHAR(20),
 	age INT,
 	mid INT !,
-	color VARCHAR(10)
+	color VARCHAR(10),
+	photo VARCHAR(256)
 }
 
 t_master {

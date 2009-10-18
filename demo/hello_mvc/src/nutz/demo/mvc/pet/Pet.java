@@ -14,7 +14,6 @@ public class Pet {
 	private String name;
 
 	@Column
-	@NotNull
 	private String race;
 
 	@Column
@@ -26,8 +25,19 @@ public class Pet {
 	@Column
 	private String color;
 
+	@Column("photo")
+	private String photoPath;
+
 	@One(target = Master.class, field = "masterId")
 	private Master master;
+
+	public String getPhotoPath() {
+		return photoPath;
+	}
+
+	public void setPhotoPath(String photoPath) {
+		this.photoPath = photoPath;
+	}
 
 	public int getId() {
 		return id;

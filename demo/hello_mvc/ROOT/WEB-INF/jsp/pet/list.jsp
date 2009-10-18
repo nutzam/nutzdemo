@@ -1,5 +1,8 @@
 <%@include file="/WEB-INF/jsp/head.jsp"%>
 <%@include file="sky.jsp"%>
+<!--
+====================================================================== 
+-->
 <div id="menu">
 	<button onclick="document.getElementById('new_pet').style.display = 'inline';">
 		${msg.pet_new_button}
@@ -9,6 +12,9 @@
 		<input type="submit" value="${msg.save} >>">
 	</form>
 </div>
+<!--
+====================================================================== 
+-->
 <table cellspacing="2" cellpadding="4" border="0" id="pets">
 <c:forEach var="pet" items="${obj}">
 	<tr>

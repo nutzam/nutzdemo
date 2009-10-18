@@ -1,6 +1,10 @@
 package nutz.demo.mvc.pet;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.nutz.dao.Dao;
+import org.nutz.lang.Files;
 import org.nutz.service.IdNameEntityService;
 
 public class PetService extends IdNameEntityService<Pet> {
@@ -9,4 +13,17 @@ public class PetService extends IdNameEntityService<Pet> {
 		super(dao);
 	}
 
+	public void uploadPhoto(int id, File tempFile, String root) throws IOException {
+		// Get pet
+		Pet pet = this.fetch(id);
+		// Move the file to "$ROOT/photo/$id.$extension"
+		String ext = Files.getExtension(tempFile);
+		pet.setPhotoPath("/photo/" + id + "." + ext);
+		File photo = new File(root + pet.getPhotoPath());
+		if (photo.exists())
+			Files.deleteFile(photo);
+		Files.moveTo(tempFile, photo);
+		// Update the pets
+		dao().update(pet);
+	}
 }
