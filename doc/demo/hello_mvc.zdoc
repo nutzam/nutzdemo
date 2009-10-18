@@ -1,0 +1,57 @@
+#title:Hello Mvc
+#index:0,1
+
+设置一个 Eclipse 的 web 项目
+	运行的容器是 Tomcat，下面逐步接受再 Eclipse 中设置一个 Web 项目的步骤：
+
+	从 SVN 下载源代码到磁盘
+		[http://code.google.com/p/nutzdemo/source/browse/#svn/trunk/demo/hello_mvc 这里的源代码] 你可以下载到本地磁盘。
+
+		另外你还需要[http://code.google.com/p/nutzdemo/source/browse/#svn/trunk/lib 一些支持的 jar 文件]，请用 SVN 客户端下载到本地
+
+		如果不知道如何使用 SVN，[http://docs.google.com/View?id=dc5jpf24_82cdz7pp5n 这里的这篇教程]，可能对你有所帮助
+
+	新建一个 Dynamic Web Project
+		<hello_mvc/setup_01.png>
+
+		点击 “下一步” 到下一个向导界面
+	
+	设置 Content Directory
+		确认如下图设置
+
+		<hello_mvc/setup_02.png>
+		
+	链接 SVN 目录到 Eclipse 项目
+		<hello_mvc/setup_03.png>
+
+		你需要链接的目录是:
+		 * src -- 你需要先删除 Eclipse 为你生成的 src
+		 * properties
+		 * ROOT
+	
+	链接支持的 jar 文件
+		在 ROOT/WEB-INF 下，链接 lib 文件夹
+		
+		<hello_mvc/setup_04.png>
+
+	修改 build path
+		请将 src 和 properties 加入到项目的 build path。
+	设置完毕
+		你的 Eclipse 工程将是这个样子
+
+		<hello_mvc/setup_05.png>
+
+		请以这张图片为向导，阅读你感兴趣的源代码，代码都有详尽的注释（其实代码没多少，全是说明）
+
+运行 Demo
+	为了正确运行，你需要建立一个数据库。
+	文件 {*/properties/ioc/dao.js} 声明了数据库连接的配置信息，
+	打开这个文件，你就会知道如何创建数据库。
+	
+	你可以在 Eclipse 中运行，也可以把这个应用发布到 Tomcat 或者任何一个 JSP/SERVLET 容器中运行。
+	首页地址大概类似：
+	{{{	
+	http://locahost:8080/hellomvc/index.jsp
+	}}}	
+	根据你具体的配置不同，你可以将这个地址改成你设置的地址。
+		

@@ -1,0 +1,12 @@
+#title: Hello Ioc
+
+Ioc 的运行非常简单，你只需要：
+
+ # [http://code.google.com/p/nutzdemo/source/browse/#svn/trunk/demo/hello_ioc 这里的源代码] 你可以下载到本地磁盘。
+ # 另外你还需要[http://code.google.com/p/nutzdemo/source/browse/#svn/trunk/lib 一些支持的 jar 文件]，请用 SVN 客户端下载到本地
+ # 如果不知道如何使用 SVN，[http://docs.google.com/View?id=dc5jpf24_82cdz7pp5n 这里的这篇教程]，可能对你有所帮助
+ 
+Ioc 的 demo 就是纯 java 项目，你可以直接运行 Main 函数。
+
+直接阅读 {*nutz.demo.ioc.hello.HelloIoc} 的源代码即可，里面有详细的文档。
+

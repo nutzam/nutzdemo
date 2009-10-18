@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<doc title="Nutz 的 demo" author="zozoh(zozohtnt@gmail.com)">
+	<doc path="prefact.zdoc"/>
+	<doc path="hello_mvc.zdoc"/>
+	<doc path="hello_ioc.zdoc"/>
+</doc>
