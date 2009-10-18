@@ -27,7 +27,7 @@ import org.nutz.mvc.upload.UploadAdaptor;
  * <li>'@At("/pet")' 声明了前缀 "/pet"，也就是说，所有的入口函数地址都将是 /petXXXX
  * <li>'@Fail("json")' 表示我们模块函数如果出错（有异常抛出），将默认的把异常消息显示成 JSON 字符串
  * <li>'@Filters(XXXX)' 表示，所有的入口函数都要经过 CheckSession 的检查，如果 session 中不存在 master
- * 属性，则自动跳转到地址 /login.jsp
+ * 属性，则自动跳转到地址 /index.jsp
  * </ol>
  * 
  * @author zozoh
