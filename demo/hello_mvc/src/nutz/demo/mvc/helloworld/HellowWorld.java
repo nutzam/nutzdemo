@@ -52,7 +52,7 @@ public class HellowWorld {
 	 * <p>
 	 * 当然，如果你在整个模块类上也声明了 '@At' 注解，那么显然你当前的函数挂接的 URL 就得和模块的 Url 合并了。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/say.o</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/say.nut</i>
 	 */
 	@At
 	public String say() {
@@ -63,7 +63,7 @@ public class HellowWorld {
 	 * 这个函数显示了更多的配置。 你可以随意定义你的函数所要挂接的 URL。 在默认的适配方式下（名值对的方式）你也可以通过 '@Param'
 	 * 注解将你的函数任意的参数对应到 HTTP 的参数上。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/yousay.o?word=xxx</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/yousay.nut?word=xxx</i>
 	 * 
 	 * @param word
 	 *            : 这个参数是从浏览器传上来的 '@Param' 注解声明了它的 HTTP 参数名
@@ -79,7 +79,7 @@ public class HellowWorld {
 	/**
 	 * 你可以返回各种类型的对象， 框架会帮你转换成正确的 Json 字符串
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/time.o</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/time.nut</i>
 	 */
 	@At("/time")
 	public Calendar tellTime() {
@@ -89,7 +89,7 @@ public class HellowWorld {
 	/**
 	 * 即使是数组，集合，Map，都不在话下
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/map.o</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/map.nut</i>
 	 */
 	@At("/map")
 	@Ok("json:{compact:false, quoteName:false}")
@@ -116,7 +116,7 @@ public class HellowWorld {
 	 * 很简单，你直接在入口函数中声明它们就是了，框架会自动为你设置值的。并且不限顺序，不限个数。 比如下面的例子中，我们就需要一个
 	 * HttpServletRequest，声明了，你就会得到它。
 	 * <p>
-	 * <i>网址示意： http://localhost:8080/hellomvc/params.o</i>
+	 * <i>网址示意： http://localhost:8080/hellomvc/params.nut</i>
 	 * 
 	 * @param request
 	 *            : 这个参数会被正确设置

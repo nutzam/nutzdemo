@@ -22,7 +22,7 @@ public class PetService extends IdNameEntityService<Pet> {
 		File photo = new File(root + pet.getPhotoPath());
 		if (photo.exists())
 			Files.deleteFile(photo);
-		Files.moveTo(tempFile, photo);
+		Files.move(tempFile, photo);
 		// Update the pets
 		dao().update(pet);
 	}
