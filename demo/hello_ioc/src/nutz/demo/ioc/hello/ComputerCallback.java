@@ -1,11 +1,11 @@
 package nutz.demo.ioc.hello;
 
-import org.nutz.ioc.ObjCallback;
+import org.nutz.ioc.IocEventTrigger;
 
-public class ComputerCallback<Computer> implements ObjCallback<Computer> {
+public class ComputerCallback<Computer> implements IocEventTrigger<Computer> {
 
 	@Override
-	public void invoke(Computer obj) {
+	public void trigger(Computer obj) {
 		System.out.println("Fetch one computer!");
 	}
 

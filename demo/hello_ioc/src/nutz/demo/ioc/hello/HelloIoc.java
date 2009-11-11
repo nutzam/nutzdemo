@@ -5,7 +5,7 @@ import nutz.demo.ioc.meta.*;
 
 import org.nutz.ioc.Ioc;
 import org.nutz.ioc.impl.NutIoc;
-import org.nutz.ioc.json.JsonLoader;
+import org.nutz.ioc.loader.json.JsonLoader;
 import org.nutz.lang.Lang;
 
 import static java.lang.System.*;
@@ -119,7 +119,7 @@ public class HelloIoc {
 		 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		 * 所以，有趣的是，我们甚至还可以来个张冠李戴，因为配置信息中并没有 限制对象的类型
 		 */
-		ioc.clear(); // 原来的 "amd" 对象已经被缓存了，这里需要先清除一下。
+		ioc.reset(); // 原来的 "amd" 对象已经被缓存了，这里需要先清除一下。
 		cpu = ioc.get(IntelE5300.class, "amd");
 		out.println("amd: " + cpu.getClass().getName());
 
@@ -206,7 +206,7 @@ public class HelloIoc {
 		ioc.get(Computer.class, "computer");
 		// 因为对象不是单例，将不会触发 depose
 		out.println("> depose ...");
-		ioc.clear();
+		ioc.reset();
 
 		out.println("\n[For 'c3'] : ");
 		// 让我们获取一个单例对象看看
@@ -218,7 +218,7 @@ public class HelloIoc {
 		ioc.get(Computer.class, "c3");
 		// 将会触发 depose
 		out.println("> depose ...");
-		ioc.clear();
+		ioc.reset();
 	}
 
 }
