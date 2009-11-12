@@ -12,6 +12,7 @@ import org.nutz.json.Json;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
 import org.nutz.lang.meta.Email;
+import org.nutz.mvc.Mvcs;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
@@ -44,7 +45,8 @@ import org.nutz.mvc.annotation.Param;
  * @author zozoh
  */
 @Ok("json")
-public class HellowWorld {
+@At
+public class HelloWorld {
 
 	/**
 	 * 任何一个函数都可以作为入口函数。只要它是 public 并且声明了 @At 注解，那么就会被框架 当做入 口函数 当前的函数将自动和路径
@@ -126,9 +128,70 @@ public class HellowWorld {
 	 * @return 一个字符串，将被渲染成 Json 字符串
 	 */
 	@At("/params")
-	public String tellMore(HttpServletRequest request, @Param("word") String word,
-			HttpSession session) {
+	public String tellMore(	HttpServletRequest request,
+							@Param("word") String word,
+							HttpSession session) {
 		return "You said: " + word + " => " + request.getLocale().toString() + " :: session: "
 				+ session.getId();
+	}
+
+	/**
+	 * '@At' 注解支持你写多个路径，这些路径都会映射到你的这个入口函数
+	 * 
+	 * <p>
+	 * <b>网址示意：</b><br>
+	 * <i> http://localhost:8080/hellomvc/tls.nut</i><br>
+	 * 或<br>
+	 * <i>http://localhost:8080/hellomvc/lots.nut</i>
+	 */
+	@At({"/tls", "/lots"})
+	public String tellLots(HttpServletRequest req) {
+		return String.format("URL is '%s'", Mvcs.getRequestPath(req));
+	}
+
+	/**
+	 * 如果你用 '@At' 注解声明了一个通配符， 那么通配符之后的内容，都会被框架自动拆分成参数 并填充到入口函数的参数中。
+	 * <p>
+	 * 比如下面这个例子，如果你访问 <b>/path/1234</b>， 那么，这个函数的第一个参数会被赋值为 1234 <br>
+	 * 如果你访问 <b>/path/1234/TTT</b>，那么，第一个参数会被赋值为 1234，第二个参数被赋值为 TTT，但是遗憾的
+	 * 是，你没有第二个参数，并且框架也不支持同名的入口函数（那会引发不可预知的错误）
+	 * <p>
+	 * 当然，如果你访问 /path/123TTT，会引发类型转换失败的错误，因为 123TTT 是不能被转成数字的。
+	 * <p>
+	 * 如果你声明 '@At("/path*")'，并访问 /path/1234，那么框架会试图将 <b>/1234</b>
+	 * 转成数字，同样也会引发类型转换错误。
+	 * <p>
+	 * <i>网址示意： http://localhost:8080/hellomvc/path/1234.nut</i>
+	 */
+	@At("/path/*")
+	public String pathId(int id) {
+		return String.format("My is id [%d]", id);
+	}
+
+	/**
+	 * 这个例子展示了一个路径多个参数
+	 * <p>
+	 * <b>网址示意</b>
+	 * <ul>
+	 * <li>http://localhost:8080/hellomvc/path2/1234.nut<br>
+	 * 输入: <b>"id: 1234 | txt: null | word: null"</b>
+	 * <li>http://localhost:8080/hellomvc/path2/1234/sometxt.nut<br>
+	 * 输入: <b>"id: 1234 | txt: sometxt | word: null"</b>
+	 * <li>http://localhost:8080/hellomvc/path2/1234/sometxt/abc.nut<br>
+	 * 输入: <b>"id: 1234 | txt: sometxt | word: abc"</b>
+	 * <li>http://localhost:8080/hellomvc/path2/1234/sometxt.nut?word=TTT<br>
+	 * 输入: <b>"id: 1234 | txt: sometxt | word: TTT"</b>
+	 * <li>http://localhost:8080/hellomvc/path2/1234/sometxt/abc.nut?word=TTT<br>
+	 * 输入: <b>"id: 1234 | txt: sometxt | word: abc"</b>
+	 * </ul>
+	 * 
+	 * 由此可见，路径参数比 GET 参数优先级更高。
+	 * <p>
+	 * <b>注意：</b>，如果你的函数的参数为数字（整数浮点），你必须保证它是有值的。否则，会造成类型转换错误
+	 * 
+	 */
+	@At("/path2/*")
+	public String pathMulti(int id, String txt, @Param("word") String word) {
+		return String.format("id: %d | txt: %s | word: %s", id, txt, word);
 	}
 }

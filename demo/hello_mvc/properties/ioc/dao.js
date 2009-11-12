@@ -7,7 +7,7 @@ var ioc = {
 	 */
 	dataSource : {
 		type : "org.apache.commons.dbcp.BasicDataSource",
-		lifecycle : {
+		events : {
 			depose : "close"
 		},
 		fields : {

@@ -1,6 +1,6 @@
 package nutz.demo.mvc;
 
-import nutz.demo.mvc.helloworld.HellowWorld;
+import nutz.demo.mvc.helloworld.HelloWorld;
 import nutz.demo.mvc.pet.PetModule;
 
 import org.nutz.mvc.annotation.Fail;
@@ -24,7 +24,7 @@ import org.nutz.mvc.init.JsonIocProvider;
  * @author zozoh
  * 
  */
-@Modules( { HellowWorld.class, PetModule.class })
+@Modules( { HelloWorld.class, PetModule.class })
 @IocBy(type = JsonIocProvider.class, args = { "ioc/dao.js", "ioc/pets.js" })
 @SetupBy(HelloMvcSetup.class)
 @Localization("msg")

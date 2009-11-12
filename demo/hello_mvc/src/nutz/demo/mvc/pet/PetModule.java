@@ -18,7 +18,7 @@ import org.nutz.mvc.upload.UploadAdaptor;
  * <li>ioc/dao.js -- 数据库注入配置
  * <li>ioc/pets.js -- Pet 模块注入配置
  * </ul>
- * 这两个文件，由默认模块类的 '@IocBy' 注解导入。
+ * 这两个文件，由默认模块类 (nutz.demo.mvc.MainModule) 的 '@IocBy' 注解导入。
  * <p>
  * 还有几点是需要说明的：
  * <ol>
