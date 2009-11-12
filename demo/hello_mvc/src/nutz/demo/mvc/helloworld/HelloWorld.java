@@ -45,7 +45,6 @@ import org.nutz.mvc.annotation.Param;
  * @author zozoh
  */
 @Ok("json")
-@At
 public class HelloWorld {
 
 	/**
