@@ -6,6 +6,11 @@ import org.nutz.ioc.ValueProxyMaker;
 import org.nutz.ioc.meta.IocValue;
 import org.nutz.lang.Lang;
 
+/**
+ * 手册中 《你都可以注入什么》 一节的代码
+ * 
+ * @author zozoh(zozohtnt@gmail.com)
+ */
 public class ScanValueProxyMaker implements ValueProxyMaker {
 
 	@Override
@@ -16,7 +21,7 @@ public class ScanValueProxyMaker implements ValueProxyMaker {
 			return new ValueProxy() {
 				public Object get(IocMaking ing) {
 					// 根据 address 创建一个对象
-					throw Lang.noImplement();
+					throw Lang.makeThrow(address);
 				}
 
 			};
