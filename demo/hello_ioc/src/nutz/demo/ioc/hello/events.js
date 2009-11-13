@@ -4,7 +4,7 @@ var ioc = {
 	 */
 	computer : {
 		singleton : false,
-		lifecycle : {
+		events : {
 			create : 'init',
 			fetch : 'nutz.demo.ioc.hello.ComputerCallback',
 			depose : 'depose'

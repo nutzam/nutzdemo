@@ -193,10 +193,10 @@ public class HelloIoc {
 	/**
 	 * 让我们再创建一个文件 -- lifecycle.js，并将它同 hello.js 一起使用
 	 */
-	public void demo_lifecycle() {
+	public void demo_events() {
 		// JsonLoader 很容易组合很多个配置文件
 		Ioc ioc = new NutIoc(new JsonLoader("nutz/demo/ioc/hello/hello.js",
-				"nutz/demo/ioc/hello/lifecycle.js"));
+				"nutz/demo/ioc/hello/events.js"));
 		out.println("[For 'computer'] : ");
 		// 因为对象不是单例， 将会触发 create 和 fetch
 		out.println("> first ...");
