@@ -28,6 +28,9 @@ import static java.lang.System.*;
  */
 public class HelloIoc {
 
+	/**
+	 * 这个 Main 函数，将会运行 HelloIoc 每一个 public 的方法，每一个方法，就是一个演示
+	 */
 	public static void main(String[] args) throws Exception {
 		Demo.doDemo(new HelloIoc());
 	}
@@ -46,7 +49,7 @@ public class HelloIoc {
 	 * 	singleton : true,	// 是否为单例，默认为 true
 	 * 	args : [ $V1, $V2 ],  // 构造函数参数数组，
 	 * 	parent : 'xxx',  // 当前对象的配置信息继承自哪个对象，默认为 null
-	 * 	lifecycle : { // 三个属性的值为字符串，可以是当前对象某个方法名，或 org.nutz.ioc.ObjCallback 接口的某个实现
+	 * 	events : { // 三个属性的值为字符串，可以是当前对象某个方法名，或 org.nutz.ioc.IocEventTrigger 接口的某个实现
 	 *  		create : 'xxx',	// 当对象被创建时调用
 	 *  		depose : 'xxx', // 当对象被丢弃时调用
 	 *  		fetch  : 'xxx'  // 当每次 Ioc.get() 都会被调用
@@ -73,34 +76,21 @@ public class HelloIoc {
 	 * <li>文件 : {disk: '文件路径'}，会生成一个 java.io.File 对象
 	 * <li>数组或列表 ： 形式为 [$V, $V ...]， 根据对应字段的类型决定
 	 * <li>Map : 形式为 {key1: $V, key2: $V}
-	 * <li>Java 调用 : {java: '类全名.函数名'}，函数不能有参数，且必须为静态
+	 * <li>Java 调用 : 详细调用方式请参看 org.nutz.ioc.val.JavaValue 的 JDoc 说明
 	 * </ul>
 	 * 
 	 * 
 	 * 你要是想看更多关于 Nutz.Ioc 深入的阐述，请去它的官方网站下载用户手册
 	 * <p>
 	 * 下面请看这个例子，我一步一步的给你详细讲解。
+	 * 
+	 * @see org.nutz.ioc.val.JavaValue
 	 */
-	public void demo_simple_ioc_by_string() {
+	public void demo_simple_ioc() {
 		/*
-		 * 这就是 JSON 配置信息，存放在一个字符串中
+		 * 请打开 simple.js ，这是一个很简单的示例，里面配置了 3 个对象
 		 */
-		String s = "{";
-		s = s + "\n		intel : {type:'nutz.demo.ioc.meta.IntelE5300'},";
-		s = s + "\n		amd : {},";
-		s = s + "\n		c1 : {";
-		s = s + "\n			type : 'nutz.demo.ioc.meta.Computer',";
-		s = s + "\n			fields : {";
-		s = s + "\n				cpu : {refer: 'intel'},";
-		s = s + "\n				memory : {type : 'nutz.demo.ioc.meta.Kingston'},";
-		s = s + "\n				others : 2000";
-		s = s + "\n			}";
-		s = s + "\n		}";
-		s = s + "\n	}";
-		/*
-		 * 我们通过一个 Reader 把字符串连接到 JsonLoader。
-		 */
-		Ioc ioc = new NutIoc(new JsonLoader(Lang.inr(s)));
+		Ioc ioc = new NutIoc(new JsonLoader("nutz/demo/ioc/hello/simple.js"));
 		/*
 		 * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		 * 因为 intel 对象声明了类型，所以你不用传入类型也能获得正确的结果
@@ -151,6 +141,9 @@ public class HelloIoc {
 	 * 这个例子演示了 singleton 的用法
 	 */
 	public void demo_singleton() {
+		/*
+		 * 很简单的注入设定，我们直接写一个字符串即可，甚至不需要配置文件
+		 */
 		String s = "{amd:{},intel:{singleton:false}}";
 		Ioc ioc = new NutIoc(new JsonLoader(Lang.inr(s)));
 		/*
@@ -179,19 +172,7 @@ public class HelloIoc {
 	}
 
 	/**
-	 * JSON 配置的硬编码，适用于一些不太复杂的配置，如果配置的复杂了，单独做一个 JSON 文件 会比较方便。
-	 */
-	public void demo_json_in_file() {
-		Ioc ioc = new NutIoc(new JsonLoader("nutz/demo/ioc/hello/hello.js"));
-		Computer c1 = ioc.get(Computer.class, "c1");
-		Computer c2 = ioc.get(Computer.class, "c2");
-
-		c1.printBrief();
-		c2.printBrief();
-	}
-
-	/**
-	 * 让我们再创建一个文件 -- lifecycle.js，并将它同 hello.js 一起使用
+	 * 让我们再创建一个文件 -- events.js，并将它同 hello.js 一起使用
 	 */
 	public void demo_events() {
 		// JsonLoader 很容易组合很多个配置文件
