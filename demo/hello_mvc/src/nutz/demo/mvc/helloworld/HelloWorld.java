@@ -193,4 +193,21 @@ public class HelloWorld {
 	public String pathMulti(int id, String txt, @Param("word") String word) {
 		return String.format("id: %d | txt: %s | word: %s", id, txt, word);
 	}
+
+	/**
+	 * 自动跳转
+	 * <p>
+	 * 因为 '@Ok' 注解只声明了类型为 "jsp"，没有声明 JSP 文件的路径 Nutz.Mvc 会自动的将当前的 URL<br>
+	 * <b>/auto/jump.nut</b>
+	 * <p>
+	 * 作为网址的参考。直接跳转到：<br>
+	 * <b>/WEB-INF/auto/jump.jsp</b>
+	 * <p>
+	 * <i>网址示意： http://localhost:8080/hellomvc/auto/jump.nut</i>
+	 */
+	@At("/auto/jump")
+	@Ok("jsp")
+	public String auto() {
+		return "Auto Jumping @ " + System.currentTimeMillis();
+	}
 }
