@@ -8,7 +8,7 @@ import nutz.demo.mvc.pet.Master;
 import nutz.demo.mvc.pet.Pet;
 
 import org.nutz.dao.Dao;
-import org.nutz.dao.Sqls;
+import org.nutz.dao.tools.Tables;
 import org.nutz.ioc.Ioc;
 import org.nutz.mvc.Mvcs;
 import org.nutz.mvc.Setup;
@@ -23,7 +23,7 @@ public class HelloMvcSetup implements Setup {
 		Dao dao = ioc.get(Dao.class, "dao");
 		if (!dao.exists(Pet.class)) {
 			// Create tables
-			Sqls.executeDefinitionFile(dao, "tables.dod");
+			Tables.run(dao, Tables.define("tables.dod"));
 
 			// Create master account
 			Master m = new Master();

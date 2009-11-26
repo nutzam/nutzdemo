@@ -17,7 +17,7 @@ public class PetService extends IdNameEntityService<Pet> {
 		// Get pet
 		Pet pet = this.fetch(id);
 		// Move the file to "$ROOT/photo/$id.$extension"
-		String ext = Files.getExtension(tempFile);
+		String ext = Files.getSuffixName(tempFile);
 		pet.setPhotoPath("/photo/" + id + "." + ext);
 		File photo = new File(root + pet.getPhotoPath());
 		if (photo.exists())
