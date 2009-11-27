@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app>
+<web-app version="2.5">
 	<display-name>Nutz demo:: hello Mvc</display-name>
 
 	<!--
@@ -10,7 +10,7 @@
 		的源文件，里面有详细的注释。
 	-->
 	<servlet>
-		<servlet-name>nutz</servlet-name>
+		<servlet-name>nutz-demo</servlet-name>
 		<servlet-class>org.nutz.mvc.NutServlet</servlet-class>
 		<init-param>
 			<param-name>modules</param-name>
@@ -20,7 +20,7 @@
 	</servlet>
 
 	<servlet-mapping>
-		<servlet-name>nutz</servlet-name>
+		<servlet-name>nutz-demo</servlet-name>
 		<url-pattern>*.nut</url-pattern>
 	</servlet-mapping>
 

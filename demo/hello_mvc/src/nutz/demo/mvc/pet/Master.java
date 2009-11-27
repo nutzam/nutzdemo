@@ -17,7 +17,6 @@ public class Master {
 	private String name;
 
 	@Column("pwd")
-	@NotNull
 	private String password;
 
 	@Column

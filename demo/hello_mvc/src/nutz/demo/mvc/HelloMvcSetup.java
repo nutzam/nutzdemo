@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 import javax.servlet.ServletConfig;
 
 import nutz.demo.mvc.pet.Master;
-import nutz.demo.mvc.pet.Pet;
 
 import org.nutz.dao.Dao;
 import org.nutz.dao.tools.Tables;
@@ -21,7 +20,7 @@ public class HelloMvcSetup implements Setup {
 	public void init(ServletConfig config) {
 		Ioc ioc = Mvcs.getIoc(config.getServletContext());
 		Dao dao = ioc.get(Dao.class, "dao");
-		if (!dao.exists(Pet.class)) {
+		if (!dao.exists("t_pet")) {
 			// Create tables
 			Tables.run(dao, Tables.define("tables.dod"));
 
