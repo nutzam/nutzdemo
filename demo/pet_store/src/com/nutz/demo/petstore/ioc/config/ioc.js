@@ -8,20 +8,14 @@ var ioc = {
             password: 'postgres'
         }
     },
-    accountDao : {
-		type : "com.nutz.demo.petstore.dao.AccountDao",
-		fields : {
-			dataSource : {
-				refer : 'dataSource'
-			}
-		}
+	
+	dao : {
+		type : 'org.nutz.dao.impl.NutDao',
+		args : [{refer:'dataSource'}]		
 	},
+	
 	accountService : {
 		type : "com.nutz.demo.petstore.service.AccountService",
-		fields : {
-			accountDao : {
-				refer : 'accountDao'
-			}
-		}
+		args: [{refer:'dao'}]
 	}
 };
