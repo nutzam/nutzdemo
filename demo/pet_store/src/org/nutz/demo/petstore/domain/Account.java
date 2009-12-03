@@ -1,4 +1,4 @@
-package com.nutz.demo.petstore.domain;
+package org.nutz.demo.petstore.domain;
 
 import org.nutz.dao.entity.annotation.Column;
 import org.nutz.dao.entity.annotation.Id;
