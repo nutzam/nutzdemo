@@ -2,8 +2,8 @@ var ioc = {
     dataSource: {
         type: "com.mchange.v2.c3p0.ComboPooledDataSource",
         fields: {
-            driver: 'org.postgresql.Driver',
-            driverUrl: 'jdbc:postgresql://localhost/nutz_demo_petstore',
+			driverClass: 'org.postgresql.Driver',
+			jdbcUrl: 'jdbc:postgresql://localhost/nutz_demo_petstore',
             user: 'postgres',
             password: 'postgres'
         }
@@ -15,7 +15,7 @@ var ioc = {
 	},
 	
 	accountService : {
-		type : "com.nutz.demo.petstore.service.AccountService",
+		type : "com.nutz.demo.petstore.service.AccountServiceImpl",
 		args: [{refer:'dao'}]
 	}
 };

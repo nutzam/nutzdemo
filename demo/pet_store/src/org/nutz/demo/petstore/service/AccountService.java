@@ -1,11 +1,13 @@
 package org.nutz.demo.petstore.service;
 
+import java.util.List;
+
 import org.nutz.demo.petstore.domain.Account;
-import org.nutz.service.NameEntityService;
 
 
-public class AccountService extends NameEntityService<Account>{
-	public void addAccount(Account account){
-		
-	}
+public interface AccountService{
+	public void addAccount(Account account);
+	public Account getAccountByUserid(String userid);
+	public List<Account> getAllAccounts();
+	public void updateAccount(Account account);
 }

@@ -1,17 +1,15 @@
 package org.nutz.demo.petstore.domain;
 
 import org.nutz.dao.entity.annotation.Column;
-import org.nutz.dao.entity.annotation.Id;
+import org.nutz.dao.entity.annotation.Name;
 import org.nutz.dao.entity.annotation.One;
 import org.nutz.dao.entity.annotation.Table;
 
 @Table("account")
 public class Account {
 	@Column
-	@Id
-	private String username;
-	@Column
-	private String password;
+	@Name
+	private String userid;
 	@Column
 	private String email;
 	@Column
@@ -20,9 +18,9 @@ public class Account {
 	private String lastName;
 	@Column
 	private String status;
-	@Column
+	@Column("addr1")
 	private String address1;
-	@Column
+	@Column("addr2")
 	private String address2;
 	@Column
 	private String city;
@@ -34,25 +32,17 @@ public class Account {
 	private String country;
 	@Column
 	private String phone;
-	@One(target = Profile.class, field = "username")
+	@One(target = Profile.class, field = "userid")
 	private Profile profile;
-	@One(target = Signon.class, field = "username")
+	@One(target = Signon.class, field = "userid")
 	private Signon signon;
 
-	public String getUsername() {
-		return username;
+	public String getUserid() {
+		return userid;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
+	public void setUserid(String userid) {
+		this.userid = userid;
 	}
 
 	public String getEmail() {
