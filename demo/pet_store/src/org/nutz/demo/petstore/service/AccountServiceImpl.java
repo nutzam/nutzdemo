@@ -1,5 +1,7 @@
 package org.nutz.demo.petstore.service;
 
+import java.util.List;
+
 import org.nutz.demo.petstore.domain.Account;
 import org.nutz.service.NameEntityService;
 
@@ -12,5 +14,15 @@ public class AccountServiceImpl extends NameEntityService<Account> implements Ac
 	@Override
 	public Account getAccountByUserid(String userid) {
 		return this.dao().fetch(Account.class, userid);
+	}
+
+	@Override
+	public List<Account> getAllAccounts() {
+		return this.dao().query(Account.class, null, null);
+	}
+
+	@Override
+	public void updateAccount(Account account) {
+		this.dao().update(account);
 	}
 }
