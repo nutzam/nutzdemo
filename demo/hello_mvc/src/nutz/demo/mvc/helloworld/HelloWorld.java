@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -121,6 +122,8 @@ public class HelloWorld {
 	 * 
 	 * @param request
 	 *            : 这个参数会被正确设置
+	 * @param context
+	 *            : 这个参数会被正确设置
 	 * @Param session: 这个参数会被正确设置
 	 * @param word
 	 *            你传入的参数
@@ -128,10 +131,11 @@ public class HelloWorld {
 	 */
 	@At("/params")
 	public String tellMore(	HttpServletRequest request,
+							ServletContext context,
 							@Param("word") String word,
 							HttpSession session) {
 		return "You said: " + word + " => " + request.getLocale().toString() + " :: session: "
-				+ session.getId();
+				+ session.getId() + " :: " + context.getContextPath();
 	}
 
 	/**
