@@ -22,8 +22,8 @@ public class AccountModule {
 		return accountService.getAllAccounts();
 	}
 	@At
-	@Ok("jsp:jsp.account.showallaccounts2")
-	public void showAllAccounts2(HttpServletRequest request){
+	@Ok("jsp:jsp.account.showallaccounts")
+	public void showAllAccounts(HttpServletRequest request){
 		request.setAttribute("accounts", accountService.getAllAccounts());
 	}
 }
