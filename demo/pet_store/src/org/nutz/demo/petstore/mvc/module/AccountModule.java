@@ -10,6 +10,7 @@ import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Fail;
 import org.nutz.mvc.annotation.InjectName;
 import org.nutz.mvc.annotation.Ok;
+import org.nutz.mvc.annotation.Param;
 
 @InjectName("accountModule")
 @At("/mvc/account")
@@ -25,5 +26,11 @@ public class AccountModule {
 	@Ok("jsp:jsp.account.showallaccounts")
 	public void showAllAccounts(HttpServletRequest request){
 		request.setAttribute("accounts", accountService.getAllAccounts());
+	}
+	@At
+	@Ok("json")
+	public Account createAccount(@Param("account")Account account){
+		accountService.addAccount(account);
+		return account;
 	}
 }
