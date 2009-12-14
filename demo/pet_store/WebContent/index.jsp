@@ -10,17 +10,35 @@
 <head>
 <base href="<%=basePath%>">
 <title>Insert title here</title>
+	<link type="text/css" href="themes/base/ui.all.css" rel="stylesheet" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="ui/ui.core.js"></script>
+	<script type="text/javascript" src="ui/ui.tabs.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#tabs").tabs({
+				collapsible: true
+			});
+		});
+	</script>
 </head>
 <body>
-<table width="100%" height="100%" border="1" cellpadding="0"
-	cellspacing="0">
-	<tr height="100%">
-		<td width="200px" height="100%" valign="top"><a
-			href="mvc/account/showAllAccounts.do" target="iframe">Account
-		Management</a></td>
-		<td><iframe width="100%" height="100%" name="iframe" id="iframe"
-			src=""></iframe></td>
-	</tr>
-</table>
+<div id="tabs" >
+<ul>
+	<li><a href="#tabs-1">Account Management</a></li>
+	<li><a href="#tabs-2">Proin dolor</a></li>
+	<li><a href="#tabs-3">Aenean lacinia</a></li>
+</ul>
+<div id="tabs-1">
+<iframe width="1000px" height="700px" name="iframe" id="iframe"
+			src="mvc/account/showAllAccounts.do" frameborder="0"></iframe>
+</div>
+<div id="tabs-2">
+<p>Not Implement</p>
+</div>
+<div id="tabs-3">
+<p>Not Implement</p>
+</div>
+</div>
 </body>
 </html>

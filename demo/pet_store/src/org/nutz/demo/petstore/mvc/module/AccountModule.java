@@ -33,4 +33,13 @@ public class AccountModule {
 		accountService.addAccount(account);
 		return account;
 	}
+	@At
+	@Ok("json")
+	public void deleteAccount(@Param("userids")String userids[] ){
+		if(userids!=null){
+			for(String userid:userids){
+				accountService.deleteAccountByUserid(userid);
+			}
+		}
+	}
 }

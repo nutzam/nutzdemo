@@ -31,7 +31,7 @@
 	input.text { margin-bottom:12px; width:95%; padding: .4em; }
 	fieldset { padding:0; border:0; margin-top:25px; }
 	h1 { font-size: 1.2em; margin: .6em 0; }
-	div#users-contain {  width: 350px; margin: 20px 0; }
+	div#users-contain {  width: 100%; margin: 20px 0; }
 	div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
 	div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
 	.ui-button { outline: 0; margin:0; padding: .4em 1em .5em; text-decoration:none;  !important; cursor:pointer; position: relative; text-align: center; }
@@ -119,13 +119,14 @@ $(function() {
 	</form>
 </div>
 
-<div id="users-contain" class="ui-widget">
+<div id="users-contain" class="ui-widget user-div">
 
 		<h1>Existing Users:</h1>
 
 <table id="users" class="ui-widget ui-widget-content">
 	<thead>
 		<tr class="ui-widget-header ">
+			<td><input type="checkbox" id="check_all" /></td>
 			<td>User ID</td>
 			<th>First Name</th>
 			<th>Last Name</th>
@@ -136,6 +137,7 @@ $(function() {
 	<tbody>
 		<c:forEach var="account" items="${accounts}">
 			<tr>
+				<td><input type="checkbox" value="${account.userid}"/></td>
 				<td><a href="javascript:void(0);" class="userid">${account.userid}</a></td>
 				<td>${account.firstName}</td>
 				<td>${account.lastName}</td>
@@ -147,5 +149,6 @@ $(function() {
 </table>
 </div>
 <button id="create-user" class="ui-button ui-state-default ui-corner-all">Create new user</button>
+<button id="delete-user" class="ui-button ui-state-default ui-corner-all">Delete user</button>
 </body>
 </html>

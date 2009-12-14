@@ -10,4 +10,5 @@ public interface AccountService{
 	public Account getAccountByUserid(String userid);
 	public List<Account> getAllAccounts();
 	public void updateAccount(Account account);
+	public void deleteAccountByUserid(String userid);
 }

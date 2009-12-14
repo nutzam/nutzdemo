@@ -23,6 +23,9 @@ var showAllAccounts = {
 		$(".userid").bind("click", function() {
 			funcHolder.showAccountDetail($(this).text());
 		});
+		$("#check_all").bind("click", function() {
+			$(":checkbox").attr("checked",$(this).attr("checked"));
+		});
 		$("#error_message").dialog({
 			bgiframe: true,
 			modal: true,
@@ -103,9 +106,51 @@ var showAllAccounts = {
 		.mouseup(function(){
 				$(this).removeClass("ui-state-active");
 		});
+		$('#delete-user').click(function() {
+			funcHolder.deleteAccount();
+		})
+		.hover(
+			function(){ 
+				$(this).addClass("ui-state-hover"); 
+			},
+			function(){ 
+				$(this).removeClass("ui-state-hover"); 
+			}
+		).mousedown(function(){
+			$(this).addClass("ui-state-active"); 
+		})
+		.mouseup(function(){
+				$(this).removeClass("ui-state-active");
+		});
 	},
 	showAccountDetail : function(userid) {
 		$('#update_dialog').dialog('open');
+	},
+	deleteAccount : function() {
+		var userid=[];
+		$(":checkbox:checked").each(function(i,domEle) {
+			if (domEle.id != "check_all") {
+				userid.push(domEle.value);
+			}
+		});
+		var param = {};
+		param.userids = userid;
+		$.ajax({
+	        url:"mvc/account/deleteAccount.do",
+	        type:"GET",
+	        data:param,
+	        dataType:"json",
+	        success :function (result){
+				if(result&&result.detailMessage){
+					alert(result.detailMessage);
+				}else{
+		            alert("ok");
+		            $(":checkbox:checked").each(function(i,domEle) {
+		            	$(domEle).parent().parent().remove();
+		    		});
+				}
+	        }
+		});
 	},
 	createAccount : function(dialog) {
 		var bValid = true;
@@ -154,6 +199,7 @@ var showAllAccounts = {
 					}else{
 			            
 			            $('#users tbody').append('<tr>' +
+			            		'<td><input type="checkbox" value="'+result.userid+'"/></td>' + 
 			    				'<td>' + result.userid + '</td>' + 
 			    				'<td>' + result.firstName + '</td>' + 
 			    				'<td>' + result.lastName + '</td>' +

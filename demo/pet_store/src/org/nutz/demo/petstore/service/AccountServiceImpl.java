@@ -25,4 +25,8 @@ public class AccountServiceImpl extends NameEntityService<Account> implements Ac
 	public void updateAccount(Account account) {
 		this.dao().update(account);
 	}
+	@Override
+	public void deleteAccountByUserid(String userid) {
+		this.dao().delete(Account.class, userid);
+	}
 }
