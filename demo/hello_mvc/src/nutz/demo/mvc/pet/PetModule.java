@@ -36,7 +36,7 @@ import org.nutz.mvc.upload.UploadAdaptor;
 @InjectName("petModule")
 @At("/pet")
 @Fail("json")
-@Filters( { @By(type = CheckSession.class, args = { "master", "/index.jsp" }) })
+@Filters({@By(type = CheckSession.class, args = {"master", "/index.jsp"})})
 public class PetModule {
 
 	/*
@@ -162,7 +162,7 @@ public class PetModule {
 	 * @see org.nutz.mvc.annotation.AdaptBy
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = { "D:/tmp/demo/upload", "10" })
+	@AdaptBy(type = UploadAdaptor.class, args = {"D:/tmp/demo/upload", "10"})
 	@Ok("jsp:jsp.upload.done")
 	@Fail("jsp:jsp.upload.fail")
 	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)
@@ -170,4 +170,30 @@ public class PetModule {
 		pets.uploadPhoto(id, f, context.getRealPath("/"));
 	}
 
+	/**
+	 * 支持参数前缀。
+	 * <p>
+	 * 如果你的请求表单包含了2个对象，每个对象的字段都有一个规定的前缀，那么为你的 入口函数每个参数声明一下
+	 * '@Param("::前缀名")'，则会根据这个前缀名来构建对象
+	 * <p>
+	 * <b style=color:red>注意：</b>前缀名大小写敏感
+	 * <p>
+	 * <b>实例网址：</b> http://localhost:8080/hellomvc/pet/add2.nut <br>
+	 * 传入参数<br>
+	 * A.age=12&A.name=AA&B.age=15&B.name=BB
+	 * 
+	 */
+	@At("/add2")
+	@Ok("json")
+	public Pet[] insertTwo(@Param("::A.") Pet a, @Param("::B.") Pet b, HttpSession session) {
+		// 应该支持 @Attr ，可以从 request, session, context 里取属性
+		Master m = (Master) session.getAttribute("master");
+		a.setMasterId(m.getId());
+		b.setMasterId(m.getId());
+		Pet[] list = new Pet[2];
+		list[0] = a;
+		list[1] = b;
+		pets.dao().insert(list);
+		return list;
+	}
 }
