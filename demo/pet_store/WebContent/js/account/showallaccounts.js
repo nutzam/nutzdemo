@@ -1,26 +1,41 @@
 var showAllAccounts = {
+	userid : null,
+	password : null,
+	firstname : null,
+	lastname : null,
+	phone : null,
+	email : null,
+	address1 : null,
+	address2 : null,
+	city : null,
+	state : null,
+	zip : null,
+	country : null,
+	allFields : null,
+	isUpdate : false,
 	onLoadEvent : function() {
 		$(document).ajaxError(function(event, request, settings){
 			$("#error_message span").text("Network Error");
 			$("#error_message").dialog("open");
 		});
-		userid = $("#userid"),
-		password = $("#password"),
-		firstname = $("#firstname"),
-		lastname = $("#lastname"),
-		phone = $("#phone"),
-		email = $("#email"),
-		address1 = $("#address1"),
-		address2 = $("#address2"),
-		city = $("#city"),
-		state = $("#state"),
-		zip = $("#zip"),
-		country = $("#country"),
-		allFields = $([]).add(userid).add(password).add(firstname).add(lastname).add(
-			phone).add(email).add(address1).add(address2).add(city).add(
-			state).add(zip).add(country);
+		this.userid = $("#userid"),
+		this.password = $("#password"),
+		this.firstname = $("#firstname"),
+		this.lastname = $("#lastname"),
+		this.phone = $("#phone"),
+		this.email = $("#email"),
+		this.address1 = $("#address1"),
+		this.address2 = $("#address2"),
+		this.city = $("#city"),
+		this.state = $("#state"),
+		this.zip = $("#zip"),
+		this.country = $("#country"),
+		this.allFields = $([]).add(this.userid).add(this.password).add(this.firstname).add(this.lastname).add(
+				this.phone).add(this.email).add(this.address1).add(this.address2).add(this.city).add(
+						this.state).add(this.zip).add(this.country);
 		var funcHolder = this;
 		$(".userid").bind("click", function() {
+			funcHolder.isUpdate=true;
 			funcHolder.showAccountDetail($(this).text());
 		});
 		$("#check_all").bind("click", function() {
@@ -37,13 +52,13 @@ var showAllAccounts = {
 			}
 		});
 
-		$("#create_dialog").dialog({
+		$("#dialog").dialog({
 			bgiframe: true,
 			autoOpen: false,
 			height: 500,
 			modal: true,
 			buttons: {
-				'Create an account': function() {
+				'OK': function() {
 					funcHolder.createAccount($(this));
 				},
 				Cancel: function() {
@@ -51,47 +66,13 @@ var showAllAccounts = {
 				}
 			},
 			close: function() {
-				allFields.val('').removeClass('ui-state-error');
-			}
-		});
-		$("#update_dialog").dialog({
-			bgiframe: true,
-			autoOpen: false,
-			height: 300,
-			modal: true,
-			buttons: {
-				'Update an account': function() {
-					var bValid = true;
-					allFields.removeClass('ui-state-error');
-
-					bValid = bValid && funcHolder.checkLength(name,"username",3,16);
-					bValid = bValid && funcHolder.checkLength(email,"email",6,80);
-					bValid = bValid && funcHolder.checkLength(password,"password",5,16);
-
-					bValid = bValid && funcHolder.checkRegexp(name,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
-					// From jquery.validate.js (by joern), contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
-					bValid = bValid && funcHolder.checkRegexp(email,/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i,"eg. ui@jquery.com");
-					bValid = bValid && funcHolder.checkRegexp(password,/^([0-9a-zA-Z])+$/,"Password field only allow : a-z 0-9");
-					
-					if (bValid) {
-						$('#users tbody').append('<tr>' +
-							'<td>' + name.val() + '</td>' + 
-							'<td>' + email.val() + '</td>' + 
-							'<td>' + password.val() + '</td>' +
-							'</tr>'); 
-						$(this).dialog('close');
-					}
-				},
-				Cancel: function() {
-					$(this).dialog('close');
-				}
-			},
-			close: function() {
-				allFields.val('').removeClass('ui-state-error');
+				funcHolder.allFields.val('').removeClass('ui-state-error');
 			}
 		});
 		$('#create-user').click(function() {
-			$('#create_dialog').dialog('open');
+			funcHolder.isUpdate=false;
+			$('#dialog').attr("title","Create new user");
+			$('#dialog').dialog('open');
 		})
 		.hover(
 			function(){ 
@@ -123,18 +104,50 @@ var showAllAccounts = {
 				$(this).removeClass("ui-state-active");
 		});
 	},
-	showAccountDetail : function(userid) {
-		$('#update_dialog').dialog('open');
+	showAccountDetail : function(useridtext) {
+		var param = {};
+		param.userid = useridtext;
+		var funcHolder = this;
+		$.ajax({
+	        url:"mvc/account/showAccount.do",
+	        type:"GET",
+	        data:param,
+	        dataType:"json",
+	        success :function (result){
+				if(result&&result.detailMessage){
+					alert(result.detailMessage);
+				}else{
+					funcHolder.userid.val(result.userid);
+					funcHolder.password.val("");
+					funcHolder.email.val(result.email);
+					funcHolder.firstname.val(result.firstName);
+					funcHolder.lastname.val(result.lastName);
+					funcHolder.address1.val(result.address1);
+					funcHolder.address2.val(result.address2);
+					funcHolder.city.val(result.city);
+					funcHolder.state.val(result.state);
+					funcHolder.zip.val(result.zip);
+					funcHolder.country.val(result.country);
+					funcHolder.phone.val(result.phone);
+					$('#dialog').attr("title","Update user");
+					$('#dialog').dialog('open');
+				}
+	        }
+		});
 	},
 	deleteAccount : function() {
-		var userid=[];
+		var userids=[];
 		$(":checkbox:checked").each(function(i,domEle) {
 			if (domEle.id != "check_all") {
-				userid.push(domEle.value);
+				userids.push(domEle.value);
 			}
 		});
+		if(userids.length==0){
+			alert("Please select one user.");
+		}
+			
 		var param = {};
-		param.userids = userid;
+		param.userids = userids;
 		$.ajax({
 	        url:"mvc/account/deleteAccount.do",
 	        type:"GET",
@@ -153,41 +166,46 @@ var showAllAccounts = {
 		});
 	},
 	createAccount : function(dialog) {
+		if(this.isUpdate==true){
+			this.updateAccount(dialog);
+			return;
+		}
+		
 		var bValid = true;
-		allFields.removeClass('ui-state-error');
+		this.allFields.removeClass('ui-state-error');
 
-		bValid = bValid && this.checkLength(userid,"username",3,16);
-		bValid = bValid && this.checkLength(password,"password",5,16);
-		bValid = bValid && this.checkLength(firstname,"firstname",3,16);
-		bValid = bValid && this.checkLength(lastname,"lastname",3,16);
-		bValid = bValid && this.checkLength(email,"email",6,80);
-		bValid = bValid && this.checkLength(address1,"address1",3,16);
-		bValid = bValid && this.checkLength(city,"city",3,16);
-		bValid = bValid && this.checkLength(state,"state",3,16);
-		bValid = bValid && this.checkLength(zip,"zip",3,16);
-		bValid = bValid && this.checkLength(country,"country",3,16);
+		bValid = bValid && this.checkLength(this.userid,"username",3,16);
+		bValid = bValid && this.checkLength(this.password,"password",5,16);
+		bValid = bValid && this.checkLength(this.firstname,"firstname",3,16);
+		bValid = bValid && this.checkLength(this.lastname,"lastname",3,16);
+		bValid = bValid && this.checkLength(this.email,"email",6,80);
+		bValid = bValid && this.checkLength(this.address1,"address1",3,16);
+		bValid = bValid && this.checkLength(this.city,"city",3,16);
+		bValid = bValid && this.checkLength(this.state,"state",3,16);
+		bValid = bValid && this.checkLength(this.zip,"zip",3,16);
+		bValid = bValid && this.checkLength(this.country,"country",3,16);
 		
 
-		bValid = bValid && this.checkRegexp(userid,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
-		bValid = bValid && this.checkRegexp(firstname,/^[a-z]([0-9a-z_])+$/i,"Firstname may consist of a-z, 0-9, underscores, begin with a letter.");
-		bValid = bValid && this.checkRegexp(lastname,/^[a-z]([0-9a-z_])+$/i,"Lastname may consist of a-z, 0-9, underscores, begin with a letter.");
+		bValid = bValid && this.checkRegexp(this.userid,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
+		bValid = bValid && this.checkRegexp(this.firstname,/^[a-z]([0-9a-z_])+$/i,"Firstname may consist of a-z, 0-9, underscores, begin with a letter.");
+		bValid = bValid && this.checkRegexp(this.lastname,/^[a-z]([0-9a-z_])+$/i,"Lastname may consist of a-z, 0-9, underscores, begin with a letter.");
 		// From jquery.validate.js (by joern), contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
-		bValid = bValid && this.checkRegexp(email,/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i,"eg. ui@jquery.com");
-		bValid = bValid && this.checkRegexp(password,/^([0-9a-zA-Z])+$/,"Password field only allow : a-z 0-9");
+		bValid = bValid && this.checkRegexp(this.email,/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i,"eg. ui@jquery.com");
+		bValid = bValid && this.checkRegexp(this.password,/^([0-9a-zA-Z])+$/,"Password field only allow : a-z 0-9");
 		
 		if (bValid) {
 			var account={};
-			account.userid=userid.val();
-			account.email=email.val();
-			account.firstName=firstname.val();
-			account.lastName=lastname.val();
-			account.address1=address1.val();
-			account.address2=address2.val();
-			account.city=city.val();
-			account.state=state.val();
-			account.zip=zip.val();
-			account.country=country.val();
-			account.phone=phone.val();
+			account.userid=this.userid.val();
+			account.email=this.email.val();
+			account.firstName=this.firstname.val();
+			account.lastName=this.lastname.val();
+			account.address1=this.address1.val();
+			account.address2=this.address2.val();
+			account.city=this.city.val();
+			account.state=this.state.val();
+			account.zip=this.zip.val();
+			account.country=this.country.val();
+			account.phone=this.phone.val();
 			$.ajax({
 		        url:"mvc/account/createAccount.do",
 		        type:"GET",
@@ -206,6 +224,59 @@ var showAllAccounts = {
 			    				'<td>' + result.email + '</td>' +
 			    				'<td>' + result.phone + '</td>' +
 			    				'</tr>');
+			            dialog.dialog('close');
+					}
+		        }
+			});
+			
+		}
+	},
+	updateAccount : function(dialog) {
+		var bValid = true;
+		this.allFields.removeClass('ui-state-error');
+
+		bValid = bValid && this.checkLength(this.userid,"username",3,16);
+		bValid = bValid && this.checkLength(this.password,"password",5,16);
+		bValid = bValid && this.checkLength(this.firstname,"firstname",3,16);
+		bValid = bValid && this.checkLength(this.lastname,"lastname",3,16);
+		bValid = bValid && this.checkLength(this.email,"email",6,80);
+		bValid = bValid && this.checkLength(this.address1,"address1",3,16);
+		bValid = bValid && this.checkLength(this.city,"city",3,16);
+		bValid = bValid && this.checkLength(this.state,"state",3,16);
+		bValid = bValid && this.checkLength(this.zip,"zip",3,16);
+		bValid = bValid && this.checkLength(this.country,"country",3,16);
+		
+
+		bValid = bValid && this.checkRegexp(this.userid,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
+		bValid = bValid && this.checkRegexp(this.firstname,/^[a-z]([0-9a-z_])+$/i,"Firstname may consist of a-z, 0-9, underscores, begin with a letter.");
+		bValid = bValid && this.checkRegexp(this.lastname,/^[a-z]([0-9a-z_])+$/i,"Lastname may consist of a-z, 0-9, underscores, begin with a letter.");
+		// From jquery.validate.js (by joern), contributed by Scott Gonzalez: http://projects.scottsplayground.com/email_address_validation/
+		bValid = bValid && this.checkRegexp(this.email,/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i,"eg. ui@jquery.com");
+		bValid = bValid && this.checkRegexp(this.password,/^([0-9a-zA-Z])+$/,"Password field only allow : a-z 0-9");
+		
+		if (bValid) {
+			var account={};
+			account.userid=this.userid.val();
+			account.email=this.email.val();
+			account.firstName=this.firstname.val();
+			account.lastName=this.lastname.val();
+			account.address1=this.address1.val();
+			account.address2=this.address2.val();
+			account.city=this.city.val();
+			account.state=this.state.val();
+			account.zip=this.zip.val();
+			account.country=this.country.val();
+			account.phone=this.phone.val();
+			$.ajax({
+		        url:"mvc/account/updateAccount.do",
+		        type:"GET",
+		        data:"account="+encodeURIComponent(JSON.stringify(account)),
+		        dataType:"json",
+		        success :function (result){
+					if(result.detailMessage){
+						alert(result.detailMessage);
+					}else{
+			            alert("ok");
 			            dialog.dialog('close');
 					}
 		        }

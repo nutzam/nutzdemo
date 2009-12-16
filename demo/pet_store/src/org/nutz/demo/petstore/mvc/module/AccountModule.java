@@ -42,4 +42,14 @@ public class AccountModule {
 			}
 		}
 	}
+	@At
+	@Ok("json")
+	public Account showAccount(@Param("userid")String userid){
+		return accountService.getAccountByUserid(userid);
+	}
+	@At
+	@Ok("json")
+	public void updateAccount(@Param("account")Account account){
+		accountService.updateAccount(account);
+	}
 }

@@ -54,7 +54,7 @@ $(function() {
 	</p>
 </div>
 
-<div id="create_dialog" title="Create new user">
+<div id="dialog" title="Create new user">
 	<p id="validateTips">All form fields are required.</p>
 
 	<form>
@@ -83,38 +83,6 @@ $(function() {
 		<input type="text" name="zip" id="zip" value="" class="text ui-widget-content ui-corner-all" />
 		<label for="country">Country <font>*</font></label>
 		<input type="text" name="country" id="country" value="" class="text ui-widget-content ui-corner-all" />
-	</fieldset>
-	</form>
-</div>
-<div id="update_dialog" title="Update user">
-	<p id="validateTips_update">All form fields are required.</p>
-
-	<form>
-	<fieldset>
-		<label for="userid_create">User ID</label>
-		<input type="text" name="userid_create" id="userid_create" class="text ui-widget-content ui-corner-all" />
-		<label for="password_create">Password</label>
-		<input type="password" name="password_create" id="password_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="firstname_create">First Name</label>
-		<input type="text" name="firstname_create" id="firstname_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="lastname_create">Last Name</label>
-		<input type="text" name="lastname_create" id="lastname_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="phone_create">Phone</label>
-		<input type="text" name="phone_create" id="phone_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="email_create">Email</label>
-		<input type="text" name="email_create" id="email_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="address1_create">Address 1</label>
-		<input type="text" name="address1_create" id="address1_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="address2_create">Address 2</label>
-		<input type="text" name="address2_create" id="address2_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="city_create">City</label>
-		<input type="text" name="city_create" id="city_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="state_create">State</label>
-		<input type="text" name="state_create" id="state_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="zip_create">Zip</label>
-		<input type="text" name="zip_create" id="zip_create" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="country_create">Country</label>
-		<input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all" />
 	</fieldset>
 	</form>
 </div>
