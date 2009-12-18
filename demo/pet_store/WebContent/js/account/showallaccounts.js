@@ -174,16 +174,17 @@ var showAllAccounts = {
 		var bValid = true;
 		this.allFields.removeClass('ui-state-error');
 
-		bValid = bValid && this.checkLength(this.userid,"username",3,16);
-		bValid = bValid && this.checkLength(this.password,"password",5,16);
-		bValid = bValid && this.checkLength(this.firstname,"firstname",3,16);
-		bValid = bValid && this.checkLength(this.lastname,"lastname",3,16);
+		bValid = bValid && this.checkLength(this.userid,"username",3,25);
+		bValid = bValid && this.checkLength(this.password,"password",5,25);
+		bValid = bValid && this.checkLength(this.firstname,"firstname",3,80);
+		bValid = bValid && this.checkLength(this.lastname,"lastname",3,80);
 		bValid = bValid && this.checkLength(this.email,"email",6,80);
-		bValid = bValid && this.checkLength(this.address1,"address1",3,16);
-		bValid = bValid && this.checkLength(this.city,"city",3,16);
-		bValid = bValid && this.checkLength(this.state,"state",3,16);
-		bValid = bValid && this.checkLength(this.zip,"zip",3,16);
-		bValid = bValid && this.checkLength(this.country,"country",3,16);
+		bValid = bValid && this.checkLength(this.address1,"address1",3,80);
+		bValid = bValid && this.checkLength(this.address2,"address1",0,40);
+		bValid = bValid && this.checkLength(this.city,"city",3,80);
+		bValid = bValid && this.checkLength(this.state,"state",2,80);
+		bValid = bValid && this.checkLength(this.zip,"zip",3,20);
+		bValid = bValid && this.checkLength(this.country,"country",3,80);
 		
 
 		bValid = bValid && this.checkRegexp(this.userid,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
@@ -212,7 +213,7 @@ var showAllAccounts = {
 		        data:"account="+encodeURIComponent(JSON.stringify(account)),
 		        dataType:"json",
 		        success :function (result){
-					if(result.detailMessage){
+					if(result&&result.detailMessage){
 						alert(result.detailMessage);
 					}else{
 			            
@@ -235,16 +236,17 @@ var showAllAccounts = {
 		var bValid = true;
 		this.allFields.removeClass('ui-state-error');
 
-		bValid = bValid && this.checkLength(this.userid,"username",3,16);
-		bValid = bValid && this.checkLength(this.password,"password",5,16);
-		bValid = bValid && this.checkLength(this.firstname,"firstname",3,16);
-		bValid = bValid && this.checkLength(this.lastname,"lastname",3,16);
+		bValid = bValid && this.checkLength(this.userid,"username",3,25);
+		bValid = bValid && this.checkLength(this.password,"password",5,25);
+		bValid = bValid && this.checkLength(this.firstname,"firstname",3,80);
+		bValid = bValid && this.checkLength(this.lastname,"lastname",3,80);
 		bValid = bValid && this.checkLength(this.email,"email",6,80);
-		bValid = bValid && this.checkLength(this.address1,"address1",3,16);
-		bValid = bValid && this.checkLength(this.city,"city",3,16);
-		bValid = bValid && this.checkLength(this.state,"state",3,16);
-		bValid = bValid && this.checkLength(this.zip,"zip",3,16);
-		bValid = bValid && this.checkLength(this.country,"country",3,16);
+		bValid = bValid && this.checkLength(this.address1,"address1",3,80);
+		bValid = bValid && this.checkLength(this.address2,"address1",0,40);
+		bValid = bValid && this.checkLength(this.city,"city",3,80);
+		bValid = bValid && this.checkLength(this.state,"state",2,80);
+		bValid = bValid && this.checkLength(this.zip,"zip",3,20);
+		bValid = bValid && this.checkLength(this.country,"country",3,80);
 		
 
 		bValid = bValid && this.checkRegexp(this.userid,/^[a-z]([0-9a-z_])+$/i,"Username may consist of a-z, 0-9, underscores, begin with a letter.");
@@ -273,11 +275,11 @@ var showAllAccounts = {
 		        data:"account="+encodeURIComponent(JSON.stringify(account)),
 		        dataType:"json",
 		        success :function (result){
-					if(result.detailMessage){
+					if(result&&result.detailMessage){
 						alert(result.detailMessage);
 					}else{
-			            alert("ok");
-			            dialog.dialog('close');
+						dialog.dialog('close');
+						window.location.reload(); 
 					}
 		        }
 			});
