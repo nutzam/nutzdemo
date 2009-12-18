@@ -171,14 +171,14 @@ public class PetModule {
 	}
 
 	/**
-	 * 支持参数前缀。
+	 * 支持参数前缀 (Issue 72)
 	 * <p>
 	 * 如果你的请求表单包含了2个对象，每个对象的字段都有一个规定的前缀，那么为你的 入口函数每个参数声明一下
 	 * '@Param("::前缀名")'，则会根据这个前缀名来构建对象
 	 * <p>
 	 * <b style=color:red>注意：</b>前缀名大小写敏感
 	 * <p>
-	 * <b>实例网址：</b> http://localhost:8080/hellomvc/pet/add2.nut <br>
+	 * <b>网址示意：</b> http://localhost:8080/hellomvc/pet/add2.nut <br>
 	 * 传入参数<br>
 	 * A.age=12&A.name=AA&B.age=15&B.name=BB
 	 * 
@@ -194,6 +194,22 @@ public class PetModule {
 		list[0] = a;
 		list[1] = b;
 		pets.dao().insert(list);
+		return list;
+	}
+
+	/**
+	 * 支持数组参数 (Issue 86)
+	 * <p>
+	 * 参数是数组的话，自动适配 HTTP 参数数组
+	 * <p>
+	 * <b>网址示意：</b> http://localhost:8080/hellomvc/pet/getpets.nut?id=1&id=2<br>
+	 */
+	@At("/getpets")
+	@Ok("json")
+	public Pet[] getPets(@Param("id") int[] ids) {
+		Pet[] list = new Pet[ids.length];
+		for (int i = 0; i < ids.length; i++)
+			list[i] = pets.fetch(ids[i]);
 		return list;
 	}
 }

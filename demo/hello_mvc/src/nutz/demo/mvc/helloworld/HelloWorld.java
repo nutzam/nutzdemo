@@ -1,6 +1,7 @@
 package nutz.demo.mvc.helloworld;
 
 import java.util.ArrayList;
+
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,7 @@ import org.nutz.mvc.Mvcs;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
+import org.nutz.mvc.annotation.Attr;
 
 /**
  * 这是一个非常简单的模块，它甚至都没有用到注入。
@@ -214,4 +216,24 @@ public class HelloWorld {
 	public String auto() {
 		return "Auto Jumping @ " + System.currentTimeMillis();
 	}
+
+	/**
+	 * 获取属性 (Issue 80)
+	 * <p>
+	 * 你可以通过 '@Attr' 注解获取 ServletContext, Session, Request 对象内的属性。
+	 * <p>
+	 * 比如这个例子，它可以获取应用中的本地化字符串。因为你在 MainMdoule 声明了 '@Localization("msg")'，即，在 msg
+	 * 下的所有 .properties 文件都会被加入 应用，成为本地化字符串。 <br>
+	 * 同时，在 request 里，会一直保留一个 "msg" 为名字的属性，它的值就是一个 Map。 这个例子，就是要获取这个 Map 里的值。
+	 * <p>
+	 * <i>网址示意： http://localhost:8080/hellomvc/msg.nut?key=title</i>
+	 */
+	@At("/msg")
+	public String getMessage(@Attr("msg") Map<String, String> msg, @Param("key") String key) {
+		String s = msg.get(key);
+		if (Strings.isBlank(s))
+			return "<Unknown Key>";
+		return s;
+	}
+	
 }
