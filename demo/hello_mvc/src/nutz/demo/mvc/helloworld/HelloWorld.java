@@ -23,6 +23,8 @@ import org.nutz.mvc.annotation.Attr;
 /**
  * 这是一个非常简单的模块，它甚至都没有用到注入。
  * <p>
+ * 通过访问： http://localhost:8080/hellomvc/helloworld.jsp 快速查看本演示
+ * <p>
  * 通过这个例子我只是想 告诉大家， Nutz.Mvc 可以让你的代码变得有多简洁
  * <p>
  * 你还可以在模块类上声明：
@@ -235,5 +237,5 @@ public class HelloWorld {
 			return "<Unknown Key>";
 		return s;
 	}
-	
+
 }
