@@ -49,7 +49,7 @@
 	-->
 	<!--
 		<listener>
-		<listerner-class>org.nutz.mvc.NutSessionListener</listerner-class>
+		<listener-class>org.nutz.mvc.NutSessionListener</listener-class>
 		</listener>
 	-->
 </web-app>
