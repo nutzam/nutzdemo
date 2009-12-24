@@ -60,7 +60,7 @@ $(function() {
 	<form>
 	<fieldset>
 		<label for="userid">User ID <font>*</font></label>
-		<input type="text" name="userid" id="userid" class="text ui-widget-content ui-corner-all" />
+		<input type="text" name="userid" id="userid" class="text ui-widget-content ui-corner-all" /><input type="hidden" name="olduserid" id="olduserid"/>
 		<label for="password">Password <font>*</font></label>
 		<input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all" />
 		<label for="firstname">First Name <font>*</font></label>
@@ -94,7 +94,7 @@ $(function() {
 <table id="users" class="ui-widget ui-widget-content">
 	<thead>
 		<tr class="ui-widget-header ">
-			<td><input type="checkbox" id="check_all" /></td>
+			<td style="width:10px"><input type="checkbox" id="check_all" /></td>
 			<td>User ID</td>
 			<th>First Name</th>
 			<th>Last Name</th>
@@ -116,7 +116,7 @@ $(function() {
 	</tbody>
 </table>
 </div>
-<button id="create-user" class="ui-button ui-state-default ui-corner-all">Create new user</button>
+<button id="create-user" class="ui-button ui-state-default ui-corner-all">Create new user</button>&nbsp;
 <button id="delete-user" class="ui-button ui-state-default ui-corner-all">Delete user</button>
 </body>
 </html>

@@ -1,5 +1,6 @@
 var showAllAccounts = {
 	userid : null,
+	olduserid : null,
 	password : null,
 	firstname : null,
 	lastname : null,
@@ -19,6 +20,7 @@ var showAllAccounts = {
 			$("#error_message").dialog("open");
 		});
 		this.userid = $("#userid"),
+		this.olduserid = $("#olduserid"),
 		this.password = $("#password"),
 		this.firstname = $("#firstname"),
 		this.lastname = $("#lastname"),
@@ -71,7 +73,7 @@ var showAllAccounts = {
 		});
 		$('#create-user').click(function() {
 			funcHolder.isUpdate=false;
-			$('#dialog').attr("title","Create new user");
+			$('#dialog').dialog('option', 'title', 'Create new user');
 			$('#dialog').dialog('open');
 		})
 		.hover(
@@ -117,6 +119,7 @@ var showAllAccounts = {
 				if(result&&result.detailMessage){
 					alert(result.detailMessage);
 				}else{
+					funcHolder.olduserid.val(result.userid);
 					funcHolder.userid.val(result.userid);
 					funcHolder.password.val("");
 					funcHolder.email.val(result.email);
@@ -129,7 +132,7 @@ var showAllAccounts = {
 					funcHolder.zip.val(result.zip);
 					funcHolder.country.val(result.country);
 					funcHolder.phone.val(result.phone);
-					$('#dialog').attr("title","Update user");
+					$('#dialog').dialog('option', 'title', 'Update user');
 					$('#dialog').dialog('open');
 				}
 	        }
@@ -144,6 +147,7 @@ var showAllAccounts = {
 		});
 		if(userids.length==0){
 			alert("Please select one user.");
+			return;
 		}
 			
 		var param = {};
@@ -197,6 +201,9 @@ var showAllAccounts = {
 		if (bValid) {
 			var account={};
 			account.userid=this.userid.val();
+			account.signon = {};
+			account.signon.username=this.userid.val();
+			account.signon.password=this.password.val();
 			account.email=this.email.val();
 			account.firstName=this.firstname.val();
 			account.lastName=this.lastname.val();
@@ -207,6 +214,7 @@ var showAllAccounts = {
 			account.zip=this.zip.val();
 			account.country=this.country.val();
 			account.phone=this.phone.val();
+			var funcHolder = this;
 			$.ajax({
 		        url:"mvc/account/createAccount.do",
 		        type:"GET",
@@ -219,12 +227,16 @@ var showAllAccounts = {
 			            
 			            $('#users tbody').append('<tr>' +
 			            		'<td><input type="checkbox" value="'+result.userid+'"/></td>' + 
-			    				'<td>' + result.userid + '</td>' + 
+			    				'<td><a href="javascript:void(0);" class="userid">' + result.userid + '</a></td>' + 
 			    				'<td>' + result.firstName + '</td>' + 
 			    				'<td>' + result.lastName + '</td>' +
 			    				'<td>' + result.email + '</td>' +
 			    				'<td>' + result.phone + '</td>' +
 			    				'</tr>');
+			            $(".userid").bind("click", function() {
+			    			funcHolder.isUpdate=true;
+			    			funcHolder.showAccountDetail($(this).text());
+			    		});
 			            dialog.dialog('close');
 					}
 		        }
@@ -259,6 +271,9 @@ var showAllAccounts = {
 		if (bValid) {
 			var account={};
 			account.userid=this.userid.val();
+			account.signon = {};
+			account.signon.username=this.userid.val();
+			account.signon.password=this.password.val();
 			account.email=this.email.val();
 			account.firstName=this.firstname.val();
 			account.lastName=this.lastname.val();
@@ -272,7 +287,7 @@ var showAllAccounts = {
 			$.ajax({
 		        url:"mvc/account/updateAccount.do",
 		        type:"GET",
-		        data:"account="+encodeURIComponent(JSON.stringify(account)),
+		        data:"olduserid="+this.olduserid.val() +"&account="+encodeURIComponent(JSON.stringify(account)),
 		        dataType:"json",
 		        success :function (result){
 					if(result&&result.detailMessage){

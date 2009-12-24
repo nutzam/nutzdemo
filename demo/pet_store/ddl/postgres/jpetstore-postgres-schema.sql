@@ -1,27 +1,27 @@
-drop index productCat;
-drop index productName;
-drop index itemProd;
+-- drop index productCat;
+-- drop index productName;
+-- drop index itemProd;
 
-drop table lineitem;
-drop table orderstatus;
-drop table orders;
-drop table bannerdata;
-drop table profile;
-drop table signon;
-drop table inventory;
-drop table item;
-drop table product;
-drop table account;
-drop table category;
-drop table supplier;
-drop table sequence;
+-- drop table lineitem;
+-- drop table orderstatus;
+-- drop table orders;
+-- drop table bannerdata;
+-- drop table profile;
+-- drop table signon;
+-- drop table inventory;
+-- drop table item;
+-- drop table product;
+-- drop table account;
+-- drop table category;
+-- drop table supplier;
+-- drop table sequence;
 
 create table supplier (
     suppid int not null,
     name varchar(80) null,
     status varchar(2) not null,
     addr1 varchar(80) null,
-    addr2 varchar(80) null,
+    addr2 varchar(80) null,-- 
     city varchar(80) null,
     state varchar(80) null,
     zip varchar(5) null,

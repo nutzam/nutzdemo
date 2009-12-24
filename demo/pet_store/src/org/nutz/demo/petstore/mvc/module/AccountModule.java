@@ -49,7 +49,7 @@ public class AccountModule {
 	}
 	@At
 	@Ok("json")
-	public void updateAccount(@Param("account")Account account){
-		accountService.updateAccount(account);
+	public void updateAccount(@Param("account")Account account, @Param("olduserid")String olduserid){
+		accountService.updateAccount(account,olduserid);
 	}
 }
