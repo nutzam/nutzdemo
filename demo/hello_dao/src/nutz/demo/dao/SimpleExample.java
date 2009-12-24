@@ -2,6 +2,8 @@ package nutz.demo.dao;
 
 import java.io.File;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -11,9 +13,12 @@ import org.apache.commons.dbcp.BasicDataSource;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;
+import org.nutz.dao.pager.Pager;
 import org.nutz.dao.tools.Tables;
 import org.nutz.lang.Files;
 import org.nutz.lang.Strings;
+import org.nutz.lang.random.R;
+import org.nutz.lang.random.StringGenerator;
 
 import static java.lang.System.*;
 
@@ -70,20 +75,16 @@ public class SimpleExample {
 		File dodFile = Files.findFile("nutz/demo/dao/meta/pet.dod");
 		Tables.run(dao, dodFile);
 
+		dao.insert(pet("XiaoBai", 8));
+		dao.insert(pet("XiaoHei", 5));
+		dao.insert(pet("Manto", 11));
+	}
+
+	private static Pet pet(String name, int age) {
 		Pet pet = new Pet();
-		pet.setName("XiaoBai");
-		pet.setAge(8);
-		dao.insert(pet);
-
-		pet = new Pet();
-		pet.setName("XiaoHei");
-		pet.setAge(5);
-		dao.insert(pet);
-
-		pet = new Pet();
-		pet.setName("Manto");
-		pet.setAge(11);
-		dao.insert(pet);
+		pet.setName(name);
+		pet.setAge(age);
+		return pet;
 	}
 
 	private static BasicDataSource ds;
@@ -142,7 +143,7 @@ public class SimpleExample {
 	 */
 	private static void title(String str) {
 		out.println();
-		out.printf(">> %s:\n",str);
+		out.printf(">> %s:\n", str);
 	}
 
 	/**
@@ -154,6 +155,10 @@ public class SimpleExample {
 		out.print(Strings.dup('=', 40));
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		demoFetch();
+		demoUpdate();
+		demoDelete();
+		demoClear();
+		demoInsertAndQuery();
 		// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 		closeDataSource();
 		out.println(Strings.dup('=', 40));
@@ -164,11 +169,11 @@ public class SimpleExample {
 	 * 演示如何获取对象
 	 */
 	static void demoFetch() {
-		title("依靠 @Id");
+		title("依靠 @Id 获取");
 		Pet xb = dao.fetch(Pet.class, 1);
 		print(xb);
 
-		title("依靠 @Name");
+		title("依靠 @Name 获取");
 		Pet xh = dao.fetch(Pet.class, "XiaoHei");
 		print(xh);
 
@@ -179,12 +184,101 @@ public class SimpleExample {
 		title("获取第一个年龄大于 8 岁的宠物（按名称降序）");
 		pet = dao.fetch(Pet.class, Cnd.where("age", ">", 8).asc("name"));
 		print(pet);
-		
+
 		title("根据一个对象，自动决定用 @Id 还是 @Name");
 		Pet p = new Pet();
 		p.setId(2);
 		pet = dao.fetch(p);
 		print(pet);
+	}
+
+	/**
+	 * 演示如何更新对象
+	 */
+	static void demoUpdate() {
+		title("更新对象");
+		Pet pet = dao.fetch(Pet.class);
+		pet.setAge(50);
+		dao.update(pet);
+	}
+
+	/**
+	 * 演示如何删除对象
+	 */
+	static void demoDelete() {
+		// Demo I ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		title("依靠 @Id 删除");
+		int num = dao.count(Pet.class);
+		print("数据表中有 " + num + " 条记录");
+
+		dao.delete(Pet.class, 1);
+
+		num = dao.count(Pet.class);
+		print("数据表中有还剩 " + num + " 条记录");
+
+		// Demo II ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+		title("依靠 @Name 删除");
+		num = dao.count(Pet.class);
+		print("数据表中有 " + num + " 条记录");
+		dao.delete(Pet.class, "Manto");
+		num = dao.count(Pet.class);
+		print("数据表中有还剩 " + num + " 条记录");
+	}
+
+	/**
+	 * 演示如何清除对象
+	 */
+	static void demoClear() {
+		print("\n\n重新准备数据 ...");
+		prepareData();
+		title("删除所有年龄大于 8 岁的宠物");
+		int num = dao.count(Pet.class);
+		print("数据表中有 " + num + " 条记录");
+
+		dao.clear(Pet.class, Cnd.where("age", ">", 8));
+
+		num = dao.count(Pet.class);
+		print("数据表中有还剩 " + num + " 条记录");
+
+		title("删除所有宠物");
+		num = dao.count(Pet.class);
+		print("数据表中有 " + num + " 条记录");
+
+		dao.clear(Pet.class);
+
+		num = dao.count(Pet.class);
+		print("数据表中有还剩 " + num + " 条记录");
+	}
+
+	/**
+	 * 演示如何插入以及查询数据
+	 */
+	static void demoInsertAndQuery() {
+		title("插入40个新 宠物...");
+		List<Pet> pets = new ArrayList<Pet>(40);
+		StringGenerator sg = new StringGenerator(3, 8);
+		for (int i = 0; i < 40; i++) {
+			pets.add(pet(sg.next(), R.random(1, 5 + i)));
+		}
+		dao.insert(pets);
+
+		title("查询全部宠物");
+		pets = dao.query(Pet.class, null, null);
+		for (Pet pet : pets)
+			print(pet);
+
+		title("查询全部宠物，并按名字排序");
+		pets = dao.query(Pet.class, Cnd.orderBy().asc("name"), null);
+		for (Pet pet : pets)
+			print(pet);
+
+		title("按页查询，每页4个宠物，列出第2页，并按名称排序");
+		Pager pager = dao.createPager(2, 4);
+		pets = dao.query(Pet.class, Cnd.orderBy().asc("name"), pager);
+		for (Pet pet : pets)
+			print(pet);
+		pager.setRecordCount(dao.count(Pet.class));
+		print(pager.toString());
 	}
 
 }

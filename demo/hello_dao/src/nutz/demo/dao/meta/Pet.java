@@ -38,6 +38,6 @@ public class Pet {
 	}
 
 	public String toString() {
-		return String.format("[%d]%s is %d years old", id, name, age);
+		return String.format("[%2d]%s is %d years old", id, name, age);
 	}
 }
