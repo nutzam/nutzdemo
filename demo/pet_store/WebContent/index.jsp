@@ -9,7 +9,7 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-<title>${msg.org.nutz.demo.petstore.jsp.index.page.title}</title>
+<title>${msg.index_jsp_page_title}</title>
 	<link type="text/css" href="themes/base/ui.all.css" rel="stylesheet" />
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="ui/ui.core.js"></script>
@@ -25,9 +25,9 @@
 <body>
 <div id="tabs" >
 <ul>
-	<li><a href="#tabs-1">${msg.org.nutz.demo.petstore.jsp.index.tab1.title}</a></li>
-	<li><a href="#tabs-2">${msg.org.nutz.demo.petstore.jsp.index.tab2.title}</a></li>
-	<li><a href="#tabs-3">${msg.org.nutz.demo.petstore.jsp.index.tab3.title}</a></li>
+	<li><a href="#tabs-1">${msg.index_jsp_tab1_title}</a></li>
+	<li><a href="#tabs-2">${msg.index_jsp_tab2_title}</a></li>
+	<li><a href="#tabs-3">${msg.index_jsp_tab3_title}</a></li>
 </ul>
 <div id="tabs-1">
 <iframe width="1000px" height="600px" name="iframe" id="iframe"
