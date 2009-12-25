@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <!--<message><![CDATA[You can broadcast any message to chart from data XML file]]></message> -->
+	<axes>
+		<axis xid="0" fill_color="#0066CC">N</axis>
+		<axis xid="1">NE</axis>
+		<axis xid="2">E</axis>
+		<axis xid="3" fill_color="#CC3333">SE</axis>
+		<axis xid="4" fill_color="#CC3333">S</axis>
+		<axis xid="5">SW</axis>
+    <axis xid="6">W</axis>
+    <axis xid="5" fill_color="#0066CC">NW</axis> 		
+	</axes>
+	<graphs>
+		<graph gid="1"> 
+			<value xid="0">8</value>
+			<value xid="1">9</value>
+			<value xid="2">4.5</value>
+			<value xid="3">3.5</value>
+			<value xid="4">9.2</value>
+			<value xid="5">8.4</value>
+			<value xid="6">11.1</value>
+		</graph>                   		
+  </graphs>
+</chart>

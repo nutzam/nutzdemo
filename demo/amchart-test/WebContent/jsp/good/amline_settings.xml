@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+	<background>
+		<alpha>100</alpha>
+		<border_alpha>20</border_alpha>
+	</background>
+	<grid>
+		<category>
+			<dashed>1</dashed>
+		</category>
+		<value>
+			<dashed>1</dashed>
+		</value>
+	</grid>
+	<axes>
+		<category>
+			<width>1</width>
+			<color>E7E7E7</color>
+		</category>
+		<value>
+			<width>1</width>
+			<color>E7E7E7</color>
+		</value>
+	</axes>
+	<values>
+		<value>
+			<min>0</min>
+		</value>
+	</values>
+	<depth>15</depth>
+	<column>
+		<width>85</width>
+		<balloon_text>{title}: {value} 次</balloon_text>
+		<grow_time>3</grow_time>
+	</column>
+	<graphs>
+		<graph gid="0">
+			<color>ADD981</color>
+		</graph>
+		<graph gid="1">
+			<color>7F8DA9</color>
+		</graph>
+		<graph gid="2">
+			<color>FEC514</color>
+		</graph>
+	</graphs>
+	<labels>
+		<label lid="0">
+			<text><![CDATA[<b>排名情况</b>]]></text>
+			<y>18</y>
+			<text_color>000000</text_color>
+			<text_size>13</text_size>
+			<align>center</align>
+		</label>
+	</labels>
+</settings>

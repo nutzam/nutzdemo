@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+	<series>
+		<value xid="John" bg_color="#000000" bg_alpha="20">John</value>
+		<value xid="Joe" bg_color="#000000" bg_alpha="15">Joe</value>
+		<value xid="Susan" bg_color="#000000" bg_alpha="10">Susan</value>
+		<value xid="Eaton" bg_color="#000000" bg_alpha="5">Eaton</value>
+	</series>
+	<graphs>
+		<graph gid="0" title="Schedule" gradient_fill_colors="#33CCFF, #003366">
+		<value xid="John" start="8">11</value>
+		<value xid="Joe" start="10">13</value>
+		<value xid="Susan" start="11">18</value>
+		<value xid="Eaton"start="15">19</value>
+   </graph>
+</chart>

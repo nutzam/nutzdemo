@@ -1,0 +1,7 @@
+Czech Republic;156.90  
+Ireland;131.10  
+Germany;115.80  
+Australia;109.90  
+Austria;108.30  
+UK;99.00  
+Belgium;93.00 

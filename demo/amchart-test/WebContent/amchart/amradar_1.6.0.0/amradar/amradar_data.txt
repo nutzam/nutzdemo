@@ -1,0 +1,6 @@
+Sales;15;16
+Development;13;14
+Marketing;10;8
+Customer Support;14;19
+Administration;13;7
+Information technology;6;12

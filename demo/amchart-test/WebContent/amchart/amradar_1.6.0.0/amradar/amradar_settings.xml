@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Value between [] brackets, for example [#FFFFFF] shows default value which is used if this parameter is not set -->
+<!-- This means, that if you are happy with this value, you can delete this line at all and reduce file size         -->
+<!-- value or explanation between () brackets shows the range or type of values you should use for this parameter    -->
+<!-- the top left corner has coordinates x = 0, y = 0                                                                -->
+<!-- "!" before x or y position (for example: <x>!20</x>) means that the coordinate will be calculated from the right side or the bottom -->
+
+<settings> 
+  <data_type></data_type>                                     <!-- [xml] (xml / csv) -->
+  <type></type>                                               <!-- [line] (line / stacked / 100% stacked) The type of graph -->
+  <csv_separator></csv_separator>                             <!-- [;] (string) csv file data separator (you need it only if you are using csv file for your data) -->     
+  <skip_rows></skip_rows>                                     <!-- [0] (Number) if you are using csv data type, you can set the number of rows which should be skipped here -->
+  <font></font>                                               <!-- [Arial] (font name) use device fonts, such as Arial, Times New Roman, Tahoma, Verdana... -->
+  <text_size></text_size>                                     <!-- [11] (Number) text size of all texts. Every text size can be set individually in the settings below -->
+  <text_color></text_color>                                   <!-- [#000000] (hex color code) main text color. Every text color can be set individually in the settings below-->
+  <decimals_separator></decimals_separator>                   <!-- [,] (string) decimal separator. Note, that this is for displaying data only. Decimals in data xml file must be separated with a dot -->
+  <thousands_separator></thousands_separator>                 <!-- [ ] (string) thousand separator. use "none" if you don't want to separate -->
+  <digits_after_decimal></digits_after_decimal>               <!-- [] (Number) if your value has less digits after decimal then is set here, zeroes will be added -->
+  <reload_data_interval></reload_data_interval>               <!-- [0] (Number) how often data should be reloaded (time in seconds) -->
+  <preloader_on_reload></preloader_on_reload>                 <!-- [false] (true / false) Whether to show preloaded when data or settings are reloaded -->
+  <redraw></redraw>                                           <!-- [false] (true / false) if your chart's width or height is set in percents, and redraw is set to true, the chart will be redrawn then screen size changes --> 
+  <add_time_stamp></add_time_stamp>                           <!-- [false] (true / false) if true, a unique number will be added every time flash loads data. Mainly this feature is useful if you set reload _data_interval -->
+  <precision></precision>                                     <!-- [2] (Number) shows how many numbers should be shown after comma for calculated values (percents) -->
+  <colors></colors>                                           <!-- [#FF0000,#0000FF,#00FF00,#FF9900,#CC00CC,#00CCCC,#33FF00,#990000,#000066,#555555] Colors of graphs. if the graph color is not set, color from this array will be used -->
+  
+  <radar>
+    <x></x>                                                   <!-- [50%](Number / Number% / !Number) -->
+    <y></y>                                                   <!-- [50%](Number / Number% / !Number) -->
+    <radius></radius>                                         <!-- [30%] (Number / Number%) -->
+    <grow_time>2</grow_time>                                  <!-- [0] (Number) grow time in seconds. Leave 0 to appear instantly -->
+    <grow_effect></grow_effect>                               <!-- [elastic] (elastic, regular, strong) -->    
+    <sequenced_grow>true</sequenced_grow>                     <!-- [false] (true / false) whether graphs should grow at the same time or one after another -->    
+  </radar>
+  
+  <axes>
+    <width></width>                                           <!-- [0] (Number) width of axes -->
+    <color></color>                                           <!-- [#000000] (hex color code) axes color -->
+    <alpha></alpha>                                           <!-- [25] (0 - 100) opacity of axes -->
+    <tick_length></tick_length>                               <!-- [5] The length of a small tick from axis to a value -->
+    <labels>                                                  <!-- the following settings control the labels of the axes -->
+      <enabled></enabled>                                     <!-- [true] (true / false) -->
+      <text_color></text_color>                               <!-- [text_color] (hex color code) -->
+      <text_size></text_size>                                 <!-- [text_size] (Number) -->
+      <distance></distance>                                   <!-- [10] (Number) the distance from the radar axes to axes labels -->
+      <width></width>                                         <!-- [150] (Number) maximum width of axis label. (The label will be wrapped if it doesn't fit to this width) -->
+    </labels>
+  </axes> 
+  
+  <grid>
+    <type></type>                                             <!-- [lines] (lines / circles) If you set this to "circles" the grid lines will be circles. The chart might be called "Polar chart" in this case.-->
+    <color></color>                                           <!-- [#000000] (hex color code) grid color -->
+    <alpha></alpha>                                           <!-- [10] (0 - 100) opacity of a grid -->                                           
+    <approx_count></approx_count>                             <!-- [8] (Number) the approximate number of grid lines -->
+    <fill_color></fill_color>                                 <!-- [#FFFFFF] (hex color code) every second area between gridlines will be filled with this color (you will need to set fill_alpha > 0) -->
+    <fill_alpha></fill_alpha >                                <!-- [0] (0 - 100) opacity of fill -->
+    <dashed></dashed>                                         <!-- [false] (true / false) The grid lines can be dashed (the circle grid lines can not be dashed) -->
+    <dash_length></dash_length>                               <!-- [5] (Number) -->   
+  </grid>
+  
+  <values>
+    <enabled></enabled>                                       <!-- [true] (true / false) -->
+    <position></position>                                     <!-- [left] (left / right) postion of the values -->
+    <min></min>                                               <!-- [] (Number) minimum value of this axis. If empty, this value will be calculated automatically. -->
+    <max></max>                                               <!-- [] (Number) maximum value of this axis. If empty, this value will be calculated automatically -->
+    <strict_min_max></strict_min_max>                         <!-- [false] (true / false) by default, if your values are bigger then defined max (or smaller then defined min), max and min is changed so that all the chart would fit to chart area. If you don't want this, set this option to true. -->
+    <frequency></frequency>                                   <!-- [1] (Number) how often values should be placed, 1 - near every gridline, 2 - near every second gridline... -->
+    <skip_first></skip_first>                                 <!-- [true] (true / false) to skip or not first value -->
+    <skip_last>true</skip_last>                               <!-- [false] (true / false) to skip or not last value -->
+    <color></color>                                           <!-- [text_color] (hex color code) --> 
+    <text_size></text_size>                                   <!-- [text_size] (Number) -->
+    <integers_only></integers_only>                           <!-- [false] (true / false) if set to true, values with decimals will be omitted -->
+    <unit>$</unit>                                            <!-- [] (text) -->
+    <unit_position>left</unit_position>                       <!-- [right] (right / left) -->    
+  </values>
+  
+  <background>                                                <!-- BACKGROUND -->
+    <color></color>                                           <!-- [#FFFFFF] (hex color code) Separate color codes with comas for gradient -->
+    <alpha></alpha>                                           <!-- [0] (0 - 100) use 0 if you are using custom swf or jpg for background -->
+    <border_color></border_color>                             <!-- [#000000] (hex color code) -->
+    <border_alpha></border_alpha>                             <!-- [0] (0 - 100) -->
+    <file></file>                                             <!-- [] (filename) swf or jpg file of a background. Do not use progressive jpg file, it will be not visible with flash player 7 -->
+                                                              <!-- The chart will look for this file in path folder (path is set in HTML) -->
+  </background>
+  
+  <balloon>                                                   <!-- BALLOON -->
+    <enabled></enabled>                                       <!-- [true] (true / false) -->
+    <color></color>                                           <!-- [] (hex color code) balloon background color. If empty, slightly darker then current slice color will be used -->
+    <alpha></alpha>                                           <!-- [80] (0 - 100) -->
+    <text_color></text_color>                                 <!-- [#FFFFFF] (hex color code) -->
+    <text_size></text_size>                                   <!-- [text_size] (Number) -->    
+    <show>
+       <![CDATA[{title}: ${value} mln.]]>                     <!-- [{title}: ({value}) <br>{description}] ({value} {title} {percents} {axis} {description}) You can format any data label: {value} - will be replaced with value and so on. You can add your own text or html code too. -->
+    </show>
+    <max_width></max_width>                                   <!-- [220] (Number) The maximum width of a balloon -->
+    <corner_radius></corner_radius>                           <!-- [0] (Number) Corner radius of a balloon. If you set it > 0, the balloon will not display arrow -->
+    <border_width></border_width>                             <!-- [0] (Number) -->
+    <border_alpha></border_alpha>                             <!-- [balloon.alpha] (Number) -->
+    <border_color></border_color>                             <!-- [balloon.color] (hex color code) -->   
+  </balloon>
+    
+  <legend>                                                    <!-- LEGEND -->
+    <enabled></enabled>                                       <!-- [true] (true / false) -->
+    <x></x>                                                   <!-- [5%] (Number / Number% / !Number) -->
+    <y></y>                                                   <!-- [] (Number / Number% / !Number) if empty, will be placed below the pie -->
+    <width></width>                                           <!-- [90%] (Number / Number%) -->
+    <color></color>                                           <!-- [#FFFFFF] (hex color code) background color. Separate color codes with comas for gradient -->
+    <max_columns></max_columns>                               <!-- [] (Number) the maximum number of columns in the legend -->
+    <alpha></alpha>                                           <!-- [0] (0 - 100) background alpha -->
+    <border_color></border_color>                             <!-- [#000000] (hex color code) border color -->
+    <border_alpha></border_alpha>                             <!-- [0] (0 - 100) border alpha -->
+    <text_color></text_color>                                 <!-- [text_color] (hex color code) -->   
+    <text_size></text_size>                                   <!-- [text_size] (Number) -->
+    <spacing></spacing>                                       <!-- [10] (Number) vertical and horizontal gap between legend entries -->
+    <margins></margins>                                       <!-- [0] (Number) legend margins (space between legend border and legend entries, recommended to use only if legend border is visible or background color is different from chart area background color) -->
+    <reverse_order></reverse_order>                           <!-- [false] (true / false) whether to sort legend entries in a reverse order -->
+    <align>center</align>                                     <!-- [left] (left / center / right) alignment of legend entries -->
+    <key>                                                     <!-- KEY (the color box near every legend entry) -->
+      <size></size>                                           <!-- [16] (Number) key size-->
+      <border_color></border_color>                           <!-- [] (hex color code) leave empty if you don't want to have border -->
+    </key>
+  </legend>  
+  
+  <export_as_image>                                           <!-- export_as_image feature works only on a web server -->
+    <file></file>                                             <!-- [] (filename) if you set filename here, context menu (then user right clicks on flash movie) "Export as image" will appear. This will allow user to export chart as an image. Collected image data will be posted to this file name (use ampie/export.php or ampie/export.aspx) -->
+    <target></target>                                         <!-- [] (_blank, _top ...) target of a window in which export file must be called -->
+    <x></x>                                                   <!-- [0] (Number / Number% / !Number) x position of "Collecting data" text -->
+    <y></y>                                                   <!-- [] (Number / Number% / !Number) y position of "Collecting data" text. If not set, will be aligned to the bottom of flash movie -->
+    <color></color>                                           <!-- [#BBBB00] (hex color code) background color of "Collecting data" text -->
+    <alpha></alpha>                                           <!-- [0] (0 - 100) background alpha -->
+    <text_color></text_color>                                 <!-- [text_color] (hex color code) -->
+    <text_size></text_size>                                   <!-- [text_size] (Number) -->
+  </export_as_image>
+  
+  <error_messages>                                            <!-- "error_messages" settings will be applied for all error messages except the one which is showed if settings file wasn't found -->
+    <enabled></enabled>                                       <!-- [true] (true / false) -->
+    <x></x>                                                   <!-- [] (Number / Number% / !Number) x position of error message. If not set, will be aligned to the center -->
+    <y></y>                                                   <!-- [] (Number / Number% / !Number) y position of error message. If not set, will be aligned to the center -->
+    <color></color>                                           <!-- [#BBBB00] (hex color code) background color of error message. Separate color codes with comas for gradient -->
+    <alpha></alpha>                                           <!-- [100] (0 - 100) background alpha -->
+    <text_color></text_color>                                 <!-- [#FFFFFF] (hex color code) -->
+    <text_size></text_size>                                   <!-- [text_size] (Number) -->
+  </error_messages>    
+  
+  <strings>
+    <no_data></no_data>                                       <!-- [No data for selected period] (text) if data is missing, this message will be displayed -->
+    <export_as_image></export_as_image>                       <!-- [Export as image] (text) text for right click menu -->
+    <collecting_data></collecting_data>                       <!-- [Collecting data] (text) this text is displayed while exporting chart to an image -->
+  </strings>  
+  
+  <context_menu>                                              <!-- context menu allows you to controll right-click menu items. You can add custom menu items to create custom controls -->                                                              
+                                                              <!-- "function_name" specifies JavaScript function which will be called when user clicks on this menu. You can pass variables, for example: function_name="alert('something')" -->
+                                                              <!-- "title" sets menu item text. Do not use for title: Show all, Zoom in, Zoom out, Print, Settings... -->
+                                                              <!-- you can have any number of custom menus. Uncomment the line below to enable this menu and add apropriate JS function to your html file. -->
+     
+     <!-- <menu function_name="printChart" title="Print chart"></menu> -->
+     
+     <default_items>
+       <zoom></zoom>                                          <!-- [false] (true / false) to show or not flash players zoom menu -->
+       <print></print>                                        <!-- [true] (true / false) to show or not flash players print menu -->
+     </default_items>
+  </context_menu>  
+  
+  <labels>                                                    <!-- LABELS -->
+                                                              <!-- you can add as many labels as you want -->
+                                                              <!-- labels can also be added in data xml file, using exactly the same structure like it is here -->
+    <label>
+      <x>0</x>                                                <!-- [0] (Number / Number% / !Number) -->
+      <y>10</y>                                               <!-- [0] (Number / Number% / !Number) -->
+      <rotate>false</rotate>                                  <!-- [false] (true / false) -->
+      <width></width>                                         <!-- [] (Number / Number%) if empty, will stretch from left to right untill label fits -->
+      <align>center</align>                                   <!-- [left] (left / center / right) -->  
+      <text_color></text_color>                               <!-- [text_color] (hex color code) button text color -->
+      <text_size>12</text_size>                               <!-- [text_size](Number) button text size -->
+      <text>                                                  <!-- [] (text) html tags may be used (supports <b>, <i>, <u>, <font>, <a href="">, <br/>. Enter text between []: <![CDATA[your <b>bold</b> and <i>italic</i> text]]>-->
+        <![CDATA[<b>Spending in the Company X</b>]]>
+      </text>        
+    </label>
+  </labels>
+  
+  <graphs>                                                    <!-- GRAPHS SETTINGS. These settings can also be specified in data file, as attributes of <graph>, in this case you can delete everything from <graphs> to </graphs> (including) -->
+                                                              <!-- It is recommended to have graph settings here if you don't want to mix data with other params -->
+                                                              <!-- copy <graph>...</graph> (including) as many times as many graphs you have and edit settings individually -->
+                                                              <!-- if graph settings are defined both here and in data file, the ones from data file are used -->
+    <graph gid="1">                                           <!-- if you are using XML data file, graph "gid" must match graph "gid" in data file -->
+      <title>Actual spending</title>                                  <!-- [] (graph title) -->
+      <color>#FFCC00</color>                                  <!-- [] (hex color code) if not defined, uses colors from this array: #FF0000, #0000FF, #00FF00, #FF9900, #CC00CC, #00CCCC, #33FF00, #990000, #000066 -->
+      <line_alpha></line_alpha>                               <!-- [100] (0 - 100) -->
+      <line_width>2</line_width>                              <!-- [0] (Number) 0 for hairline -->                                    
+      <fill_alpha></fill_alpha>                               <!-- [0] (0 - 100) if you want the chart to be area chart, use bigger than 0 value -->
+      <fill_color></fill_color>                               <!-- [grpah.color] (hex color code). Separate color codes with comas for gradient -->
+      <balloon_color></balloon_color>                         <!-- [graph color] (hex color code) leave empty to use the same color as graph -->
+      <balloon_alpha></balloon_alpha>                         <!-- [100] (0 - 100) -->      
+      <balloon_text_color></balloon_text_color>               <!-- [#FFFFFF] (hex color code) -->
+      <bullet>round</bullet>                                  <!-- [] (square, round, square_outlined, round_outlined, square_outline, round_outline, square_outline, round_outline, filename.swf) can be used predefined bullets or loaded custom bullets. Leave empty if you don't want to have bullets at all. Outlined bullets use plot area color for outline color -->
+                                                              <!-- The chart will look for this file in "path" folder ("path" is set in HTML) -->
+      <bullet_size></bullet_size>                             <!-- [6](Number) affects only predefined (square and round) bullets, does not change size of custom loaded bullets -->
+      <bullet_color></bullet_color>                           <!-- [graph color] (hex color code) affects only predefined (square and round) bullets, does not change color of custom loaded bullets. Leave empty to use the same color as graph  -->
+      <bullet_alpha></bullet_alpha>                           <!-- [graph alpha] (hex color code) Leave empty to use the same alpha as graph -->      
+      <balloon_text></balloon_text>                           <!-- [balloon.show] ({title} {value} {series} {description} {percents}) You can format any balloon text: {title} will be replaced with real title, {value} - with value and so on. You can add your own text or html code too. -->      
+      <visible_in_legend></visible_in_legend>                 <!-- [true] (true / false) whether to show legend entry for this graph or not -->
+    </graph>
+    
+    <graph gid="2">                                                            
+      <title>Alocated budget</title>
+      <line_width>2</line_width>                
+      <color>#999999</color>
+      <bullet>round</bullet>
+    </graph>
+  </graphs>    
+
+  <fills>                                                     <!-- you can fill radar chart with colors from one value to another. You can create any number of fills, also place them to data file -->
+    <fill>
+      <start_value>20</start_value>                           <!-- [] (Number) value at which fill should start -->
+      <end_value>25</end_value>                               <!-- [] (Number) value at which fill should end -->
+      <color>#CC3333</color>                                  <!-- [] (hex color code) fill color -->
+      <alpha></alpha>                                         <!-- [100] (0 - 100) fill opacity -->
+    </fill>
+    <fill>
+      <start_value>0</start_value>
+      <end_value>5</end_value>    
+      <color>#0066CC</color>       
+      <alpha></alpha>             
+    </fill>    
+  </fills>
+
+  
+	<!-- DATA can also be set in settings file. Just place data in CSV or XML format between <data></data> -->
+	<!--
+	<data>
+	</data> 
+  -->  
+</settings>

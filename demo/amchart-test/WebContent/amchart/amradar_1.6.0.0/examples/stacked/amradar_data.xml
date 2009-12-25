@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+  <!--<message><![CDATA[You can broadcast any message to chart from data XML file]]></message> -->
+	<axes>
+		<axis xid="0">Sales</axis>
+		<axis xid="1">Development</axis>
+		<axis xid="2">Marketing</axis>
+		<axis xid="3">Customer Support</axis>		
+	</axes>
+	<graphs>
+		<graph gid="1"> 
+			<value xid="0">20</value>
+			<value xid="1">15</value>
+			<value xid="2">12</value>
+			<value xid="3">18</value>
+		</graph>
+		<graph gid="2"> 
+			<value xid="0">21</value>
+			<value xid="1">13</value>
+			<value xid="2">16</value>
+			<value xid="3">15</value>
+		</graph>               		
+  </graphs>
+</chart>

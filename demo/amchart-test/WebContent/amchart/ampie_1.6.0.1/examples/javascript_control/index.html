@@ -1,0 +1,328 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>JavaScript control example</title>
+</head>
+<style>
+  body{
+  	background-color: #FFFFFF;
+  	font-family: Arial;
+  	font-size: 12px;
+  }
+</style>
+<body>
+<b><font color="red">Attention! Because of security restrictions in most cases this example will work only if you upload files to your web server.</font></b><br><br>
+<!-- saved from url=(0013)about:internet -->
+<!-- ampie script-->
+<script type="text/javascript" src="../../ampie/swfobject.js"></script>
+<div id="flashcontent">
+	<strong>You need to upgrade your Flash Player</strong>
+</div>
+
+<script type="text/javascript">
+  var so = new SWFObject("../../ampie/ampie.swf", "ampie", "520", "400", "8", "#FFFFFF");
+  so.addVariable("path", "../../ampie/");  
+  so.addVariable("chart_id", "ampie"); // if you have more then one chart in one page, set different chart_id for each chart	
+  so.addVariable("settings_file", encodeURIComponent("ampie_settings.xml"));
+  so.addVariable("data_file", encodeURIComponent("ampie_data.xml"));
+  so.addVariable("preloader_color", "#999999");
+  so.write("flashcontent");
+</script>
+<!-- end of ampie script -->
+
+
+<script type="text/javascript">
+//////////////////////////////////////////////////////////////////////////////////////////
+// Functions that control the chart //////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+
+// SET DATA //////////////////////////////////////////////////////////////////////////////
+// flashMovie.setData(data)
+// This function can be used for setting the chart's data on the fly. 
+// Data must be in CSV or XML form, as per the <data_type> setting.
+function setData() {
+  // gets data from the text area with id "data"
+  var data = document.getElementById("data").value;
+  // sets data
+  flashMovie.setData(data);
+}
+
+// APPEND DATA ///////////////////////////////////////////////////////////////////////////
+// flashMovie.appendData(data[, remove_count])
+// This function can be used to append new data to the existing dataset. 
+// The data must be in CSV or XML form, as per the <data_type> setting. 
+// The remove_count variable is optional and sets the number of data points
+// that should be removed from the beginning of dataset.
+function appendData() {
+  // gets data from the text area with id "data"
+  var data = document.getElementById("data").value;
+  // appends data
+  flashMovie.appendData(data, 0);
+}
+
+// SET SETTINGS //////////////////////////////////////////////////////////////////////////
+// flashMove.setSettings(settings[, rebuild])
+// This function can be used to set some part or all the settings. The settings should be
+// in XML format, inside <settings></settings>. The "rebuild" parameter is optional and 
+// can be "true" or "false". "false" means that the new settings will not be applied right
+// after this function is called. They will can be applied using flashMovie.rebuild()
+// function or by adding some more setings with the "rebuild" set to "true". The default
+// value of "rebuild" is "true"  
+function setSettings() {
+  var settings = document.getElementById("settings").value;
+  flashMovie.setSettings(settings, true);
+}   
+
+// REBUILD CHART /////////////////////////////////////////////////////////////////////////
+// flashMovie.rebuild();
+// This function might be used to rebuild the chart after several portions of settings were
+// set using setSettings(settings, rebuild) function, with the rebuild set to false
+function rebuild() {
+  flashMovie.rebuild();
+}
+
+// RELOAD DATA ///////////////////////////////////////////////////////////////////////////
+// flashMove.reloadData([file_name])
+// This function will reload the data. The file_name variable is optional, if you do not
+// set it here, data from the original file will be reloaded.       
+function reloadData() {
+  flashMovie.reloadData(); 
+}
+
+// RELOAD SETTINGS ///////////////////////////////////////////////////////////////////////
+// flashMovie.reloadSettings([file_name])
+// This function will reload the settings. The file_name variable is optional, if you do
+// not set it here, settings from the original file will be reloaded. 
+function reloadSettings() {
+  flashMovie.reloadSettings();
+}
+
+// RELOAD ALL ////////////////////////////////////////////////////////////////////////////
+// flashMovie.reloadAll([data_file_name][,settings_file_name])
+// This function will reload both data and settings. The names of the files are optional. 
+// If you do not set them, the original file names will be used.
+function reloadAll() {
+  flashMovie.reloadAll();
+}
+
+// SET PARAM /////////////////////////////////////////////////////////////////////////////
+// flashMovie.setParam(param, value)
+// This function lets you change a single setting. The parameter names are formed using 
+// the section name and the parameter name, separated with a period. For example: 
+// background.alpha or labels.label[1].text 
+function setParam() {
+  // gets param name from a field with id "param"
+  var param = document.getElementById("param").value;
+  // gets param value from a field with id "value"
+  var value = document.getElementById("value").value;
+  // sets param
+  flashMovie.setParam(param, value);
+}
+      
+// GET PARAM /////////////////////////////////////////////////////////////////////////////
+// flashMovie.getParam(param)
+// This function will ask Flash to return the value of a setting. The parameter name is
+// formed in the same way as the setParam function (described above). When you call this
+// function to return the setting value, Flash will return the value by calling the 
+// amReturnParam(chart_id, param_value) function
+function getParam() {
+  // get the param name from a field with id "getparam"
+  var param = document.getElementById("getparam").value;            
+  flashMovie.getParam(param);
+} 
+
+// GET DATA //////////////////////////////////////////////////////////////////////////////
+// flashMovie.getData()
+// This function will ask Flash to return the whole data. When you call this function to
+// return the data, Flash will call the amReturnData(chart_id, data) function.
+function getData() {
+  flashMovie.getData();
+}   
+      
+// GET SETTINGS //////////////////////////////////////////////////////////////////////////
+// flashMovie.getSettings()
+// This function will ask Flash to return the whole settings XML. When you call this 
+// function to return the settings, Flash will call the 
+// amReturnSettings(chart_id, settings) function. 
+function getSettings() {
+  flashMovie.getSettings();
+}   
+      
+// EXPORT AS IMAGE ///////////////////////////////////////////////////////////////////////
+// flashMovie.exportImage([file_name]) 
+// This function will start the process of exporting the chart as an image. The file_name
+// is a name of a file to which image data will be posted (files provided in the download 
+// package are export.php and export.aspx). The file_name is optional and can be set in 
+// the <export_as_image><file> setting.
+function exportImage() {
+  flashMovie.exportImage('../../ampie/export.php');  
+}
+
+// PRINT /////////////////////////////////////////////////////////////////////////////////
+// flashMovie.print()
+// This function will print the chart. Use this print function if you don't have any
+// values rotated by 90 degrees, also if you don't have a custom bitmap background.
+function print(){
+  flashMovie.print();
+}
+      
+// PRINT AS BITMAP ///////////////////////////////////////////////////////////////////////
+// flashMovie.printAsBitmap()
+// Use it if you have values rotated by 90 degrees and/or a custom bitmap background.
+function printAsBitmap(){
+  flashMovie.printAsBitmap();
+}
+
+// CLICK SLICE ///////////////////////////////////////////////////////////////////////////
+// flashMovie.clickSlice(index)
+// This function mimics a viewer clicking on a slice. Index is the sequential number of
+// the slice, counting from 0.
+function clickSlice(){      
+  var index = document.getElementById("sliceclick").value;
+  flashMovie.clickSlice(index);
+}
+
+// ROLL OVER SLICE ///////////////////////////////////////////////////////////////////////
+// flashMovie.rollOverSlice(index)
+// This function mimics a viewer rolling over a slice (showing a balloon if it is enabled)
+// Index is the sequential number of the slice, counting from 0.
+function rollOverSlice(){
+  var index = document.getElementById("sliceover").value;
+  flashMovie.rollOverSlice(index);
+}
+
+// ROLL OUT OF THE SLICE /////////////////////////////////////////////////////////////////
+// rollOutSlice()
+// This function mimics a viewer rolling away from a slice
+function rollOutSlice(){
+  flashMovie.rollOutSlice();
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////
+// Functions that are called by the chart ////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
+      
+// CHART INITED //////////////////////////////////////////////////////////////////////////    
+// amChartInited(chart_id)
+// This function is called when the chart is fully loaded and initialized.
+function amChartInited(chart_id){
+  // get the flash object into "flashMovie" variable   
+  flashMovie = document.getElementById(chart_id);
+  // tell the field with id "chartfinished" that this chart was initialized
+  document.getElementById("chartfinished").value = "chart " + chart_id + " is finished";           
+}      
+      
+// RETURN DATA ///////////////////////////////////////////////////////////////////////////
+// amReturnData(chart_id, data)
+// This function is called when you request data from a chart 
+//  by calling the flashMove.getData() function.
+function amReturnData(chart_id, data){
+  document.getElementById("data").value = unescape(data);
+}
+
+// RETURN PARAM //////////////////////////////////////////////////////////////////////////
+// amReturnParam(chart_id, param)
+// This function is called when you request a setting from a chart  
+// by calling the flashMovie.getParam(param) function.
+function amReturnParam(chart_id, param){
+  document.getElementById("returnedparam").value = unescape(param);
+}
+
+// RETURN SETTINGS ///////////////////////////////////////////////////////////////////////
+// amReturnSettings(chart_id, settings)
+// This function is called when you request settings from a chart 
+// by calling flashMovie.getSettings() function.  
+function amReturnSettings(chart_id, settings){
+  document.getElementById("settings").value = unescape(settings);
+}      
+
+// RETURN IMAGE DATA /////////////////////////////////////////////////////////////////////
+// amReturnImageData(chart_id, data)
+// This function is called when the export to image process is finished and might be used
+// as alternative way to get image data (instead of posting it to some file)
+function amReturnImageData(chart_id, data){
+  // your own functions here
+}
+
+// ERROR /////////////////////////////////////////////////////////////////////////////////
+// amError(chart_id, message)
+// This function is called when an error occurs, such as no data, or file not found.
+function amError(chart_id, message){
+  alert(message);
+}    
+
+// FIND OUT WHICH SLICE WAS CLICKED //////////////////////////////////////////////////////
+// amSliceClick(chart_id, index, title, value, percents, color, description)
+// This function is called when the viewer clicks on the slice. It returns chart_id, 
+// the sequential number of the slice (index), the title, value, percent value, 
+// color and description.
+function amSliceClick(chart_id, index, title, value, percents, color, description){
+  document.getElementById("sliceclick").value = index;
+} 
+
+// FIND OUT WHICH SLICE WAS HOVERED //////////////////////////////////////////////////////
+// amSliceOver(chart_id, index, title, value, percents, color, description)
+// This function is called when the viewer rolls over the slice. It returns chart_id, the 
+// sequential number of the slice (index), the title, value, percent value, 
+// color and description.
+function amSliceOver(chart_id, index, title, value, percents, color, description){
+  document.getElementById("sliceover").value = index;
+}
+
+// FIND OUT WHEN THE MOUSE WAS MOVED AWAY FROM A SLICE ///////////////////////////////////
+// amSliceOut(chart_id)
+// This function is called when the viewer rolls away from the slice.
+function amSliceOut(chart_id){
+  document.getElementById("sliceover").value = "";
+} 
+  
+
+</script>
+
+
+<!-- Buttons and forms -->
+
+<form action="" id="myform">
+  <input type="text" id="chartfinished">				
+  <input type="button" value="reload Data" onclick="reloadData();" />
+	<input type="button" value="reload Settings" onclick="reloadSettings();" />
+  <input type="button" value="reload All" onclick="reloadAll();" />
+  <hr noshade size="1">
+  
+  <input type="button" value="export image" onclick="exportImage();" />            	    
+  <input type="button" value="print" onclick="print();" />
+  <input type="button" value="print as bitmap" onclick="printAsBitmap();" />
+  <hr noshade size="1">
+  	
+  <textarea id="data" rows="6" cols="62"></textarea><br>
+  <input type="button" value="Get data" onclick="getData();" />
+  <input type="button" value="Set Data" onclick="setData();" />
+  <input type="button" value="Append Data" onclick="appendData();" />
+  <hr noshade size="1">
+  	 
+  Param: <input type="text" id="param" value="background.color"/>
+  Value: <input type="text" id="value" value="0xBBBB00"/>
+  <input type="button" value="set param" onclick="setParam();" />
+  <hr noshade size="1">
+     
+  Param: <input type="text" id="getparam" value="pie.angle">
+  Value: <input type="text" id="returnedparam" />
+  <input type="button" value="get param" onclick="getParam();" />
+  <hr noshade size="1">
+     
+  Hover: <input type="text" id="sliceover" value="0"/>
+  <input type="button" value="roll over" onclick="rollOverSlice();" />
+  <input type="button" value="roll out" onclick="rollOutSlice();" />
+  Click: <input type="text" id="sliceclick" value="1" />
+  <input type="button" value="click" onclick="clickSlice();" />
+  <hr noshade size="1">  
+  
+  <textarea id="settings" rows="6" cols="62"></textarea><br>
+  <input type="button" value="Get settings" onclick="getSettings();" />
+  <input type="button" value="Set settings" onclick="setSettings();" />
+  <input type="button" value="Rebuild" onclick="rebuild();" />  
+  <hr noshade size="1">	           		   		   		   
+</form>
+
+</body>
+</html>
