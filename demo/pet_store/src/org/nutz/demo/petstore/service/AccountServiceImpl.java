@@ -11,8 +11,7 @@ import org.nutz.service.NameEntityService;
 public class AccountServiceImpl extends NameEntityService<Account> implements AccountService {
 	@Override
 	public void addAccount(Account account) {
-		//this.dao().insertRelation(account, "signon");
-		this.dao().insert(account);
+		this.dao().insertWith(account, "signon");
 	}
 
 	@Override
@@ -34,12 +33,13 @@ public class AccountServiceImpl extends NameEntityService<Account> implements Ac
 		}else{
 			account.setUserid(olduserid);
 			this.update(Chain.make("userid", newUserid), Cnd.where("userid","=",olduserid));
-			//this.dao().update(Signon.class,Chain.make("password", account.getSignon().getPassword()).add("username", newUserid), Cnd.where("username","=",olduserid));
+			this.dao().update(Signon.class,Chain.make("password", account.getSignon().getPassword()).add("username", newUserid), Cnd.where("username","=",olduserid));
 		}
 	}
 	@Override
 	public void deleteAccountByUserid(String userid) {
 		this.delete(userid);
+		this.dao().delete(Signon.class,userid);
 	}
 
 	@Override
