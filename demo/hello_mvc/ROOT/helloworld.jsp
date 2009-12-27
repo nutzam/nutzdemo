@@ -9,7 +9,7 @@
 <script language="Javascript" src="${base}/js/nutz.js"></script>
 <script language="Javascript">
 	function setParam(str) {
-		$("#params").text(str);
+		$("#params")[0].value = str;
 	}
 
 	function initParams() {
@@ -33,21 +33,40 @@
 		case '/msg':
 			setParam("key=title");
 			break;
+		case '/demojson':
+			setParam("{\nmap:'Hello'\n}");
+			break;
 		}
 	}
 
 	function doDemo() {
-		var theUrl = "${base}" + $("#urls")[0].value + ".nut?" + $("#params")[0].value;
-		$.ajax( {
-			type : "GET",
-			url : theUrl,
-			//data : data,
-			dataType : "json",
-			processData : true,
-			success : function(obj) {
-				$("#resp").text(nutz.json(obj));
-			}
-		});
+		var demo = $("#urls")[0].value;
+		var theUrl = "${base}" + demo + ".nut";
+		if(demo == "/demojson"){
+			$.ajax( {
+				type : "POST",
+				url : theUrl,
+				contentType : "application/jsonrequest",
+				data : nutz.json({r:34,t:'tttt',e:[2,true,'yyyy']}),
+				dataType : "json",
+				processData : true,
+				success : function(obj) {
+					$("#resp").text(nutz.json(obj));
+				}
+			});
+		}else{
+			var theUrl = theUrl + "?" + $("#params")[0].value;
+			$.ajax( {
+				type : "GET",
+				url : theUrl,
+				//data : data,
+				dataType : "json",
+				processData : true,
+				success : function(obj) {
+					$("#resp").text(nutz.json(obj));
+				}
+			});
+		}
 	}
 </script>
 </head>
@@ -68,6 +87,7 @@
 	<option value="/path2/23">/path2/23</option>
 	<option value="/path2/879/text">/path2/879/text</option>
 	<option value="/msg">/msg</option>
+	<option value="/demojson">/demojson</option>
 </select>
 <input type="button" onclick="doDemo();" value="Do Demo" />
 <hr />

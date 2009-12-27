@@ -15,6 +15,8 @@ import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
 import org.nutz.lang.meta.Email;
 import org.nutz.mvc.Mvcs;
+import org.nutz.mvc.adaptor.JsonAdaptor;
+import org.nutz.mvc.annotation.AdaptBy;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
@@ -236,6 +238,12 @@ public class HelloWorld {
 		if (Strings.isBlank(s))
 			return "<Unknown Key>";
 		return s;
+	}
+
+	@AdaptBy(type = JsonAdaptor.class)
+	@At("/demojson")
+	public String demoJson(Map<?, ?> map) {
+		return String.format("Map has %d elements:\n%s", map.size(), Json.toJson(map));
 	}
 
 }
