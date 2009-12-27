@@ -1,7 +1,7 @@
-ÔËĞĞ¸ÃdemoÒª×¢Òâ£º
-1.ÔÚmysqlÖĞÔËĞĞresouceÖĞµÄamchart.sql
-2.ĞŞ¸Äresouce/ioc/dao.jsÖĞdataSourceÄÚÈİ
-3.ÔÚWebContent/WEB-INF/libÖĞ¼ÓÈëÏÂÁĞjar°ü
+è¿è¡Œè¯¥demoè¦æ³¨æ„ï¼š
+1.åœ¨mysqlä¸­è¿è¡Œresouceä¸­çš„amchart.sql
+2.ä¿®æ”¹resouce/ioc/dao.jsä¸­dataSourceå†…å®¹
+3.åœ¨WebContent/WEB-INF/libä¸­åŠ å…¥ä¸‹åˆ—jaråŒ…
 	commons-dbcp-1.2.2.jar
 	commons-pool-1.4.jar
 	dom4j-1.6.1.jar
