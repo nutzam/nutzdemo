@@ -36,6 +36,8 @@
 		case '/demojson':
 			setParam("{\nmap:'Hello'\n}");
 			break;
+		case '/demomap':
+			setParam("a=AA&b=BB");
 		}
 	}
 
@@ -63,7 +65,10 @@
 				dataType : "json",
 				processData : true,
 				success : function(obj) {
-					$("#resp").text(nutz.json(obj));
+					if((typeof obj) == "string")
+						$("#resp").text(obj);
+					else
+						$("#resp").text(nutz.json(obj));
 				}
 			});
 		}
@@ -88,6 +93,7 @@
 	<option value="/path2/879/text">/path2/879/text</option>
 	<option value="/msg">/msg</option>
 	<option value="/demojson">/demojson</option>
+	<option value="/demomap">/demomap</option>
 </select>
 <input type="button" onclick="doDemo();" value="Do Demo" />
 <hr />

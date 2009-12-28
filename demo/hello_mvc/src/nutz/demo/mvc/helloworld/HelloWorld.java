@@ -240,10 +240,31 @@ public class HelloWorld {
 		return s;
 	}
 
+	/**
+	 * 通过 JSON 的方式与服务器通讯
+	 * <p>
+	 * HTTP 请求的 content-type 需要符合 <a href="http://json.org>json.org</a> 里面的规范
+	 * <p>
+	 * <i>网址示意：[POST] http://localhost:8080/hellomvc/demojson.nut</i> <br>
+	 * 数据为标准的 JSON 字符串，通过这个字符串你可以组建 JSON 支持的 POJO， 数组， Map 等对象
+	 */
 	@AdaptBy(type = JsonAdaptor.class)
 	@At("/demojson")
 	public String demoJson(Map<?, ?> map) {
 		return String.format("Map has %d elements:\n%s", map.size(), Json.toJson(map));
+	}
+
+	/**
+	 * 通过名值对的方式，构建一个 Map
+	 * <p>
+	 * 同 POJO 一样，你可以通过 '@Param("..")' 来声明自己的对象是从整个 HTTP 参数表构建 如果你的参数是个 Map，那么
+	 * Nutz.Mvc 会自动为你构建一个 HashMap
+	 * <p>
+	 * <i>网址示意：http://localhost:8080/hellomvc/demomap.nut?a=AA&b=BB</i>
+	 */
+	@At("/demomap")
+	public String demoMap(@Param("..") Map<?, ?> map) {
+		return String.format("HTTP Map has %d elements:\n%s", map.size(), Json.toJson(map));
 	}
 
 }
