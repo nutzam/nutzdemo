@@ -267,4 +267,14 @@ public class HelloWorld {
 		return String.format("HTTP Map has %d elements:\n%s", map.size(), Json.toJson(map));
 	}
 
+	/**
+	 * 重定向
+	 * <p>
+	 * <i>网址示意：http://localhost:8080/hellomvc/demoredirect.nut?t=haha</i>
+	 */
+	@At("/demoredirect")
+	@Ok("redirect:/yousay.nut?word=${id}")
+	public String demoRedirect(@Param("t") String t) {
+		return "R:" + t;
+	}
 }
