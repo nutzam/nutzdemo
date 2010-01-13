@@ -16,7 +16,7 @@ var showAllAccounts = {
 	isUpdate : false,
 	onLoadEvent : function() {
 		$(document).ajaxError(function(event, request, settings){
-			$("#error_message span").text("Network Error");
+			$("#error_message span").text(nutz_message.network_error);
 			$("#error_message").dialog("open");
 		});
 		this.userid = $("#userid"),
@@ -73,7 +73,7 @@ var showAllAccounts = {
 		});
 		$('#create-user').click(function() {
 			funcHolder.isUpdate=false;
-			$('#dialog').dialog('option', 'title', 'Create new user');
+			$('#dialog').dialog('option', 'title', nutz_message.account_showallaccounts_jsp_create_account_dialog_title);
 			$('#dialog').dialog('open');
 		})
 		.hover(
@@ -132,7 +132,7 @@ var showAllAccounts = {
 					funcHolder.zip.val(result.zip);
 					funcHolder.country.val(result.country);
 					funcHolder.phone.val(result.phone);
-					$('#dialog').dialog('option', 'title', 'Update user');
+					$('#dialog').dialog('option', 'title', nutz_message.account_showallaccounts_jsp_update_account_dialog_title);
 					$('#dialog').dialog('open');
 				}
 	        }

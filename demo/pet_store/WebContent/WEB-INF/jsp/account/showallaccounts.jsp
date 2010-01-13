@@ -24,6 +24,7 @@
 <script type="text/javascript" src="ui/effects.core.js"></script>
 <script type="text/javascript" src="ui/effects.highlight.js"></script>
 <script type="text/javascript" src="external/bgiframe/jquery.bgiframe.js"></script>
+<script type="text/javascript" src="mvc/message/getMessage.do"></script>
 <style type="text/css">
 	body { font-size: 62.5%; }
 	label font{color:red;}
@@ -54,34 +55,34 @@ $(function() {
 	</p>
 </div>
 
-<div id="dialog" title="Create new user">
+<div id="dialog">
 	<p id="validateTips">All form fields are required.</p>
 
 	<form>
 	<fieldset>
-		<label for="userid">User ID <font>*</font></label>
+		<label for="userid">${msg.account_showallaccounts_jsp_dailog_label_userid} <font>*</font></label>
 		<input type="text" name="userid" id="userid" class="text ui-widget-content ui-corner-all" /><input type="hidden" name="olduserid" id="olduserid"/>
-		<label for="password">Password <font>*</font></label>
+		<label for="password">${msg.account_showallaccounts_jsp_dailog_label_password} <font>*</font></label>
 		<input type="password" name="password" id="password" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="firstname">First Name <font>*</font></label>
+		<label for="firstname">${msg.account_showallaccounts_jsp_dailog_label_firstname} <font>*</font></label>
 		<input type="text" name="firstname" id="firstname" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="lastname">Last Name <font>*</font></label>
+		<label for="lastname">${msg.account_showallaccounts_jsp_dailog_label_lastname} <font>*</font></label>
 		<input type="text" name="lastname" id="lastname" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="phone">Phone <font>*</font></label>
+		<label for="phone">${msg.account_showallaccounts_jsp_dailog_label_phone} <font>*</font></label>
 		<input type="text" name="phone" id="phone" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="email">Email <font>*</font></label>
+		<label for="email">${msg.account_showallaccounts_jsp_dailog_label_email} <font>*</font></label>
 		<input type="text" name="email" id="email" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="address1">Address 1 <font>*</font></label>
+		<label for="address1">${msg.account_showallaccounts_jsp_dailog_label_address1} <font>*</font></label>
 		<input type="text" name="address1" id="address1" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="address2">Address 2</label>
+		<label for="address2">${msg.account_showallaccounts_jsp_dailog_label_address2}</label>
 		<input type="text" name="address2" id="address2" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="city">City <font>*</font></label>
+		<label for="city">${msg.account_showallaccounts_jsp_dailog_label_city} <font>*</font></label>
 		<input type="text" name="city" id="city" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="state">State <font>*</font></label>
+		<label for="state">${msg.account_showallaccounts_jsp_dailog_label_state} <font>*</font></label>
 		<input type="text" name="state" id="state" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="zip">Zip <font>*</font></label>
+		<label for="zip">${msg.account_showallaccounts_jsp_dailog_label_zip} <font>*</font></label>
 		<input type="text" name="zip" id="zip" value="" class="text ui-widget-content ui-corner-all" />
-		<label for="country">Country <font>*</font></label>
+		<label for="country">${msg.account_showallaccounts_jsp_dailog_label_country} <font>*</font></label>
 		<input type="text" name="country" id="country" value="" class="text ui-widget-content ui-corner-all" />
 	</fieldset>
 	</form>
@@ -89,17 +90,17 @@ $(function() {
 
 <div id="users-contain" class="ui-widget user-div">
 
-		<h1>Existing Users:</h1>
+		<h1>${msg.account_showallaccounts_jsp_h1}</h1>
 
 <table id="users" class="ui-widget ui-widget-content">
 	<thead>
 		<tr class="ui-widget-header ">
 			<td style="width:10px"><input type="checkbox" id="check_all" /></td>
-			<td>User ID</td>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Email Addreass</th>
-			<th>Phone</th>
+			<td>${msg.account_showallaccounts_jsp_user_list_table_title_userid}</td>
+			<th>${msg.account_showallaccounts_jsp_user_list_table_title_firstname}</th>
+			<th>${msg.account_showallaccounts_jsp_user_list_table_title_lastname}</th>
+			<th>${msg.account_showallaccounts_jsp_user_list_table_title_email}</th>
+			<th>${msg.account_showallaccounts_jsp_user_list_table_title_phone}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -116,7 +117,7 @@ $(function() {
 	</tbody>
 </table>
 </div>
-<button id="create-user" class="ui-button ui-state-default ui-corner-all">Create new user</button>&nbsp;
-<button id="delete-user" class="ui-button ui-state-default ui-corner-all">Delete user</button>
+<button id="create-user" class="ui-button ui-state-default ui-corner-all">${msg.account_showallaccounts_jsp_button_create_user}</button>&nbsp;
+<button id="delete-user" class="ui-button ui-state-default ui-corner-all">${msg.account_showallaccounts_jsp_button_delete_user}</button>
 </body>
 </html>
