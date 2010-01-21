@@ -22,7 +22,7 @@ public class HelloMvcSetup implements Setup {
 		Dao dao = ioc.get(Dao.class, "dao");
 		if (!dao.exists("t_pet")) {
 			// Create tables
-			Tables.run(dao, Tables.define("tables.dod"));
+			Tables.define(dao, Tables.loadFrom("tables.dod"));
 
 			// Create master account
 			Master m = new Master();

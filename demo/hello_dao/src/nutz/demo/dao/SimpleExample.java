@@ -73,7 +73,7 @@ public class SimpleExample {
 	public static void prepareData() {
 		Dao dao = getDao();
 		File dodFile = Files.findFile("nutz/demo/dao/meta/pet.dod");
-		Tables.run(dao, dodFile);
+		Tables.define(dao, dodFile);
 
 		dao.insert(pet("XiaoBai", 8));
 		dao.insert(pet("XiaoHei", 5));
