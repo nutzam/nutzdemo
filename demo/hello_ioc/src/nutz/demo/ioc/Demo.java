@@ -24,7 +24,7 @@ public class Demo {
 		String[] ss = Strings.splitIgnoreBlank(title, "_");
 		for (int i = 0; i < ss.length; i++)
 			ss[i] = Strings.capitalize(ss[i]);
-		return Lang.concatBy(' ', ss).toString();
+		return Lang.concat(' ', ss).toString();
 	}
 
 }
