@@ -6,6 +6,8 @@ public class TwoMethod {
 
 	@Aop(value={"log","diffm"}) //先经过logranh到diffm
 //	@Aop(value={"diffm","log"}) //试试这种,看看打印的信息有何不同,记得配置log哦
+	//拦截器之间的调用顺序,与value里面的顺序是一样的. 还有就是beforeInvoke调用的顺序 与afterInvoke是一致的,并非相反!!
+	// A拦截器beforeInvoke-->B拦截器beforeInvoke-->方法调用 -->A拦截器afterInvoke-->B拦截器afterInvoke
 	public void methodA(){
 		System.out.println("我是方法A");//我可是名正言顺地被调用的!
 	}

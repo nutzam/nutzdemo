@@ -14,6 +14,7 @@ public class DiffMethodInterceptor extends AbstractMethodInterceptor {
 
 	@Override
 	public boolean beforeInvoke(Object obj, Method method, Object... args) {
+		System.out.println("DiffMethodInterceptor的beforeInvoke被调用");
 		return canOrgl;//如果返回true,就调用原本method,反之,不调用,调往afterInvoke
 	}
 	

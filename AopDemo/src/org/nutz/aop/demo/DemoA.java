@@ -30,6 +30,8 @@ public class DemoA {
 		System.out.println("=============华丽的分隔线====================================");
 		ioc.get(CanPass.class, "canpass").getIt(); //看看你拿得多少钱
 		System.out.println("我是强盗,看看能拿到多少钱: "+ ioc.get(SecurityMethod.class, "securityMethod").giveMeMoney());
+		
+		System.out.println(ioc.get(null, "securityMethod") instanceof SecurityMethod);
 	}
 
 }
