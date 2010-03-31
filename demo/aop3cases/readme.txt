@@ -21,7 +21,7 @@ tm.methodA();
 通过设置拦截器的状态,可以随意改变调用哪一个方法,这可是运行时更改哦
 
 3. 例子C 是一个简化的权限拦截器
-oc.get(CanPass.class, "canpass").getIt(); //看看你拿得多少钱
+ioc.get(CanPass.class, "canpass").getIt(); //看看你拿得多少钱
 System.out.println("我是强盗,看看能拿到多少钱: "+ ioc.get(SecurityMethod.class, "securityMethod").giveMeMoney());
 System.out.println(ioc.get(null, "securityMethod") instanceof SecurityMethod);
 
