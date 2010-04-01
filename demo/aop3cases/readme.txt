@@ -1,33 +1,33 @@
-3¸öAopÀı×Ó,ÈÃÄãÇáËÉÈëÃÅNut.Aop
+ï»¿3ä¸ªAopä¾‹å­,è®©ä½ è½»æ¾å…¥é—¨Nut.Aop
 By Wendal
 
-ÒÀÀµµÄjar,×îĞÂµÄnutz,ÎªÁËÊä³öÈÕÖ¾,Äã»¹ĞèÒªlog4j,¿ÉÒÔÔÚlabÖĞÕÒµ½.
+ä¾èµ–çš„jar,æœ€æ–°çš„nutz,ä¸ºäº†è¾“å‡ºæ—¥å¿—,ä½ è¿˜éœ€è¦log4j,å¯ä»¥åœ¨labä¸­æ‰¾åˆ°.
 
-1. Àı×ÓA ¸Ä±ä·µ»ØÖµ
+1. ä¾‹å­A æ”¹å˜è¿”å›å€¼
 Ioc ioc = new NutIoc(new JsonLoader("ioc.js"));
 Integer integer = ioc.get(GetMinValue.class, "getmax").getMin();
-System.out.printf("µÃµ½µÄÖµ: %s \n",integer);
+System.out.printf("å¾—åˆ°çš„å€¼: %s \n",integer);
 
-Õâ¸öÀı×Ó,Í¨¹ıÀ¹½ØÆ÷,ÎŞÊÓÔ­ÓĞµÄ·µ»ØÖµ,×ÔĞĞ·µ»ØÒ»¸öÖµ.
+è¿™ä¸ªä¾‹å­,é€šè¿‡æ‹¦æˆªå™¨,æ— è§†åŸæœ‰çš„è¿”å›å€¼,è‡ªè¡Œè¿”å›ä¸€ä¸ªå€¼.
 
-2. Àı×ÓB ¸ÄÎªµ÷ÓÃÆäËû·½·¨
+2. ä¾‹å­B æ”¹ä¸ºè°ƒç”¨å…¶ä»–æ–¹æ³•
 TwoMethod tm = ioc.get(TwoMethod.class, "tm");
 DiffMethodInterceptor diffm = ioc.get(DiffMethodInterceptor.class, "diffm");
-tm.methodA();//ºô½ĞÒ»ÏÂ·½·¨A,¿´¿´Ê²Ã´±»Ö´ĞĞÁË
-//ÏÖÔÚÎÒ¶Ô·½·¨A²»Âú,ÎÒ¾õµÃ·½·¨B»áºÃĞ©,so..
-diffm.setCanOrgl(false);//¸æËßÀ¹½ØÆ÷,ÎÒ²»Ïëµ÷ÓÃ·½·¨AÁË
+tm.methodA();//å‘¼å«ä¸€ä¸‹æ–¹æ³•A,çœ‹çœ‹ä»€ä¹ˆè¢«æ‰§è¡Œäº†
+//ç°åœ¨æˆ‘å¯¹æ–¹æ³•Aä¸æ»¡,æˆ‘è§‰å¾—æ–¹æ³•Bä¼šå¥½äº›,so..
+diffm.setCanOrgl(false);//å‘Šè¯‰æ‹¦æˆªå™¨,æˆ‘ä¸æƒ³è°ƒç”¨æ–¹æ³•Aäº†
 tm.methodA();
 
-Í¨¹ıÉèÖÃÀ¹½ØÆ÷µÄ×´Ì¬,¿ÉÒÔËæÒâ¸Ä±äµ÷ÓÃÄÄÒ»¸ö·½·¨,Õâ¿ÉÊÇÔËĞĞÊ±¸ü¸ÄÅ¶
+é€šè¿‡è®¾ç½®æ‹¦æˆªå™¨çš„çŠ¶æ€,å¯ä»¥éšæ„æ”¹å˜è°ƒç”¨å“ªä¸€ä¸ªæ–¹æ³•,è¿™å¯æ˜¯è¿è¡Œæ—¶æ›´æ”¹å“¦
 
-3. Àı×ÓC ÊÇÒ»¸ö¼ò»¯µÄÈ¨ÏŞÀ¹½ØÆ÷
-ioc.get(CanPass.class, "canpass").getIt(); //¿´¿´ÄãÄÃµÃ¶àÉÙÇ®
-System.out.println("ÎÒÊÇÇ¿µÁ,¿´¿´ÄÜÄÃµ½¶àÉÙÇ®: "+ ioc.get(SecurityMethod.class, "securityMethod").giveMeMoney());
+3. ä¾‹å­C æ˜¯ä¸€ä¸ªç®€åŒ–çš„æƒé™æ‹¦æˆªå™¨
+ioc.get(CanPass.class, "canpass").getIt(); //çœ‹çœ‹ä½ æ‹¿å¾—å¤šå°‘é’±
+System.out.println("æˆ‘æ˜¯å¼ºç›—,çœ‹çœ‹èƒ½æ‹¿åˆ°å¤šå°‘é’±: "+ ioc.get(SecurityMethod.class, "securityMethod").giveMeMoney());
 System.out.println(ioc.get(null, "securityMethod") instanceof SecurityMethod);
 
-Í¨¹ı»ñÈ¡µ÷ÓÃÕßµÄĞÅÏ¢,ÅĞ¶ÏÊÇ·ñÔÊĞíµ÷ÓÃÔ­·½·¨
+é€šè¿‡è·å–è°ƒç”¨è€…çš„ä¿¡æ¯,åˆ¤æ–­æ˜¯å¦å…è®¸è°ƒç”¨åŸæ–¹æ³•
 
 
 
-4. ¼Ç×¡Å¶,Õâ¸ö¶¼ÊÇĞèÒªIocÖ§³ÖµÄ. O(¡É_¡É)O¹ş¹ş~
+4. è®°ä½å“¦,è¿™ä¸ªéƒ½æ˜¯éœ€è¦Iocæ”¯æŒçš„. O(âˆ©_âˆ©)Oå“ˆå“ˆ~
 Any question? free to ask !
