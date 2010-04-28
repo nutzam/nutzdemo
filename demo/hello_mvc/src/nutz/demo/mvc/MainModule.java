@@ -24,8 +24,8 @@ import org.nutz.mvc.init.JsonIocProvider;
  * @author zozoh
  * 
  */
-@Modules( { HelloWorld.class, PetModule.class })
-@IocBy(type = JsonIocProvider.class, args = { "ioc/dao.js", "ioc/pets.js" })
+@Modules({HelloWorld.class, PetModule.class})
+@IocBy(type = JsonIocProvider.class, args = {"ioc/dao.js", "ioc/pets.js"})
 @SetupBy(HelloMvcSetup.class)
 @Localization("msg")
 @Fail("json")
