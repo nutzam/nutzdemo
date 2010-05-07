@@ -140,8 +140,14 @@ public class HelloWorld {
 							ServletContext context,
 							@Param("word") String word,
 							HttpSession session) {
-		return "You said: " + word + " => " + request.getLocale().toString() + " :: session: "
-				+ session.getId() + " :: " + context.getContextPath();
+		return "You said: "
+				+ word
+				+ " => "
+				+ request.getLocale().toString()
+				+ " :: session: "
+				+ session.getId()
+				+ " :: "
+				+ context.getContextPath();
 	}
 
 	/**
@@ -270,11 +276,26 @@ public class HelloWorld {
 	/**
 	 * 重定向
 	 * <p>
-	 * <i>网址示意：http://localhost:8080/hellomvc/demoredirect.nut?t=haha</i>
+	 * <i>网址示意：http://localhost:8080/hellomvc/demoredirect/byid.nut?t=haha</i>
 	 */
-	@At("/demoredirect")
+	@At("/demoredirect/byid")
 	@Ok("redirect:/yousay.nut?word=${id}")
 	public String demoRedirect(@Param("t") String t) {
 		return "R:" + t;
+	}
+
+	/**
+	 * 重定向 -- 根据返回的对象字段值
+	 * <p>
+	 * <i>网址示意：http://localhost:8080/hellomvc/demoredirect/byobj.nut?t=haha</i>
+	 * 
+	 * @return
+	 */
+	@At("/demoredirect/byobj")
+	@Ok("redirect:/yousay.nut?word=${obj.name}")
+	public Hello demoRedirectByObj(@Param("t") String t) {
+		Hello re = new Hello();
+		re.setName(t);
+		return re;
 	}
 }

@@ -39,7 +39,10 @@
 		case '/demomap':
 			setParam("a=AA&b=BB");
 			break;
-		case '/demoredirect':
+		case '/demoredirect/byid':
+			setParam("t=123");
+			break;
+		case '/demoredirect/byobj':
 			setParam("t=haha");
 			break;
 		}
@@ -98,7 +101,8 @@
 	<option value="/msg">/msg</option>
 	<option value="/demojson">/demojson</option>
 	<option value="/demomap">/demomap</option>
-	<option value="/demoredirect">/demoredirect</option>
+	<option value="/demoredirect/byid">/demoredirect/byid</option>
+	<option value="/demoredirect/byobj">/demoredirect/byobj</option>
 </select>
 <input type="button" onclick="doDemo();" value="Do Demo" />
 <hr />

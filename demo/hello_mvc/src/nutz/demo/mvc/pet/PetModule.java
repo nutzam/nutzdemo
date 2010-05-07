@@ -162,7 +162,7 @@ public class PetModule {
 	 * @see org.nutz.mvc.annotation.AdaptBy
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = {"D:/tmp/demo/upload", "10"})
+	@AdaptBy(type = UploadAdaptor.class, args = {"~/nutz/demo/hellomvc/petm/tmp", "10"})
 	@Ok("jsp:jsp.upload.done")
 	@Fail("jsp:jsp.upload.fail")
 	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)
