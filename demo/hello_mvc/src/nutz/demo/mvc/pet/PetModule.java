@@ -154,7 +154,7 @@ public class PetModule {
 	 * 利用注解 '@AdaptBy' 可以切换当前入口函数默认的适配适配器。 Nutz.Mvc 提供了 UploadAdaptor 专门处理 HTTP
 	 * 方式的文件上传。它的工作机理，请参看 UploadAdaptor 的 JDoc 文档。
 	 * <p>
-	 * 这个入口函数将所有上传的文件，存放在目录 "D:/tmp/demo/upload" 中，这个临时目录中最对有 10 个临时文件
+	 * 这个入口函数将所有上传的文件，存放在目录 "D:/tmp/demo/upload" 中，buffer的大小为8K，编码为UTF-8，这个临时目录中最对有 10 个临时文件
 	 * 
 	 * @throws IOException
 	 * 
@@ -162,7 +162,7 @@ public class PetModule {
 	 * @see org.nutz.mvc.annotation.AdaptBy
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = {"~/nutz/demo/hellomvc/petm/tmp", "10"})
+	@AdaptBy(type = UploadAdaptor.class, args = {"~/nutz/demo/hellomvc/petm/tmp", "8192", "UTF-8", "10" })
 	@Ok("jsp:jsp.upload.done")
 	@Fail("jsp:jsp.upload.fail")
 	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)
