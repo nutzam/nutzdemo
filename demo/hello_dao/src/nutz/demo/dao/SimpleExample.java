@@ -9,7 +9,7 @@ import javax.sql.DataSource;
 
 import nutz.demo.dao.meta.Pet;
 
-import org.apache.commons.dbcp.BasicDataSource;
+import org.h2.jdbcx.JdbcConnectionPool;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;
@@ -87,7 +87,7 @@ public class SimpleExample {
 		return pet;
 	}
 
-	private static BasicDataSource ds;
+	private static JdbcConnectionPool ds;
 	private static Dao dao;
 
 	/**
@@ -96,11 +96,7 @@ public class SimpleExample {
 	 * @return 数据源对象
 	 */
 	public static DataSource getDataSource() {
-		ds = new BasicDataSource();
-		ds.setDriverClassName("org.postgresql.Driver");
-		ds.setUrl("jdbc:postgresql://localhost:5432/daodemo");
-		ds.setUsername("postgres");
-		ds.setPassword("123456");
+		ds = JdbcConnectionPool.create( "jdbc:h2:file:~/nutz/demo/dao/all", "sa", "sa");
 		return ds;
 	}
 
@@ -110,7 +106,7 @@ public class SimpleExample {
 	public static void closeDataSource() {
 		if (null != ds)
 			try {
-				ds.close();
+				ds.dispose();
 			} catch (SQLException e) {}
 	}
 

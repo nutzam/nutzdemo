@@ -8,9 +8,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
 import org.nutz.dao.Cnd;
+import org.nutz.dao.FieldFilter;
+
+import org.nutz.ioc.annotation.InjectName;
 import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
 import org.nutz.mvc.upload.UploadAdaptor;
+import org.nutz.trans.Atom;
 
 /**
  * 本模块，使用了 Ioc 注入，Nutz.Ioc 将为本模块注入两个属性 "pets" 和 "masters"。 请参看 properties 目录下的
@@ -111,8 +115,12 @@ public class PetModule {
 	 */
 	@At
 	@Ok("redirect:/pet/detail.nut?id=${id}")
-	public int update(@Param("..") Pet pet) {
-		pets.dao().update(pet);
+	public int update(@Param("..") final Pet pet) {
+		FieldFilter.create(Pet.class, null, "photoPath", true).run(new Atom() {
+			public void run() {
+				pets.dao().update(pet);
+			}
+		});
 		return pet.getId();
 	}
 
@@ -154,7 +162,8 @@ public class PetModule {
 	 * 利用注解 '@AdaptBy' 可以切换当前入口函数默认的适配适配器。 Nutz.Mvc 提供了 UploadAdaptor 专门处理 HTTP
 	 * 方式的文件上传。它的工作机理，请参看 UploadAdaptor 的 JDoc 文档。
 	 * <p>
-	 * 这个入口函数将所有上传的文件，存放在目录 "D:/tmp/demo/upload" 中，buffer的大小为8K，编码为UTF-8，这个临时目录中最对有 10 个临时文件
+	 * 这个入口函数将所有上传的文件，存放在目录 "D:/tmp/demo/upload"
+	 * 中，buffer的大小为8K，编码为UTF-8，这个临时目录中最对有 10 个临时文件
 	 * 
 	 * @throws IOException
 	 * 
@@ -162,7 +171,10 @@ public class PetModule {
 	 * @see org.nutz.mvc.annotation.AdaptBy
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = {"~/nutz/demo/hellomvc/petm/tmp", "8192", "UTF-8", "10" })
+	@AdaptBy(type = UploadAdaptor.class, args = {	"~/nutz/demo/hellomvc/petm/tmp",
+													"8192",
+													"UTF-8",
+													"10"})
 	@Ok("jsp:jsp.upload.done")
 	@Fail("jsp:jsp.upload.fail")
 	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)

@@ -8,10 +8,7 @@ var ioc = {
 	dataSource : {
 		type : 'org.h2.jdbcx.JdbcConnectionPool',
 		events : { depose : 'dispose' },
-		args : [
-				"jdbc:h2:file:~/nutz/demo/hellomvc/petm/all",
-				"sa",
-				"sa" ] },
+		args : [ "jdbc:h2:file:~/nutz/demo/mvc/all", "sa", "sa" ] },
 	/*
 	 * 这个配置很好理解， args 表示这个对象构造函数的参数。显然，下面的注入方式将调用 new NutDao(dataSource)
 	 */

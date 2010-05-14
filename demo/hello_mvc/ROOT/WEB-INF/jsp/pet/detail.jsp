@@ -31,21 +31,21 @@
 <form action="${base}/pet/update.nut"  name="pet" method="POST" class="detail">
 <input type="hidden" name="id" value="${obj.id}"/>
 <input type="hidden" name="masterId" value="${obj.masterId}"/>
-<table>
+<table border="0">
 	<tr>
-		<td>${msg.pet_name }:</td>
+		<td nowrap>${msg.pet_name }:</td>
 		<td><input name="name" value="${obj.name }" /></td>
 	</tr>
 	<tr>
-		<td>${msg.pet_age }:</td>
+		<td nowrap>${msg.pet_age }:</td>
 		<td><input name="age" value="${obj.age }" /></td>
 	</tr>
 	<tr>
-		<td>${msg.pet_race }:</td>
+		<td nowrap>${msg.pet_race }:</td>
 		<td><input name="race" value="${obj.race }" /></td>
 	</tr>
 	<tr>
-		<td>${msg.pet_color }:</td>
+		<td nowrap>${msg.pet_color }:</td>
 		<td><input name="color" value="${obj.color }" /></td>
 	</tr>
 	<tr>
