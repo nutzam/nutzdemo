@@ -6,9 +6,9 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.nutz.demo.petstore.domain.Account;
 import org.nutz.demo.petstore.service.AccountService;
+import org.nutz.ioc.annotation.InjectName;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Fail;
-import org.nutz.mvc.annotation.InjectName;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
 
