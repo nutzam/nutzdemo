@@ -51,7 +51,7 @@
 	你可以在 Eclipse 中运行，也可以把这个应用发布到 Tomcat 或者任何一个 JSP/SERVLET 容器中运行。
 	首页地址大概类似：
 	{{{	
-	http://locahost:8080/hellomvc/index.jsp
+	http://localhost:8080/hellomvc/index.jsp
 	}}}	
 	根据你具体的配置不同，你可以将这个地址改成你设置的地址。
 		
