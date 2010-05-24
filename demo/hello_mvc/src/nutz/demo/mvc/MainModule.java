@@ -8,7 +8,7 @@ import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Localization;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.SetupBy;
-import org.nutz.mvc.init.JsonIocProvider;
+import org.nutz.mvc.ioc.provider.JsonIocProvider;
 
 /**
  * 本类为整个应用的默认模块类。在这个类上，你可以：
