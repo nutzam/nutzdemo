@@ -7,7 +7,7 @@ import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Localization;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.SetupBy;
-import org.nutz.mvc.init.JsonIocProvider;
+import org.nutz.mvc.ioc.provider.JsonIocProvider;
 
 @Modules( { AccountModule.class, MessageModule.class})
 @IocBy(type = JsonIocProvider.class, args = { "org/nutz/demo/petstore/ioc/config/dao.js", "org/nutz/demo/petstore/ioc/config/ioc.js" })
