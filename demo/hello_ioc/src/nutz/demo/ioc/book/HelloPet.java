@@ -12,7 +12,7 @@ import org.nutz.ioc.loader.json.JsonLoader;
 public class HelloPet {
 
 	public static void main(String[] args) {
-		Ioc ioc = new NutIoc(new JsonLoader("nutz/demo/ioc/pet/pets.js"));
+		Ioc ioc = new NutIoc(new JsonLoader("nutz/demo/ioc/book/pets.js"));
 		Pet pet = ioc.get(Pet.class, "xiaobai");
 		System.out.printf("%s - [%s]\n", pet.getName(), pet.getBirthday().getTimeZone().getID());
 		
