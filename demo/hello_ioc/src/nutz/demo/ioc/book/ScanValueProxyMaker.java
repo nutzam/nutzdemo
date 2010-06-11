@@ -29,4 +29,9 @@ public class ScanValueProxyMaker implements ValueProxyMaker {
 		return null;
 	}
 
+	@Override
+	public String[] supportedTypes() {
+		return Lang.array("scan");
+	}
+
 }
