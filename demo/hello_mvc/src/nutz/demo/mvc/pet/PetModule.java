@@ -11,6 +11,8 @@ import org.nutz.dao.Cnd;
 import org.nutz.dao.FieldFilter;
 
 import org.nutz.ioc.annotation.InjectName;
+import org.nutz.ioc.loader.annotation.Inject;
+import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
 import org.nutz.mvc.upload.UploadAdaptor;
@@ -37,17 +39,21 @@ import org.nutz.trans.Atom;
  * @author zozoh
  * 
  */
-@InjectName("petModule")
+@IocBean
+@InjectName
 @At("/pet")
 @Fail("json")
-@Filters({@By(type = CheckSession.class, args = {"master", "/index.jsp"})})
+@Filters( { @By(type = CheckSession.class, args = { "master", "/index.jsp" }) })
 public class PetModule {
 
 	/*
 	 * 这两属性将被注入，它们可以是私有的，不用提供 getter 和 setter
 	 */
-	private PetService pets;
-	private MasterService masters;
+	@Inject
+	private PetService petService;
+
+	@Inject
+	private MasterService masterService;
 
 	/**
 	 * 用户登陆 : http://localhost:8080/hellomvc/pet/login.nut
@@ -59,7 +65,7 @@ public class PetModule {
 	@Ok("redirect:/pet/all.nut")
 	@Fail("redirect:/wrong_master.jsp")
 	public void login(@Param("name") String name, @Param("pwd") String password, HttpSession session) {
-		Master m = masters.fetch(Cnd.where("name", "=", name).and("password", "=", password));
+		Master m = masterService.fetch(Cnd.where("name", "=", name).and("password", "=", password));
 		if (null == m)
 			throw new RuntimeException("Error username or password");
 		session.setAttribute("master", m);
@@ -84,7 +90,7 @@ public class PetModule {
 		Pet pet = new Pet();
 		pet.setName(name);
 		pet.setMasterId(m.getId());
-		return pets.dao().insert(pet);
+		return petService.dao().insert(pet);
 	}
 
 	/**
@@ -93,7 +99,7 @@ public class PetModule {
 	@At
 	@Ok("redirect:/pet/all.nut")
 	public List<Pet> remove(@Param("id") int id, HttpSession session) {
-		pets.delete(id);
+		petService.delete(id);
 		return all(session);
 	}
 
@@ -118,7 +124,7 @@ public class PetModule {
 	public int update(@Param("..") final Pet pet) {
 		FieldFilter.create(Pet.class, null, "photoPath", true).run(new Atom() {
 			public void run() {
-				pets.dao().update(pet);
+				petService.dao().update(pet);
 			}
 		});
 		return pet.getId();
@@ -142,7 +148,7 @@ public class PetModule {
 		// Get master
 		Master m = (Master) session.getAttribute("master");
 		// Do query
-		return pets.query(Cnd.where("masterId", "=", m.getId()).asc("name"), null);
+		return petService.query(Cnd.where("masterId", "=", m.getId()).asc("name"), null);
 	}
 
 	/**
@@ -153,7 +159,7 @@ public class PetModule {
 	@At
 	@Ok("jsp:jsp.pet.detail")
 	public Pet detail(@Param("id") int id) {
-		return pets.fetch(id);
+		return petService.fetch(id);
 	}
 
 	/**
@@ -171,15 +177,12 @@ public class PetModule {
 	 * @see org.nutz.mvc.annotation.AdaptBy
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = {	"~/nutz/demo/hellomvc/petm/tmp",
-													"8192",
-													"UTF-8",
-													"10"})
+	@AdaptBy(type = UploadAdaptor.class, args = { "~/nutz/demo/hellomvc/petm/tmp", "8192", "UTF-8", "10" })
 	@Ok("jsp:jsp.upload.done")
 	@Fail("jsp:jsp.upload.fail")
 	public void uploadPhoto(@Param("id") int id, @Param("photo") File f, ServletContext context)
 			throws IOException {
-		pets.uploadPhoto(id, f, context.getRealPath("/"));
+		petService.uploadPhoto(id, f, context.getRealPath("/"));
 	}
 
 	/**
@@ -205,7 +208,7 @@ public class PetModule {
 		Pet[] list = new Pet[2];
 		list[0] = a;
 		list[1] = b;
-		pets.dao().insert(list);
+		petService.dao().insert(list);
 		return list;
 	}
 
@@ -221,7 +224,7 @@ public class PetModule {
 	public Pet[] getPets(@Param("id") int[] ids) {
 		Pet[] list = new Pet[ids.length];
 		for (int i = 0; i < ids.length; i++)
-			list[i] = pets.fetch(ids[i]);
+			list[i] = petService.fetch(ids[i]);
 		return list;
 	}
 }
