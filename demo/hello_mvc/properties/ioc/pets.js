@@ -8,19 +8,13 @@ var ioc = {
 	 */
 	pets : {
 		type : "nutz.demo.mvc.pet.PetService",
-		args : [ {
-			refer : "dao"
-		} ]
-	},
+		args : [ { refer : "dao" } ] },
 	/*
 	 * Master 的服务类
 	 */
 	masters : {
 		type : "nutz.demo.mvc.pet.MasterService",
-		args : [ {
-			refer : "dao"
-		} ]
-	},
+		args : [ { refer : "dao" } ] },
 	/*
 	 * 组合 PetModule，该模块，需要有两个属性，分别是 pets 和 masters。 PetModule 类上，必须声明注入名
 	 * @InjectName("petModule")
@@ -28,12 +22,5 @@ var ioc = {
 	petModule : {
 		type : "nutz.demo.mvc.pet.PetModule",
 		fields : {
-			pets : {
-				refer : "pets"
-			},
-			masters : {
-				refer : "masters"
-			}
-		}
-	}
-};
+			petService : { refer : "pets" },
+			masterService : { refer : "masters" } } } };

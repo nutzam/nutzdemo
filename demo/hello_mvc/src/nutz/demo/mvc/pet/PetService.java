@@ -3,12 +3,21 @@ package nutz.demo.mvc.pet;
 import java.io.File;
 import java.io.IOException;
 
+import org.nutz.dao.Dao;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.lang.Files;
 import org.nutz.service.IdNameEntityService;
 
-@IocBean(field = { "dao" })
+@IocBean(field = {"dao"})
 public class PetService extends IdNameEntityService<Pet> {
+
+	public PetService() {
+		super();
+	}
+
+	public PetService(Dao dao) {
+		super(dao);
+	}
 
 	public void uploadPhoto(int id, File tempFile, String root) throws IOException {
 		// Get pet

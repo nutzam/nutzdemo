@@ -8,7 +8,7 @@ import org.nutz.mvc.annotation.IocBy;
 import org.nutz.mvc.annotation.Localization;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.SetupBy;
-import org.nutz.mvc.ioc.provider.ComboIocProvider;
+import org.nutz.mvc.ioc.provider.JsonIocProvider;
 
 /**
  * 本类为整个应用的默认模块类。在这个类上，你可以：
@@ -24,11 +24,9 @@ import org.nutz.mvc.ioc.provider.ComboIocProvider;
  * @author zozoh
  * 
  */
-@Modules( { HelloWorld.class, PetModule.class })
-@IocBy(type = ComboIocProvider.class, args = { "*org.nutz.ioc.loader.json.JsonLoader", "ioc/dao.js",
-		"*org.nutz.ioc.loader.annotation.AnnotationIocLoader", "nutz.demo" })
+@Modules({HelloWorld.class, PetModule.class})
+@IocBy(type = JsonIocProvider.class, args = {"ioc"})
 @SetupBy(HelloMvcSetup.class)
 @Localization("msg")
 @Fail("json")
-public class MainModule {
-}
+public class MainModule {}
