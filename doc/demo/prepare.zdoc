@@ -1,0 +1,26 @@
+#title: 准备工作
+
+运行demo之前需要做需要了解的一些事情
+
+1.Eclipse SVN插件的安装与使用
+
+	熟悉的话直接用这个更新地址（http://subclipse.tigris.org/update_1.6.x），大家的Eclipse应该都是3.x的吧？
+	不熟悉请参见官方说明[http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA]
+	安装时如果出现以下错误提示：
+    Subclipse Integration for Mylyn 3.x (Optional)（3.0.0）需要 插件“org.eclipse.mylyn.tasks.core（3.0.0）”或者兼容项。
+	直接把出错的选项前的勾去掉，不影响我们使用
+	
+	装好后，建议将SVN仓库加到视图中（Window->show view->SVN Repositories）
+	
+2.安装好SVN插件后，便可连接到nutzdemo的源码库了，		
+	<prepare/new_repositor.jpg>
+	(图中我已经新建了三个，你刚安装好后应该是空的)
+	在弹出的框中输入 http://nutzdemo.googlecode.com/svn/trunk/
+	
+3.初步的准备工作已经完成了，下面对目录结构作些说明
+	点开刚刚建好的地址，会有三个目录,demo,doc,lib 
+	demo中存放所有的demo源码，目前共有6个demo,有三个是Web项目，分别是DAO,IOC（IOC是什么?[http://baike.baidu.com/view/1800021.html?wtp=tt])和AOP(什么是AOP[http://baike.baidu.com/view/1865230.htm])的demo
+	doc中存放的demo的说明文档和api
+	lib中放的是几个demo中可能需要的jar包
+	
+好了，我们的准备工作和说明已经完成了，下面，让我们迅速的把这些demo跑一遍，以了解nutz给你编程带来的便利和快捷
