@@ -1,0 +1,44 @@
+#title: 跑起普通的java项目
+
+java项目的demo目前共有三个，分别是hello_dao ,hello_ioc和aop3cases
+
+1.让我们先把这三个demo迁到我们项目里面
+
+打开SVN视图，点开demo,右键java_pj,点击checkout
+<rundemo/checkout_javapj.jpg>
+
+弹出的窗口，直接点击继续
+<rundemo/checkout_continue.jpg>
+<rundemo/checkout_jp.jpg>
+选择Java Project，然后下一步
+<rundemo/make_pj_name.jpg>
+起个项目名，继续
+再继续，可能会出现
+<rundemo/view_switch.jpg>
+意思是你当前的视图模式不是java工程的模式，问你要不要切换，你点no就可以了，最后
+可能跳出这样一个窗口
+<rundemo/justok.jpg>
+不用理会，点OK
+
+2.设置build path
+找到你刚刚迁出来的工程，先将src文件夹删除，然后右键工程，build path-> Configure build path
+<rundemo/buildpath_set.jpg>
+然后按照下图添加源文件包
+<rundemo/buildpath_add.jpg>
+然后再设置依赖库，添加外库的jar时弹出的目录选择框，就是在准备工作中我们Export出来的lib下的jar包
+<rundemo/buildpath_jar.jpg>
+点OK，设置完成
+
+3.去掉红XX
+
+ioc可能源文件上会出现红叉叉，你只需在出现在红叉叉的类里把@Override删掉即可
+js的红叉叉不用理会
+
+4.run your demo
+
+
+aop3cases,运行org/nutz/aop/demo/DemoA.java
+hello_ico,运行nutz/demo/ico/hello/HelloIoc.java
+hello_dao,运行nutz/demo/dao/SimpleExample.java
+
+5.好了,跑完demo,开始研究nutz的源码吧,希望nutz能助你事半功倍~~
