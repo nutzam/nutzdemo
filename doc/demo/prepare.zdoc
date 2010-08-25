@@ -12,15 +12,31 @@
 	
 	装好后，建议将SVN仓库加到视图中（Window->show view->SVN Repositories）
 	
-2.安装好SVN插件后，便可连接到nutzdemo的源码库了，		
+2.链接到nutzdemo的源码库
+		
 	<prepare/new_repositor.jpg>
 	(图中我已经新建了三个，你刚安装好后应该是空的)
 	在弹出的框中输入 http://nutzdemo.googlecode.com/svn/trunk/
 	
-3.初步的准备工作已经完成了，下面对目录结构作些说明
+3.目录结构作些说明
+
+	到此，我们的准备工作已经差不多了，但我们仍向你介绍下我们的目录结构
+	
 	点开刚刚建好的地址，会有三个目录,demo,doc,lib 
-	demo中存放所有的demo源码，目前共有6个demo,有三个是Web项目，分别是DAO,IOC（IOC是什么?[http://baike.baidu.com/view/1800021.html?wtp=tt])和AOP(什么是AOP[http://baike.baidu.com/view/1865230.htm])的demo
+	
+	demo中存放所有的demo源码，其中java项目放在java_pj下（目前有三个demo),web项目放在web_pj下(目前也有三个demo)，这样分是因为几个java项目可以迁出到一个工程里面。
+		
 	doc中存放的demo的说明文档和api
-	lib中放的是几个demo中可能需要的jar包
+	
+	lib中放的是nutz的核心jar包和几个demo中可能需要的jar包，在具体的demo中我们会说明
+
+4.迁出lib中的jar包备用
+	
+	如果你已经下载过nutz的核心jar包和一些项目中用到的依赖包，则略过此步
+	
+	将SVN视图中的链接点开，右键lib,选择Export，然后在出来的对话框中选择你自己想放的目录
+	
+	ok,记住这个目录，后面你将会用到	
+
 	
 好了，我们的准备工作和说明已经完成了，下面，让我们迅速的把这些demo跑一遍，以了解nutz给你编程带来的便利和快捷
