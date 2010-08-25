@@ -2,7 +2,7 @@ package org.nutz.aop.demo.interceptor;
 
 import java.lang.reflect.Method;
 
-import org.nutz.aop.AbstractMethodInterceptor;
+import org.nutz.aop.interceptor.AbstractMethodInterceptor;
 
 public class DiffMethodInterceptor extends AbstractMethodInterceptor {
 	
