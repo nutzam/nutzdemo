@@ -32,6 +32,6 @@
 	
 	
 	log : {
-		type : 'org.nutz.aop.interceptor.LoggingMethodOnterceptor'
+		type : 'org.nutz.aop.interceptor.LoggingMethodInterceptor'
 	}
 }
