@@ -41,4 +41,5 @@ aop3cases,运行org/nutz/aop/demo/DemoA.java
 hello_ico,运行nutz/demo/ico/hello/HelloIoc.java
 hello_dao,运行nutz/demo/dao/SimpleExample.java
 
-5.好了,跑完demo,开始研究nutz的源码吧,希望nutz能助你事半功倍~~
+5.好了,普通工程的demo就介绍到此,开始研究nutz的源码吧,希望nutz能助你事半功倍~~
+如果朋友在Web项目demo运行中还有问题，请等下一期的wiki介绍，我会尽快拿出来~~
