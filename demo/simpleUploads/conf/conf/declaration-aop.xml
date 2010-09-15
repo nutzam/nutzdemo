@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop>
+	<class name=".*" method=".*" interceptor="ioc:log"/>
+</aop>
