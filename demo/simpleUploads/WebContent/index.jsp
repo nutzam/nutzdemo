@@ -5,6 +5,46 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>主页</title>
+    <style type="text/css">
+      .dropbox {
+        width: 250px;
+        height: 150px;
+        border: 4px dashed black;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+      }
+	  .data_content {
+	  	border: 4px solid green;
+		padding: 10px;
+		margin-top: 10px;
+	  }
+    </style>
+    <script type="text/javascript">
+      function handleFiles(files) {
+        var txt = "选择文件数：" + files.length + "<br/>";
+        document.getElementById("status").innerHTML = txt;
+
+		for(var i=0; i < files.length; i++) {
+          var reader = new FileReader();
+          reader.onloadend = function(e) {
+              $.ajax({
+                  	type : 'POST',
+					url : 'f/upload_html5.nut',
+					data: {filedata : e.target.result},
+					success: function(msg){
+            	     alert( "Server return : " + msg );
+            	   	}			
+                  });
+          };
+		  // 开始访问文件内容
+          reader.readAsBinaryString(files[i]);
+		 }
+      }
+    </script>
+	
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript">
 	$( function(){
@@ -59,7 +99,11 @@
 		</object>
 		
 	</div>
-	<div></div>
+	<div>
+		<p>4. Html5 文件上传</p>
+		
+		<input type="file" multiple="multiple" id="input" onChange="handleFiles(this.files)" />
+	</div>
 	<div></div>
 	<div></div>
 </body>
