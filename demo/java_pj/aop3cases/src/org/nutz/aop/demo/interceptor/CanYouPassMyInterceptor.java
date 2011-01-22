@@ -1,29 +1,24 @@
 package org.nutz.aop.demo.interceptor;
 
-import java.lang.reflect.Method;
+import org.nutz.aop.InterceptorChain;
+import org.nutz.aop.MethodInterceptor;
+import org.nutz.aop.demo.target.CanPass;
 
-import org.nutz.aop.interceptor.AbstractMethodInterceptor;
-
-public class CanYouPassMyInterceptor extends AbstractMethodInterceptor {
-
-
-	public boolean beforeInvoke(Object obj, Method method, Object... args) {
-		String who = whoCalling();
-		System.out.println("谁在请求: "+who);
-		if (who.endsWith("Pass"))
-			return super.beforeInvoke(obj, method, args);
-		else{
-			return false;
-		}
-	}
-
-	public Object afterInvoke(Object obj, Object returnObj, Method method, Object... args) {
-		return super.afterInvoke(obj, returnObj, method, args);
-	}
+/**
+ * 通过判断堆栈中的类是否有CanPass来决定是否调用原本的方法
+ */
+public class CanYouPassMyInterceptor implements MethodInterceptor {
 	
-	public String whoCalling(){
+	/**
+	 * 通过判断堆栈中的类是否有CanPass来决定是否调用原本的方法
+	 */
+	public void filter(InterceptorChain chain) throws Throwable {
 		Throwable throwable = new Throwable();
-		
-		return throwable.getStackTrace()[4].getClassName();
+		for (StackTraceElement ste : throwable.getStackTrace()) {
+			if (CanPass.class.getName().equals(ste.getClassName())) {
+				chain.doChain();
+				return;
+			}
+		}
 	}
 }
