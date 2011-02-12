@@ -14,8 +14,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
-import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.ExpGroup;
 import org.nutz.dao.Expression;
@@ -33,8 +31,6 @@ import org.nutz.mvc.upload.TempFile;
 import org.nutz.mvc.upload.UploadAdaptor;
 import org.nutz.mvc.view.JspView;
 
-import com.scxxs.cms.dao.ArticleDao;
-import com.scxxs.cms.dao.config.OADataSource;
 import com.scxxs.cms.model.Article;
 import com.scxxs.cms.model.ArticleFile;
 import com.scxxs.cms.model.NavModel;
@@ -47,14 +43,14 @@ import com.scxxs.cms.utils.SystemContext;
 /**
  * 文章处理Action
  * 
- * @author Administrator
+ * @author Shine
  * 
+ * 修改： 1.去掉了原来插入另外一个系统的多于代码  2011-02-12 09:47
+ * 		 2.去掉了设置文章颜色的多于判断
  */
 @IocBean
 @InjectName
 public class ArticleAction extends BaseAction {
-	private Logger logger = Logger.getLogger(ArticleAction.class);
-
 	/**
 	 * 添加文章数据
 	 * 
@@ -70,21 +66,8 @@ public class ArticleAction extends BaseAction {
 			@Param("navid") int[] ids, @Param("color") String color,
 			HttpServletResponse resp) throws IOException {
 
-		String ac = "";
-
-		if (color.equals("0")) {
-			ac = "0"; //黑色
-		} else if (color.equals("1")) {
-			ac = "1"; //红色
-		} else if (color.equals("2")) {
-			ac = "2"; //绿色
-		} else if (color.equals("3")) {
-			ac = "3"; //蓝色
-		} 
-
-
 		// 设置标题颜色
-		a.setColor(ac);
+		a.setColor(color);
 
 		
 
@@ -123,8 +106,6 @@ public class ArticleAction extends BaseAction {
 			basicDao.saveRelation(a, "nav");
 			flag = true;
 			
-			insertOa(a,ids);
-			
 		} else {
 			a.setModifyDate(new Date());
 			if (files.size() > 0) {
@@ -149,54 +130,7 @@ public class ArticleAction extends BaseAction {
 		}
 		 
 	}
-	//添加数据到OA中
-	private void insertOa(Article a,int[] ids){
-		ArticleDao oadao = new ArticleDao(OADataSource.getIoc());
-		for (int i : ids) {
-			String department = "";
-
-			if (i == 103) {
-			
-				Chain chain = Chain.make("title", a.getTitle())
-						.add("publisher", a.getAuthor())
-						.add("content",a.getContent())
-						.add("flag", 0)
-						.add("department",department)
-						.add("type", 1)
-						.add("pubtime",a.getCreateDate())
-						.add("click", a.getClick());
-
-				System.out.println(chain.toString());
-
-				oadao.save("t_news", chain);
-
-				logger.debug("插入数据到OA的新闻表中...");
-
-			} else if (i >= 116 && i <= 122) {
-				if (i == 116) {// 加入学院办通知
-					department = "学院办";
-				} else if (i == 117) {
-					department = "教务科";
-				} else if (i == 118) {
-					department = "科研科";
-				} else if (i == 119) {
-					department = "学生科";
-				} else{
-					logger.debug("暂时不知道怎么处理....");
-				}
-				Chain chain = Chain.make("pubtime", a.getCreateDate())
-							  .add("content", a.getContent())
-							  .add("title",a.getTitle())
-							  .add("department", department)
-							  .add("publisher", a.getAuthor())
-							  .add("level",2);
-							  
-				oadao.save("t_notice",chain);
-				logger.debug("保存通知到OA系统中....");
-			}
-		}
-	}
-
+	
 	/**
 	 * 分页查询页面数据
 	 * 
