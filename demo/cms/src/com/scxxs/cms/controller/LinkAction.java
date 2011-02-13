@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
@@ -30,7 +29,7 @@ public class LinkAction extends BaseAction{
 	 * @return
 	 */
 	@At("/admin/link")
-	public View findAll(@Param("currentPage") int currentPage,Ioc ioc,HttpServletRequest request){
+	public View findAll(@Param("currentPage") int currentPage,HttpServletRequest request){
 		
 		List<Link> list = basicDao.searchByPage(Link.class, currentPage, SystemContext.PAGE_SIZE, "type");
 		
@@ -51,7 +50,7 @@ public class LinkAction extends BaseAction{
 	 */
 	@At("/admin/link/add")
 	@Ok("json")
-	public String add(@Param("::link.") Link l,Ioc ioc){
+	public String add(@Param("::link.") Link l){
 		
 //		LinkDao dao = new LinkDao(ioc);
 		
@@ -83,7 +82,7 @@ public class LinkAction extends BaseAction{
 	 */
 	@At("/admin/link/del")
 	@Ok("json")
-	public String del(@Param("id") int id,@Param("currentPage") int currentPage,Ioc ioc){
+	public String del(@Param("id") int id,@Param("currentPage") int currentPage){
 		
 //		LinkDao dao  = new LinkDao(ioc);
 		
@@ -118,7 +117,7 @@ public class LinkAction extends BaseAction{
 	 */
 	@At("/admin/link/delByIds")
 	@Ok("json")
-	public String dels(@Param("ids") String ids, Ioc ioc,
+	public String dels(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size){
 //		LinkDao  dao =  new LinkDao(ioc);
 		
@@ -164,7 +163,7 @@ public class LinkAction extends BaseAction{
 	 */
 	@At("/admin/link/upate")
 	@Ok("json")
-	public String update(@Param("id") int id,Ioc ioc){
+	public String update(@Param("id") int id){
 		
 //		LinkDao dao =  new LinkDao(ioc);
 		

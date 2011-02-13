@@ -19,7 +19,7 @@ import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.ExpGroup;
 import org.nutz.dao.Expression;
-import org.nutz.ioc.Ioc;
+import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.View;
@@ -57,6 +57,7 @@ import freemarker.template.TemplateException;
  * 
  */
 @IocBean
+@InjectName
 public class NavModelAction extends BaseAction {
 
 	private static final Logger logger = Logger.getLogger(NavModelAction.class);
@@ -75,7 +76,7 @@ public class NavModelAction extends BaseAction {
 
 	@At("/admin/navmodel/json")
 	@Ok("json")
-	public String listAll(Ioc ioc, HttpServletRequest req) {
+	public String listAll(HttpServletRequest req) {
 
 		Object o = req.getSession().getAttribute("nav");
 		
@@ -84,7 +85,7 @@ public class NavModelAction extends BaseAction {
 		if (o != null) {
 			nav =  (String) o;
 		} else {
-			nav = n(ioc);
+			nav = n();
 			req.getSession().setAttribute("nav", nav);
 		}
 		
@@ -95,7 +96,7 @@ public class NavModelAction extends BaseAction {
 	 * @param ioc
 	 * @return
 	 */
-	private String n(Ioc ioc){
+	private String n(){
 		
 		
 		Expression e = Cnd.exp("pid", "=", 0);
@@ -201,7 +202,7 @@ public class NavModelAction extends BaseAction {
 	 */
 	@At("/admin/navmodel/add")
 	@Ok("json")
-	public String add(@Param("::nav.") NavModel nav, Ioc ioc,HttpServletRequest req) {
+	public String add(@Param("::nav.") NavModel nav,HttpServletRequest req) {
 
 //		NavModelDao dao = new NavModelDao(ioc);
 		boolean flag = false;
@@ -217,7 +218,7 @@ public class NavModelAction extends BaseAction {
 		}
 		
 		req.getSession().removeAttribute("nav");
-		req.getSession().setAttribute("nav", n(ioc));
+		req.getSession().setAttribute("nav", n());
 		
 		StringBuilder sb = new StringBuilder("{");
 
@@ -241,14 +242,14 @@ public class NavModelAction extends BaseAction {
 	 */
 	@At("/admin/navmodel/del")
 	@Ok("json")
-	public String del(@Param("id") int id, Ioc ioc,HttpServletRequest req) {
+	public String del(@Param("id") int id,HttpServletRequest req) {
 
 //		NavModelDao dao = new NavModelDao(ioc);
 		
 		if (basicDao.delById(id, NavModel.class)) {
 			
 			req.getSession().removeAttribute("nav");
-			req.getSession().setAttribute("nav", n(ioc));
+			req.getSession().setAttribute("nav", n());
 			
 			return "{success:true}";
 		}
@@ -266,7 +267,7 @@ public class NavModelAction extends BaseAction {
 	 */
 	@At("/admin/navmodel/update")
 	@Ok("json")
-	public String update(Ioc ioc, @Param("id") int id, @Param("pid") int pid) {
+	public String update(@Param("id") int id, @Param("pid") int pid) {
 
 //		NavModelDao dao = new NavModelDao(ioc);
 
@@ -289,7 +290,7 @@ public class NavModelAction extends BaseAction {
 	@At("/admin/nav/top")
 	@Ok("Json")
 	@Fail("Json")
-	public String buildTop(Ioc ioc, @Param("template") int id,
+	public String buildTop(@Param("template") int id,
 			@Param("position") String position,
 			ServletContext context,
 			HttpServletRequest req)
@@ -335,9 +336,9 @@ public class NavModelAction extends BaseAction {
 				} else if ("right".equalsIgnoreCase(position)) {
 					
 					//获取新闻数据
-					List<Article> newses = getArticle(ioc,103,5,req);
+					List<Article> newses = getArticle(103,5,req);
 					//获取通知数据
-					List<Article> notices = getArticle(ioc,104,5,req);
+					List<Article> notices = getArticle(104,5,req);
 					
 					root.put("newses", newses);
 					root.put("notices", notices);
@@ -374,7 +375,7 @@ public class NavModelAction extends BaseAction {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private List<Article> getArticle(Ioc ioc,int pid,int dataSize,HttpServletRequest req){
+	private List<Article> getArticle(int pid,int dataSize,HttpServletRequest req){
 		
 		
 		Expression e1 = Cnd.where("show", "=", 1);
@@ -431,7 +432,7 @@ public class NavModelAction extends BaseAction {
 	@At("/admin/nav/bottom")
 	@Ok("json")
 	@Fail("json")
-	public String buildBotton(Ioc ioc, ServletContext context)
+	public String buildBotton(ServletContext context)
 			throws IOException, TemplateException {
 
 		String path = context.getRealPath("/");
@@ -473,7 +474,7 @@ public class NavModelAction extends BaseAction {
 	@Fail("jsp:error.404")
 	public View getArticles(
 	// 导航id
-			@Param("navid") int navid, Ioc ioc,
+			@Param("navid") int navid,
 			// 当前页
 			@Param("currentPage") int currentPage,
 
@@ -501,7 +502,7 @@ public class NavModelAction extends BaseAction {
 		if (deep != 0) {
 			TemplateType type = model.getTemplate().getType();
 			req.setAttribute("model", model);
-			setDataForView(type, model, req, ioc, currentPage, articleid);
+			setDataForView(type, model, req, currentPage, articleid);
 
 			return new JspView(getTemplateFile(model.getTemplate()
 					.getFilePath()));
@@ -523,7 +524,7 @@ public class NavModelAction extends BaseAction {
 
 					req.setAttribute("model", child);
 					setDataForView(child.getTemplate().getType(), child, req,
-							ioc, currentPage, articleid);
+							currentPage, articleid);
 					return new JspView(getTemplateFile(child.getTemplate()
 							.getFilePath()));
 				} else {
@@ -534,7 +535,7 @@ public class NavModelAction extends BaseAction {
 
 						req.setAttribute("model", child);
 						setDataForView(child.getTemplate().getType(), child,
-								req, ioc, currentPage, articleid);
+								req, currentPage, articleid);
 
 						return new JspView(getTemplateFile(child.getTemplate()
 								.getFilePath()));
@@ -544,7 +545,7 @@ public class NavModelAction extends BaseAction {
 			} else if (model.getTemplate() != null) {
 
 				req.setAttribute("model", model);
-				setDataForView(model.getTemplate().getType(), model, req, ioc,
+				setDataForView(model.getTemplate().getType(), model, req,
 						currentPage, articleid);
 
 				return new JspView(getTemplateFile(model.getTemplate()
@@ -565,7 +566,7 @@ public class NavModelAction extends BaseAction {
 	 * @param req
 	 */
 	private void setDataForView(TemplateType type, NavModel model,
-			HttpServletRequest req, Ioc ioc, int currentPage, int articleid) {
+			HttpServletRequest req, int currentPage, int articleid) {
 		if (type.compareTo(TemplateType.ABOUT) == 0) {
 			// 查询一篇文章数据
 

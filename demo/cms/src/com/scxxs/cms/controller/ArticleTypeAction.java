@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
@@ -37,7 +36,7 @@ public class ArticleTypeAction extends BaseAction{
 	 */
 	@At("/admin/articletype/all")
 	@Ok("json")
-	public String listAll(Ioc ioc) {
+	public String listAll() {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
 
@@ -54,7 +53,7 @@ public class ArticleTypeAction extends BaseAction{
 	 * @param currentPage
 	 */
 	@At("/admin/articletype")
-	public View list(Ioc ioc, HttpServletRequest req,
+	public View list(HttpServletRequest req,
 			@Param("currentPage") int currentPage) {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
@@ -83,7 +82,7 @@ public class ArticleTypeAction extends BaseAction{
 	 */
 	@At("/admin/articletype/add")
 	@Ok("json")
-	public String add(@Param("::articletype.") ArticleType type, Ioc ioc) {
+	public String add(@Param("::articletype.") ArticleType type) {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
 
@@ -114,7 +113,7 @@ public class ArticleTypeAction extends BaseAction{
 	@At("/admin/articletype/del")
 	@Ok("json")
 	public String del(@Param("id") int id,
-			@Param("currentPage") int currentPage, Ioc ioc) {
+			@Param("currentPage") int currentPage) {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
 
@@ -149,7 +148,7 @@ public class ArticleTypeAction extends BaseAction{
 	 */
 	@At("/admin/articletype/delByIds")
 	@Ok("json")
-	public String delByIds(@Param("ids") String ids, Ioc ioc,
+	public String delByIds(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size) {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
@@ -191,7 +190,7 @@ public class ArticleTypeAction extends BaseAction{
 	 */
 	@At("/admin/articletype/find")
 	@Ok("json")
-	public String find(@Param("id") int id, Ioc ioc) {
+	public String find(@Param("id") int id) {
 
 //		ArticleTypeDao dao = new ArticleTypeDao(ioc);
 

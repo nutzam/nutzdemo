@@ -13,7 +13,6 @@ import org.nutz.castor.Castors;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.ExpGroup;
 import org.nutz.dao.Expression;
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.View;
@@ -39,14 +38,14 @@ public class IndexAction extends BaseAction {
 	 */
 	@At("/")
 	@Fail("jsp:error.404")
-	public View index(Ioc ioc, HttpServletRequest req) {
+	public View index(HttpServletRequest req) {
 
 		// 新闻
-		buildData("newses", 103, 11, req, ioc);
+		buildData("newses", 103, 11, req);
 		// 通知
 		//buildData("notices", 104, 6, req, ioc);
 		// 查询报告
-		buildData("reports", 105, 6, req, ioc);
+		buildData("reports", 105, 6, req);
 
 		// 查询首页切换图片
 		List<IndexPic> pics = basicDao.searchByPage(IndexPic.class, 1, 4,
@@ -84,7 +83,7 @@ public class IndexAction extends BaseAction {
 	 */
 	@SuppressWarnings("unchecked")
 	private void buildData(String key, int pid, int dataSize,
-			HttpServletRequest req, Ioc ioc) {
+			HttpServletRequest req) {
 
 		Expression e1 = Cnd.where("top", "=", 1);
 		Expression e2 = Cnd.where("show", "=", 1);
@@ -138,7 +137,7 @@ public class IndexAction extends BaseAction {
 	 */
 	@SuppressWarnings("unchecked")
 	@At("/index/xml")
-	public void xml(HttpServletRequest req, HttpServletResponse resp, Ioc ioc)
+	public void xml(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		Expression e1 = Cnd.where("top", "=", 1);
 		Expression e2 = Cnd.where("show", "=", 1);

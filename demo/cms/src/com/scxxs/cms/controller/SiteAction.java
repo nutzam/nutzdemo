@@ -2,7 +2,6 @@ package com.scxxs.cms.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.annotation.At;
@@ -21,7 +20,7 @@ public class SiteAction extends BaseAction{
 
 	@At("/admin/site")
 	@Ok("jsp:admin.site")
-	public void configSite(HttpServletRequest req,Ioc ioc){
+	public void configSite(HttpServletRequest req){
 		
 		
 		WebConfig cfg = basicDao.find(1, WebConfig.class);
@@ -32,7 +31,7 @@ public class SiteAction extends BaseAction{
 	
 	@At("/admin/site/add")
 	@Ok("redirect:/admin/site")
-	public void config(@Param("::cfg.") WebConfig cfg,Ioc ioc){
+	public void config(@Param("::cfg.") WebConfig cfg){
 		
 //		WebConfigDao dao = new WebConfigDao(ioc);
 		if(cfg.getId()!=0){

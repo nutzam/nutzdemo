@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
@@ -42,7 +41,7 @@ public class RoleAction extends BaseAction {
 	 * @return
 	 */
 	@At("/admin/role")
-	public View list(@Param("currentPage") int currentPage, Ioc ioc,
+	public View list(@Param("currentPage") int currentPage,
 			HttpServletRequest req) {
 
 		if (currentPage == 0) {
@@ -74,7 +73,7 @@ public class RoleAction extends BaseAction {
 	 */
 	@At("/admin/role/add")
 	@Ok("json")
-	public String add(@Param("::role.") Role role, Ioc ioc) {
+	public String add(@Param("::role.") Role role) {
 
 //		RoleDaobasicDao = new RoleDao(ioc);
 
@@ -115,7 +114,7 @@ public class RoleAction extends BaseAction {
 	 */
 	@At("/admin/role/del")
 	@Ok("json")
-	public String del(@Param("id") int id,@Param("currentPage") int currentPage,Ioc ioc) {
+	public String del(@Param("id") int id,@Param("currentPage") int currentPage) {
 		
 //		RoleDaobasicDao = new RoleDao(ioc);
 		
@@ -153,7 +152,7 @@ public class RoleAction extends BaseAction {
 	 */
 	@At("/admin/role/delByIds")
 	@Ok("json")
-	public String delByIds(@Param("ids") String ids, Ioc ioc,
+	public String delByIds(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size) {
 
 //		RoleDaobasicDao = new RoleDao(ioc);
@@ -197,7 +196,7 @@ public class RoleAction extends BaseAction {
 	 */
 	@At("/admin/role/find")
 	@Ok("json")
-	public String find(@Param("id") int id, Ioc ioc) {
+	public String find(@Param("id") int id) {
 
 //		RoleDaobasicDao = new RoleDao(ioc);
 
@@ -223,7 +222,7 @@ public class RoleAction extends BaseAction {
 	 * @return
 	 */
 	@At("/admin/role/permission")
-	public View setPermission(Ioc ioc,@Param("id") int id,HttpServletRequest req){
+	public View setPermission(@Param("id") int id,HttpServletRequest req){
 		
 //		RoleDaobasicDao = new RoleDao(ioc);
 		
@@ -237,7 +236,7 @@ public class RoleAction extends BaseAction {
 	}
 	
 	@At("/admin/role/set")
-	public View setRole(Ioc ioc,@Param("uid") int uid,HttpServletRequest req){
+	public View setRole(@Param("uid") int uid,HttpServletRequest req){
 		Manager m = managerDao.find(uid, Manager.class);
 		
 		m = managerDao.findLink(m, "roles");

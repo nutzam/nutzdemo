@@ -7,4 +7,4 @@
 <%@ taglib  prefix="fht" uri="http://www.scxxs.com/fht"%>
 <%@ taglib  prefix="security" uri="http://www.javafans.org/security"%>
 
-<c:set var="ctx" value="${pageContext.request.contextPath}"/>
+<c:set var="ctx" value="${base}"/>

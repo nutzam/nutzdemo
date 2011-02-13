@@ -12,7 +12,6 @@
 <link href="${ctx}/template/css/style.css" type="text/css" rel="stylesheet" />
 <script type=text/javascript src="${ctx}/template/js/jquery-1.3.2.min.js"></script>
 <script type=text/javascript src="${ctx}/template/js/lmsf.js"></script>
-<script type="text/javascript" src="${ctx}/template/js/jquery-latest.js"></script> 
 <script type=text/javascript src="${ctx}/script/setHome.js"></script>
 <script type="text/javascript" src="${ctx}/script/page.js"></script>
 <script type="text/javascript">

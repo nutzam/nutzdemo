@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.nutz.dao.Cnd;
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
@@ -40,7 +39,7 @@ public class DownloadAction extends BaseAction{
 	 * @return
 	 */
 	@At("/admin/download")
-	public View findAll(@Param("currentPage") int currentPage,Ioc ioc,HttpServletRequest request){
+	public View findAll(@Param("currentPage") int currentPage,HttpServletRequest request){
 		
 		
 		List<Download> l = basicDao.searchByPage(Download.class, currentPage, SystemContext.PAGE_SIZE,"id");
@@ -61,7 +60,7 @@ public class DownloadAction extends BaseAction{
 	 */
 	@At("/admin/download/findmodel")
 	@Ok("json")
-	public String findmodel(Ioc ioc){
+	public String findmodel(){
 		NavModel nm = basicDao.findByCondition(NavModel.class, "navName", "资源下载");
 		
 		Cnd condition =Cnd.where("pid","=",nm.getId());
@@ -88,7 +87,7 @@ public class DownloadAction extends BaseAction{
 	@At("/admin/download/upload")
 	@AdaptBy(type=UploadAdaptor.class,args={"./tmp"})
 	public String upload(@Param("downurl") TempFile tf,
-			Ioc ioc,ServletContext context,HttpServletResponse response) throws IOException{
+			ServletContext context,HttpServletResponse response) throws IOException{
 		File file = tf.getFile();
 		
 		String filename = file.getName(); //获取文件名
@@ -127,7 +126,7 @@ public class DownloadAction extends BaseAction{
 	@At("/admin/download/uploadimage")
 	@AdaptBy(type=UploadAdaptor.class,args={"./tmp"})
 	public String uploadiamge(@Param("downimage") TempFile tf,
-			Ioc ioc,ServletContext context,HttpServletResponse response) throws IOException{
+			ServletContext context,HttpServletResponse response) throws IOException{
 		File file = tf.getFile();
 		
 		String filename = file.getName(); //获取文件名
@@ -171,7 +170,7 @@ public class DownloadAction extends BaseAction{
 	 */
 	@At("/admin/download/add")
 	@Ok("json")
-	public String add(@Param("::download.") Download down,Ioc ioc){
+	public String add(@Param("::download.") Download down){
 //		DownloadDao dao = new DownloadDao(ioc);
 		
 		if(down.getTime() ==null){
@@ -205,7 +204,7 @@ public class DownloadAction extends BaseAction{
 	 */
 	@At("/admin/download/del")
 	@Ok("json")
-	public String del(@Param("id") int id,@Param("currentPage") int currentPage,Ioc ioc,ServletContext context){
+	public String del(@Param("id") int id,@Param("currentPage") int currentPage,ServletContext context){
 		
 //		DownloadDao dao =  new DownloadDao(ioc);
 		
@@ -249,7 +248,7 @@ public class DownloadAction extends BaseAction{
 	 */
 	@At("/admin/download/delByIds")
 	@Ok("json")
-	public String dels(@Param("ids") String ids, Ioc ioc,
+	public String dels(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size,ServletContext context){
 //		DownloadDao dao =  new DownloadDao(ioc);
 		
@@ -315,7 +314,7 @@ public class DownloadAction extends BaseAction{
 	 */
 	@At("/download/down")
 	public String down(HttpServletRequest request,ServletContext context,HttpServletResponse response,
-			@Param("id") int id,Ioc ioc)  throws IOException{
+			@Param("id") int id)  throws IOException{
 //		DownloadDao dao = new DownloadDao(ioc);
 		Download l = basicDao.find(id, Download.class);
 		

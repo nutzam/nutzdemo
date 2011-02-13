@@ -1,7 +1,6 @@
 package com.scxxs.cms.controller;
 
 import org.nutz.dao.Cnd;
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.annotation.At;
@@ -20,7 +19,7 @@ public class PermissionAction extends BaseAction{
 
 	@At("/admin/permission/set")
 	@Fail("json")
-	public String add(@Param("role") int role,@Param("resource") int resource,@Param("acl") int acl,Ioc ioc){
+	public String add(@Param("role") int role,@Param("resource") int resource,@Param("acl") int acl){
 		
 //		PermissionDao dao = new PermissionDao(ioc);
 		

@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.ExpGroup;
 import org.nutz.dao.Expression;
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
@@ -45,8 +44,7 @@ import com.scxxs.cms.utils.SystemContext;
  * 
  * @author Shine
  * 
- * 修改： 1.去掉了原来插入另外一个系统的多于代码  2011-02-12 09:47
- * 		 2.去掉了设置文章颜色的多于判断
+ *         修改： 1.去掉了原来插入另外一个系统的多于代码 2011-02-12 09:47 2.去掉了设置文章颜色的多于判断
  */
 @IocBean
 @InjectName
@@ -61,15 +59,13 @@ public class ArticleAction extends BaseAction {
 	 * @throws IOException
 	 */
 	@At("/admin/article/add")
-	public void add(Ioc ioc, @Param("::a.") Article a,
+	public void add(@Param("::a.") Article a,
 			@Param("articlefile") String[] articlefiles,
 			@Param("navid") int[] ids, @Param("color") String color,
 			HttpServletResponse resp) throws IOException {
 
 		// 设置标题颜色
 		a.setColor(color);
-
-		
 
 		List<NavModel> list = basicDao.searchByIds(NavModel.class, ids, "id");
 
@@ -105,7 +101,7 @@ public class ArticleAction extends BaseAction {
 			// 保存ManyMany数据
 			basicDao.saveRelation(a, "nav");
 			flag = true;
-			
+
 		} else {
 			a.setModifyDate(new Date());
 			if (files.size() > 0) {
@@ -120,17 +116,16 @@ public class ArticleAction extends BaseAction {
 			// 保存ManyMany数据
 			a = basicDao.saveRelation(a, "nav");
 		}
-		
-		 
+
 		resp.setContentType("text/html");
 		if (flag) {
 			resp.getWriter().print("[{success:true}," + Json.toJson(a) + "]");
 		} else {
 			resp.getWriter().print("[{success:false}]");
 		}
-		 
+
 	}
-	
+
 	/**
 	 * 分页查询页面数据
 	 * 
@@ -139,9 +134,9 @@ public class ArticleAction extends BaseAction {
 	 */
 	@At("/admin/article")
 	@Ok("jsp:admin.article")
-	public void list(@Param("currentPage") int currentPage, Ioc ioc,
+	public void list(@Param("currentPage") int currentPage,
 			HttpServletRequest req) {
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
 		List<Article> list = basicDao.searchByPage(Article.class, Cnd.orderBy()
 				.desc("createDate"), currentPage, SystemContext.PAGE_SIZE);
@@ -159,9 +154,9 @@ public class ArticleAction extends BaseAction {
 	@Ok("jsp:admin.article")
 	public void searchby(@Param("currentPage") int currentPage,
 			@Param("navid") int navid, @Param("pubtime") String pubtime,
-			@Param("keyword") String keyword, Ioc ioc, HttpServletRequest req)
+			@Param("keyword") String keyword, HttpServletRequest req)
 			throws UnsupportedEncodingException {
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 		ExpGroup group = Cnd.exps("1", "=", "1");
 
 		if (pubtime != null && !pubtime.equals("")) {
@@ -176,10 +171,11 @@ public class ArticleAction extends BaseAction {
 		List<Article> list = null;
 		int count = 0;
 		if (navid == 0) {
-			list = basicDao.searchByPage(Article.class, Cnd.where(group).desc(
-					"createDate"), currentPage, SystemContext.PAGE_SIZE);
-			count = basicDao.searchCount(Article.class, Cnd.where(group).desc(
-					"createDate"));
+			list = basicDao.searchByPage(Article.class,
+					Cnd.where(group).desc("createDate"), currentPage,
+					SystemContext.PAGE_SIZE);
+			count = basicDao.searchCount(Article.class,
+					Cnd.where(group).desc("createDate"));
 		} else {
 			list = basicDao.searchByRelation(Article.class, "t_article_nav",
 					"article_id", Cnd.where("navmodel_id", "=", navid), group,
@@ -226,12 +222,12 @@ public class ArticleAction extends BaseAction {
 					if (CheckFileType.isPic(file.getName())) {
 						// 图片文件存放在 article/pic 目录下
 
-						FileUtils.moveFile(file, path + "pic/" + p
-								+ file.getName());
+						FileUtils.moveFile(file,
+								path + "pic/" + p + file.getName());
 					} else {
 						// 下载文件存放在article/down目录下
-						FileUtils.moveFile(file, path + "down/" + p
-								+ file.getName());
+						FileUtils.moveFile(file,
+								path + "down/" + p + file.getName());
 					}
 					sb.append(p + file.getName());
 					sb.append(",");
@@ -248,8 +244,8 @@ public class ArticleAction extends BaseAction {
 							.moveFile(file, path + "pic/" + p + file.getName());
 				} else {
 					// 下载文件存放在article/down目录下
-					FileUtils.moveFile(file, path + "down/" + p
-							+ file.getName());
+					FileUtils.moveFile(file,
+							path + "down/" + p + file.getName());
 				}
 
 				sb.append(p + file.getName());
@@ -279,9 +275,9 @@ public class ArticleAction extends BaseAction {
 	 */
 	@At("/admin/article/find")
 	@Ok("json")
-	public String find(@Param("id") int id, Ioc ioc) {
+	public String find(@Param("id") int id) {
 
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
 		Article a = basicDao.find(id, Article.class);
 
@@ -307,10 +303,9 @@ public class ArticleAction extends BaseAction {
 	@At("/admin/article/del")
 	@Ok("json")
 	public String del(@Param("id") int id,
-			@Param("currentPage") int currentPage, Ioc ioc,
-			ServletContext context) {
+			@Param("currentPage") int currentPage, ServletContext context) {
 
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
 		int count = basicDao.searchCount(Article.class);
 		int maxPage = basicDao.maxPageSize(count, SystemContext.PAGE_SIZE);
@@ -359,11 +354,11 @@ public class ArticleAction extends BaseAction {
 	 */
 	@At("/admin/article/delByIds")
 	@Ok("json")
-	public String delByIds(@Param("ids") String ids, Ioc ioc,
+	public String delByIds(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size,
 			ServletContext context) {
 
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
 		int count = basicDao.searchCount(Article.class);
 		int maxPage = basicDao.maxPageSize(count, SystemContext.PAGE_SIZE);
@@ -418,15 +413,15 @@ public class ArticleAction extends BaseAction {
 	 */
 	@At("/article/search")
 	@Fail("jsp:error.404")
-	public View findlike(Ioc ioc, @Param("currentPage") int currentPage,
+	public View findlike(@Param("currentPage") int currentPage,
 			@Param("title") String title, HttpServletRequest req) {
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
 		int count = basicDao.searchByPageLike(Article.class, "title", title);
 		int maxpage = basicDao.maxPageSize(count, SystemContext.PAGE_SIZE);
 
-		List<Article> articles = basicDao.searchByPageLike(Article.class, "title",
-				title, currentPage, SystemContext.PAGE_SIZE);
+		List<Article> articles = basicDao.searchByPageLike(Article.class,
+				"title", title, currentPage, SystemContext.PAGE_SIZE);
 
 		req.setAttribute("maxPage", maxpage);
 		req.setAttribute("articles", articles);
@@ -446,12 +441,12 @@ public class ArticleAction extends BaseAction {
 	@At("/article/detail")
 	@Fail("jsp:error.404")
 	public View findArticle(@Param("nav") int nav,
-			@Param("article") int article, @Param("model") int model, Ioc ioc,
+			@Param("article") int article, @Param("model") int model,
 			HttpServletRequest req) {
 
-//		ArticleDao basicDao = new ArticleDao(ioc);
+		// ArticleDao basicDao = new ArticleDao(ioc);
 
-//		NavModelDao basicDao = new NavModelDao(ioc);
+		// NavModelDao basicDao = new NavModelDao(ioc);
 
 		Expression e = Cnd.where("id", "=", article);
 		ExpGroup group = Cnd.exps(e).and("show", "=", 1);
@@ -483,8 +478,8 @@ public class ArticleAction extends BaseAction {
 			}
 
 			// 查询相关文章
-			List<Article> articles = basicDao.searchPageByLike(Article.class, title,
-					"createDate", 1, 6);
+			List<Article> articles = basicDao.searchPageByLike(Article.class,
+					title, "createDate", 1, 6);
 			req.setAttribute("articles", articles);
 
 			// 增加点击率

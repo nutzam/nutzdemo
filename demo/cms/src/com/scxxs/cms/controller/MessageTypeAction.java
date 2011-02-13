@@ -2,7 +2,6 @@ package com.scxxs.cms.controller;
 
 import java.util.List;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
@@ -42,7 +41,7 @@ public class MessageTypeAction {
 	 */
 	@At("/admin/message/selecttype")
 	@Ok("json")
-	public String selecttype(Ioc ioc){
+	public String selecttype(){
 		List<MessageType> list=dao.search(MessageType.class, "sortNumber");
 		return Json.toJson(list, JsonFormat.full());
 	}
@@ -54,7 +53,7 @@ public class MessageTypeAction {
 	 */
 	@At("/admin/message/addmessagetype")
 	@Ok("json")	
-	public String addtype(@Param("::mt.") MessageType mt,Ioc ioc){
+	public String addtype(@Param("::mt.") MessageType mt){
 //		MessageTypeDao dao=new MessageTypeDao(ioc);
 		List<MessageType> list=dao.search(MessageType.class, "sortNumber");
 		if(list.size()>0){
@@ -73,7 +72,7 @@ public class MessageTypeAction {
 	 */
 	@At("/admin/message/deletype")
 	@Ok("json")	
-	public String deletype(@Param("id") int id,Ioc ioc){
+	public String deletype(@Param("id") int id){
 //		MessageTypeDao dao=new MessageTypeDao(ioc);
 		String sql="delete from t_message where tid="+id;
 		dao.updatesort(sql);
@@ -93,7 +92,7 @@ public class MessageTypeAction {
 	 */
 	@At("/admin/message/updatesort")
 	@Ok("json")
-	public String updatesort(Ioc ioc,@Param("newid") int newid,@Param("oldid") int oldid){
+	public String updatesort(@Param("newid") int newid,@Param("oldid") int oldid){
 //		MessageTypeDao dao=new MessageTypeDao(ioc);
 		MessageType mt1=dao.find(newid, MessageType.class);
 		MessageType mt2=dao.find(oldid, MessageType.class);
@@ -123,7 +122,7 @@ public class MessageTypeAction {
 	 */
 	@At("/admin/messaget/update")
 	@Ok("json")
-	public String update(@Param("::mest.") MessageType mest,Ioc ioc){
+	public String update(@Param("::mest.") MessageType mest){
 //		MessageTypeDao dao=new MessageTypeDao(ioc);
 		boolean flag=dao.update(mest);
 		if (flag) {

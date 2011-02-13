@@ -13,7 +13,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.nutz.ioc.Ioc;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.json.Json;
@@ -46,7 +45,7 @@ public class OneArticleAction extends BaseAction {
 	 * @return
 	 */
 	@At("/admin/onearticle")
-	public View findAll(@Param("currentPage") int currentPage,Ioc ioc,HttpServletRequest request){
+	public View findAll(@Param("currentPage") int currentPage,HttpServletRequest request){
 //		OneArticleDaobasicDao = new OneArticleDao(ioc);
 		
 		
@@ -67,7 +66,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@At("/admin/onearticle/add")
 	@Ok("json")
-	public String add(@Param(":: onearticle.") OneArticle onearticle,Ioc ioc,@Param("onearticlefile") String[] onearticlefiles){
+	public String add(@Param(":: onearticle.") OneArticle onearticle,@Param("onearticlefile") String[] onearticlefiles){
 		
 		if(onearticle.getCreateDate() ==null){
 			
@@ -200,7 +199,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@At("/admin/onearticle/findnav")
 	@Ok("json")
-	public String findnav(Ioc ioc){
+	public String findnav(){
 //		NavModelDao nvadao = new NavModelDao(ioc);
 		
 		StringBuffer buffer = new StringBuffer("[");
@@ -220,7 +219,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@At("/admin/onearticle/findstyle")
 	@Ok("json")
-	public String findstyle(Ioc ioc){
+	public String findstyle(){
 //		TempleteDao tdao = new TempleteDao(ioc);
 		
 		StringBuffer buffer = new StringBuffer("[");
@@ -244,7 +243,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@At("/admin/onearticle/del")
 	@Ok("json")
-	public String del(@Param("id") int id,@Param("currentPage") int currentPage,Ioc ioc){
+	public String del(@Param("id") int id,@Param("currentPage") int currentPage){
 //		OneArticleDaobasicDao = new OneArticleDao(ioc);
 		
 		
@@ -272,7 +271,7 @@ public class OneArticleAction extends BaseAction {
 	}
 	@At("/admin/onearticle/delByIds")
 	@Ok("json")
-	public String dels(@Param("ids") String ids, Ioc ioc,
+	public String dels(@Param("ids") String ids,
 			@Param("currentPage") int currentPage, @Param("size") int size){
 //		OneArticleDaobasicDao = new OneArticleDao(ioc);
 		
@@ -317,7 +316,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@At("/admin/onearticle/update")
 	@Ok("json")
-	public String update(@Param("id") int id,Ioc ioc){
+	public String update(@Param("id") int id){
 		
 //		OneArticleDaobasicDao = new OneArticleDao(ioc);
 		
