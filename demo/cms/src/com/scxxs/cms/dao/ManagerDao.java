@@ -18,7 +18,7 @@ public class ManagerDao extends BasicDao {
 	 * @return
 	 */
 	public Manager login(String username,String password){
-		
+
 		Cnd condition = Cnd.where("username", "=", username)
 							.and("password", "=", password);
 		return  findByCondition(Manager.class,condition);
