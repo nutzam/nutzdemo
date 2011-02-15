@@ -36,7 +36,7 @@
 			<div id="profile-links">
 				你好, <a href="#" title="编辑你的资料">${sessionScope.admin.username}</a><!-- , 你有 <a href="#messages" rel="modal" title="3 Messages">3 条信息</a> --><br />
 				<br />
-				<a href="${cxt}/" title="点击查看网站首页信息">【网站】</a> | <a href="${ctx}/admin/logout" title="注销">注销</a>
+				<a href="${ctx}/" title="点击查看网站首页信息">【网站】</a> | <a href="${ctx}/admin/logout" title="注销">注销</a>
 			</div>        
 			
 			<ul id="main-nav">  <!-- Accordion Menu -->

@@ -57,7 +57,7 @@ window.onload=function(){
 <div class="bannerbox">
   <div class="loginbox fl_left">
     <div class="loginlmbg">用户登录</div>
-      <form action="/OA/account.do?method=login" method="post">
+      <form action="${ctx}/admin/login" method="post">
       	<input type="hidden" value="web" name="vcode"/>
         <div class="textbox">
             <div class="yonghuming"><span>用户名：</span><input name="username" type="text" id="username"/></div>
