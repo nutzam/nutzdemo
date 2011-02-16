@@ -27,6 +27,7 @@ public class MyLoading extends DefaultLoading {
 	protected UrlMap makeUrlMap(NutConfig config, Context context, Class<?> mainModule) {
 		Class<? extends UrlMap> urlMapType;
 		UrlMapBy umb = mainModule.getAnnotation(UrlMapBy.class);
+		//检查是否有自定义UrlMap实现,有则用之,否则用默认的UrlMapImpl
 		if(null != umb){
 			urlMapType = umb.value();
 		}else{

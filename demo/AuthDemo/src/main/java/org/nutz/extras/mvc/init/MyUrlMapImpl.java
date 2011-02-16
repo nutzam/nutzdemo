@@ -40,6 +40,7 @@ public class MyUrlMapImpl extends UrlMapImpl {
 			String desc = a.desc();
 			boolean isDefault = a.isDefault();
 			
+			//在这里可以把权限写入数据库以及其它操作,此处为运行demo简单只写日志.
 			log.infof("AuthID=%s Module=%s Default=%s Desc=%s", id,module,isDefault,desc);
 		}
 		return isModule;
