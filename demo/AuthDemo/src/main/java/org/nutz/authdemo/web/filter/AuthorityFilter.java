@@ -20,6 +20,8 @@ import org.nutz.mvc.view.HttpStatusView;
 public class AuthorityFilter implements ActionFilter{
 	
 	private static final Log log = Logs.getLog(AuthorityFilter.class);
+	
+	private static final View UNAUTH =  new HttpStatusView(403);
 
 	@Override
 	public View match(ServletContext context,HttpServletRequest req,Method method){
@@ -29,15 +31,18 @@ public class AuthorityFilter implements ActionFilter{
 		String id = a.value();
 		Object auths = req.getSession().getAttribute("__AUTHORITY_STRING__");
 		if(auths == null){
-			log.warnf("%s 没有权限操作: [%s]", req.getRemoteHost(),a.desc());
-			return new HttpStatusView(403);
+			if(log.isWarnEnabled())
+				log.warnf("%s 没有权限操作: [%s]", req.getRemoteHost(),a.desc());
+			return UNAUTH;
 		}
 		int index = auths.toString().indexOf(id+";");
 		if(index < 0){
-			log.warnf("%s 没有权限操作: [%s]", req.getRemoteHost(),a.desc());
-			return new HttpStatusView(403);
+			if(log.isWarnEnabled())
+				log.warnf("%s 没有权限操作: [%s]", req.getRemoteHost(),a.desc());
+			return UNAUTH;
 		}else{
-			log.infof("%s 操作了: [%s]", req.getRemoteHost(),a.desc());
+			if(log.isInfoEnabled())
+				log.infof("%s 操作了: [%s]", req.getRemoteHost(),a.desc());
 			return null;
 		}
 	}
