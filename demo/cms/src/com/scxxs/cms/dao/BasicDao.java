@@ -1,7 +1,6 @@
 package com.scxxs.cms.dao;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import org.nutz.castor.Castors;
@@ -9,14 +8,14 @@ import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Condition;
 import org.nutz.dao.Dao;
-import org.nutz.dao.ExpGroup;
-import org.nutz.dao.Expression;
 import org.nutz.dao.Sqls;
 import org.nutz.dao.entity.Entity;
-import org.nutz.dao.entity.EntityField;
+import org.nutz.dao.entity.MappingField;
 import org.nutz.dao.entity.Record;
 import org.nutz.dao.pager.Pager;
 import org.nutz.dao.sql.Sql;
+import org.nutz.dao.util.cri.SqlExpression;
+import org.nutz.dao.util.cri.SqlExpressionGroup;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
 /**
@@ -242,13 +241,13 @@ public class BasicDao {
 	public <T> List<T> searchPageByLike(Class<T> c,String value,String orderby,int currentPage,int pageSize){
 		Entity<T> entity = dao.getEntity(c);
 		
-		Collection<EntityField> fields =  entity.fields();
+		List<MappingField> fields =  entity.getMappingFields();
 		
-		ExpGroup group = null;
+		SqlExpressionGroup group = null;
 		
-		for(EntityField f:fields){
+		for(MappingField f:fields){
 			if(!f.isId()){
-				Expression e = Cnd.exp(f.getColumnName(), "LIKE", "%"+value+"%");
+				SqlExpression e = Cnd.exp(f.getColumnName(), "LIKE", "%"+value+"%");
 				if(group==null){
 					group = Cnd.exps(e);
 				}else{
@@ -275,13 +274,13 @@ public class BasicDao {
 	public <T> int searchPageByLike(Class<T> c,String value){
 		Entity<T> entity = dao.getEntity(c);
 		
-		Collection<EntityField> fields =  entity.fields();
+List<MappingField> fields =  entity.getMappingFields();
 		
-		ExpGroup group = null;
+		SqlExpressionGroup group = null;
 		
-		for(EntityField f:fields){
+		for(MappingField f:fields){
 			if(!f.isId()){
-				Expression e = Cnd.exp(f.getColumnName(), "LIKE", "%"+value+"%");
+				SqlExpression e = Cnd.exp(f.getColumnName(), "LIKE", "%"+value+"%");
 				if(group==null){
 					group = Cnd.exps(e);
 				}else{
@@ -481,7 +480,7 @@ public class BasicDao {
 	 * @return
 	 */
 	public <T> List<T> searchByRelation(Class<T> c,String joinTabel,String cloumnName,Condition condition,
-			ExpGroup group,String orderby,int currentPage,int pageSize){
+			SqlExpressionGroup group,String orderby,int currentPage,int pageSize){
 		Entity<T> entity = dao.getEntity(c);
 			
 		List<Record> records  = dao.query(joinTabel, condition, null);
@@ -497,7 +496,7 @@ public class BasicDao {
 		
 		Pager pager = dao.createPager(currentPage, pageSize);
 		
-		Expression e =  Cnd.exp(entity.getIdField().getColumnName(),"in", Castors.me().castTo(ids, int[].class));
+		SqlExpression e =  Cnd.exp(entity.getIdField().getColumnName(),"in", Castors.me().castTo(ids, int[].class));
 		
 		ids = null;
 
@@ -514,7 +513,7 @@ public class BasicDao {
 	 * @param orderby 排序方式 
 	 * @return
 	 */
-	public <T> int searchCount(Class<T> c,String joinTabel,String cloumnName,Condition condition,ExpGroup group,String orderby){
+	public <T> int searchCount(Class<T> c,String joinTabel,String cloumnName,Condition condition,SqlExpressionGroup group,String orderby){
 		Entity<T> entity = dao.getEntity(c);
 		
 		
@@ -530,7 +529,7 @@ public class BasicDao {
 			return 0;
 		}
 		
-		Expression e =  Cnd.exp(entity.getIdField().getColumnName(),"in", Castors.me().castTo(ids, int[].class));
+		SqlExpression e =  Cnd.exp(entity.getIdField().getColumnName(),"in", Castors.me().castTo(ids, int[].class));
 		
 		group = group.and(e);
 		

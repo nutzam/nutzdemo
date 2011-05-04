@@ -6,7 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.nutz.dao.Cnd;
-import org.nutz.dao.Expression;
+import org.nutz.dao.util.cri.SqlExpression;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
@@ -159,7 +159,7 @@ public class MessageAction extends BaseAction {
 		mess.setEmail(FilterHTMLTag.delHTMLTag(mess.getEmail()));
 		mess.setInsertTime(new Date());
 		if (basicDao.save(mess) != null) {
-			Expression e = Cnd.exp("navid", "=", mess.getNavid());
+			SqlExpression e = Cnd.exp("navid", "=", mess.getNavid());
 
 			List<Message> list = basicDao.searchByPage(Message.class, Cnd
 					.where(e).desc("insertTime"), 1, SystemContext.PAGE_SIZE);

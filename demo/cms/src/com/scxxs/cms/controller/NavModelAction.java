@@ -17,8 +17,8 @@ import org.apache.log4j.Logger;
 import org.nutz.castor.Castors;
 import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
-import org.nutz.dao.ExpGroup;
-import org.nutz.dao.Expression;
+import org.nutz.dao.util.cri.SqlExpression;
+import org.nutz.dao.util.cri.SqlExpressionGroup;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
@@ -94,7 +94,7 @@ public class NavModelAction {
 	 */
 	private String n() {
 
-		Expression e = Cnd.exp("pid", "=", 0);
+		SqlExpression e = Cnd.exp("pid", "=", 0);
 
 		// 查询出所有父导航的数据
 		List<NavModel> models = messageTypeDao.search(	NavModel.class,
@@ -362,7 +362,7 @@ public class NavModelAction {
 	@SuppressWarnings("unchecked")
 	private List<Article> getArticle(int pid, int dataSize, HttpServletRequest req) {
 
-		Expression e1 = Cnd.where("show", "=", 1);
+		SqlExpression e1 = Cnd.where("show", "=", 1).where();
 
 		List<NavModel> modules = null;
 		if (pid == 103) {
@@ -384,7 +384,7 @@ public class NavModelAction {
 
 			List<Integer> ids = getIds(modules);
 
-			Expression e = Cnd.exp("navmodel_id", "in", Castors.me().castTo(ids, int[].class));
+			SqlExpression e = Cnd.exp("navmodel_id", "in", Castors.me().castTo(ids, int[].class));
 
 			datas = messageTypeDao.searchByRelation(Article.class,
 													"t_article_nav",
@@ -570,9 +570,9 @@ public class NavModelAction {
 		if (type.compareTo(TemplateType.ABOUT) == 0) {
 			// 查询一篇文章数据
 
-			Expression e1 = Cnd.where("show", "=", 1);
+			SqlExpression e1 = Cnd.where("show", "=", 1).where();
 
-			ExpGroup group = Cnd.exps(e1).and("navid", "=", model.getId());
+			SqlExpressionGroup group = Cnd.exps(e1).and("navid", "=", model.getId());
 
 			OneArticle article = messageTypeDao.findByCondition(OneArticle.class, Cnd.where(group));
 
@@ -602,7 +602,7 @@ public class NavModelAction {
 			// 查询多篇文章数据
 			// ArticleDao messageTypeDao = new ArticleDao(ioc);
 
-			ExpGroup group = Cnd.exps("show", "=", 1);
+			SqlExpressionGroup group = Cnd.exps("article_show", "=", 1);
 
 			List<Article> articles = messageTypeDao.searchByRelation(	Article.class,
 																		"t_article_nav",
@@ -648,7 +648,7 @@ public class NavModelAction {
 			Cnd condition = Cnd.where("navid", "=", navid);
 			req.setAttribute("navid", navid);
 			MessageType mest = messageTypeDao.findByCondition(MessageType.class, condition);
-			Expression e = Cnd.exp("navid", "=", navid);
+			SqlExpression e = Cnd.exp("navid", "=", navid);
 			int count = messageTypeDao.searchCount(Message.class, Cnd.where(e));
 			int maxPage = messageTypeDao.maxPageSize(count, SystemContext.PAGE_SIZE);
 			List<Message> list = messageTypeDao.searchByPage(	Message.class,

@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.nutz.castor.Castors;
 import org.nutz.dao.Cnd;
-import org.nutz.dao.ExpGroup;
-import org.nutz.dao.Expression;
+import org.nutz.dao.util.cri.SqlExpression;
+import org.nutz.dao.util.cri.SqlExpressionGroup;
 import org.nutz.ioc.annotation.InjectName;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.mvc.View;
@@ -85,11 +85,11 @@ public class IndexAction extends BaseAction {
 	private void buildData(String key, int pid, int dataSize,
 			HttpServletRequest req) {
 
-		Expression e1 = Cnd.where("top", "=", 1);
-		Expression e2 = Cnd.where("show", "=", 1);
-		Expression e3 = Cnd.where("shenhe", "=", 1);
+//		SqlExpression e1 = Cnd.where("top", "=", 1);
+//		SqlExpression e2 = Cnd.where("show", "=", 1);
+//		SqlExpression e3 = Cnd.where("shenhe", "=", 1);
 
-		ExpGroup group = Cnd.exps(e1).and(e2).and(e3);
+		SqlExpressionGroup group = Cnd.where("top", "=", 1).where().and("show", "=", 1).and("shenhe", "=", 1);
 		List<NavModel> modules = null;
 		if (pid == 103) {
 			Object o = req.getSession().getAttribute("modules");
@@ -110,11 +110,11 @@ public class IndexAction extends BaseAction {
 
 			List<Integer> ids = getIds(modules);
 
-			Expression e = Cnd.exp("navmodel_id", "in",
+			Cnd e = Cnd.where("navmodel_id", "in",
 					Castors.me().castTo(ids, int[].class));
 
 			datas = basicDao.searchByRelation(Article.class, "t_article_nav",
-					"article_id", Cnd.where(e), group, "article_createDate DESC , article_color", 1,
+					"article_id", e, Cnd.exps(group), "article_createDate DESC , article_color", 1,
 					dataSize);
 
 		} else {
@@ -139,12 +139,12 @@ public class IndexAction extends BaseAction {
 	@At("/index/xml")
 	public void xml(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
-		Expression e1 = Cnd.where("top", "=", 1);
-		Expression e2 = Cnd.where("show", "=", 1);
-		Expression e3 = Cnd.where("shenhe", "=", 1);
-		Expression e4 = Cnd.where("hasPic", "=", 1);
+//		Expression e1 = Cnd.where("top", "=", 1);
+//		Expression e2 = Cnd.where("show", "=", 1);
+//		Expression e3 = Cnd.where("shenhe", "=", 1);
+//		Expression e4 = Cnd.where("hasPic", "=", 1);
 
-		ExpGroup group = Cnd.exps(e1).and(e2).and(e3).and(e4);
+		SqlExpressionGroup group = Cnd.where("top", "=", 1).where().and("show", "=", 1).and("shenhe", "=", 1).and("hasPic", "=", 1);
 
 		List<NavModel> modules = null;
 
@@ -159,7 +159,7 @@ public class IndexAction extends BaseAction {
 
 		List<Integer> ids = getIds(modules);
 
-		Expression e = Cnd.exp("navmodel_id", "in",
+		SqlExpression e = Cnd.exp("navmodel_id", "in",
 				Castors.me().castTo(ids, int[].class));
 
 		List<Article> articles = basicDao.searchByRelation(Article.class,
