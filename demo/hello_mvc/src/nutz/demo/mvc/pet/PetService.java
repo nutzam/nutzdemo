@@ -8,7 +8,7 @@ import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.lang.Files;
 import org.nutz.service.IdNameEntityService;
 
-@IocBean(field = {"dao"})
+@IocBean(fields = {"dao"})
 public class PetService extends IdNameEntityService<Pet> {
 
 	public PetService() {

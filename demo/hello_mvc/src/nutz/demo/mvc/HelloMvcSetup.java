@@ -3,12 +3,12 @@ package nutz.demo.mvc;
 import java.sql.Timestamp;
 
 import nutz.demo.mvc.pet.Master;
+import nutz.demo.mvc.pet.Pet;
 
 import org.nutz.dao.Dao;
-import org.nutz.dao.tools.Tables;
 import org.nutz.ioc.Ioc;
+import org.nutz.mvc.NutConfig;
 import org.nutz.mvc.Setup;
-import org.nutz.mvc.init.NutConfig;
 
 public class HelloMvcSetup implements Setup {
 
@@ -20,7 +20,8 @@ public class HelloMvcSetup implements Setup {
 		Dao dao = ioc.get(Dao.class, "dao");
 		if (!dao.exists("t_pet")) {
 			// Create tables
-			Tables.define(dao, Tables.loadFrom("tables.dod"));
+			dao.create(Pet.class, false);
+			dao.create(Master.class, false);
 
 			// Create master account
 			Master m = new Master();

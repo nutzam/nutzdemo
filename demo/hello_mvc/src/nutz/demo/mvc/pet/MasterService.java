@@ -4,7 +4,7 @@ import org.nutz.dao.Dao;
 import org.nutz.ioc.loader.annotation.IocBean;
 import org.nutz.service.IdNameEntityService;
 
-@IocBean(field = {"dao"})
+@IocBean(fields = {"dao"})
 public class MasterService extends IdNameEntityService<Master> {
 
 	public MasterService() {
