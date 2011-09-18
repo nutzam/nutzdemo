@@ -8,10 +8,10 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 
+import org.nutz.ioc.annotation.InjectName;
 import org.nutz.mvc.annotation.AdaptBy;
 import org.nutz.mvc.annotation.At;
 import org.nutz.mvc.annotation.Fail;
-import org.nutz.mvc.annotation.InjectName;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.Param;
 import org.nutz.mvc.upload.UploadAdaptor;
@@ -77,7 +77,6 @@ public class GoodModule {
 	 * @param id 商品id
 	 */
 	@At("/paid/*")
-	@Ok
 	public void paid(int id){
 		GoodPaid goodPaid = new GoodPaid();
 		goodPaid.setGoodId(id);
@@ -90,7 +89,6 @@ public class GoodModule {
 	 * @param id 商品id
 	 */
 	@At("/viewed/*")
-	@Ok
 	public void viewed(int id){
 		GoodViewed goodViewed = new GoodViewed();
 		goodViewed.setGoodId(id);
@@ -103,7 +101,6 @@ public class GoodModule {
 	 * @param id 商品id
 	 */
 	@At("/back/*")
-	@Ok
 	public void back(int id){
 		GoodBack goodBack = new GoodBack();
 		goodBack.setGoodId(id);
