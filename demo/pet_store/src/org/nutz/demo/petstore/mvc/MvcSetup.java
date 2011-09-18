@@ -1,21 +1,20 @@
 package org.nutz.demo.petstore.mvc;
 
-import javax.servlet.ServletConfig;
-
+import org.nutz.mvc.NutConfig;
 import org.nutz.mvc.Setup;
 
 public class MvcSetup implements Setup {
 
 	@Override
-	public void destroy(ServletConfig config) {
-		// TODO Auto-generated method stub
-		
+	public void init(NutConfig config) {
+		System.out.println("I start!!");
 	}
 
 	@Override
-	public void init(ServletConfig config) {
-		// TODO Auto-generated method stub
-		
+	public void destroy(NutConfig config) {
+		System.out.println("I stop!!");
 	}
+
+	
 
 }
