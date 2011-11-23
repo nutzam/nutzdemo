@@ -1,0 +1,42 @@
+#title: 准备工作
+
+运行demo之前需要做需要了解的一些事情
+
+1.Eclipse SVN插件的安装与使用
+
+	熟悉的话直接用这个更新地址（http://subclipse.tigris.org/update_1.6.x），大家的Eclipse应该都是3.x的吧？
+	不熟悉请参见官方说明[http://subclipse.tigris.org/servlets/ProjectProcess?pageID=p4wYuA]
+	安装时如果出现以下错误提示：
+    Subclipse Integration for Mylyn 3.x (Optional)（3.0.0）需要 插件“org.eclipse.mylyn.tasks.core（3.0.0）”或者兼容项。
+	直接把出错的选项前的勾去掉，不影响我们使用
+	
+	装好后，建议将SVN仓库加到视图中（Window->show view->SVN Repositories）
+	
+2.链接到nutzdemo的源码库
+		
+	<prepare/new_repositor.jpg>
+	(图中我已经新建了三个，你刚安装好后应该是空的)
+	在弹出的框中输入 http://nutzdemo.googlecode.com/svn/trunk/
+	
+3.目录结构作些说明
+
+	到此，我们的准备工作已经差不多了，但我们仍向你介绍下我们的目录结构
+	
+	点开刚刚建好的地址，会有三个目录,demo,doc,lib 
+	
+	demo中存放所有的demo源码，其中java项目放在java_pj下（目前有三个demo),web项目放在web_pj下(目前也有三个demo)，这样分是因为几个java项目可以迁出到一个工程里面。
+		
+	doc中存放的demo的说明文档和api
+	
+	lib中放的是nutz的核心jar包和几个demo中可能需要的jar包，在具体的demo中我们会说明
+
+4.迁出lib中的jar包备用
+	
+	如果你已经下载过nutz的核心jar包和一些项目中用到的依赖包，则略过此步
+	
+	将SVN视图中的链接点开，右键lib,选择Export，然后在出来的对话框中选择你自己想放的目录
+	
+	ok,记住这个目录，后面你将会用到	
+
+	
+好了，我们的准备工作和说明已经完成了，下面，让我们迅速的把这些demo跑一遍，以了解nutz给你编程带来的便利和快捷

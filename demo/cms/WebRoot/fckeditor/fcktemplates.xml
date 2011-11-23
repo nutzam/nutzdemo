@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+ * FCKeditor - The text editor for Internet - http://www.fckeditor.net
+ * Copyright (C) 2003-2009 Frederico Caldeira Knabben
+ *
+ * == BEGIN LICENSE ==
+ *
+ * Licensed under the terms of any of the following licenses at your
+ * choice:
+ *
+ *  - GNU General Public License Version 2 or later (the "GPL")
+ *    http://www.gnu.org/licenses/gpl.html
+ *
+ *  - GNU Lesser General Public License Version 2.1 or later (the "LGPL")
+ *    http://www.gnu.org/licenses/lgpl.html
+ *
+ *  - Mozilla Public License Version 1.1 or later (the "MPL")
+ *    http://www.mozilla.org/MPL/MPL-1.1.html
+ *
+ * == END LICENSE ==
+ *
+ * This is the sample templates definitions file. It makes the "templates"
+ * command completely customizable.
+ *
+ * See FCKConfig.TemplatesXmlPath in the configuration file.
+-->
+<Templates imagesBasePath="fck_template/images/">
+	<Template title="Image and Title" image="template1.gif">
+		<Description>One main image with a title and text that surround the image.</Description>
+		<Html>
+			<![CDATA[
+				<img style="MARGIN-RIGHT: 10px" height="100" alt="" width="100" align="left"/>
+				<h3>Type the title here</h3>
+				Type the text here
+			]]>
+		</Html>
+	</Template>
+	<Template title="Strange Template" image="template2.gif">
+		<Description>A template that defines two colums, each one with a title, and some text.</Description>
+		<Html>
+			<![CDATA[
+				<table cellspacing="0" cellpadding="0" width="100%" border="0">
+					<tbody>
+						<tr>
+							<td width="50%">
+							<h3>Title 1</h3>
+							</td>
+							<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+							<td width="50%">
+							<h3>Title 2</h3>
+							</td>
+						</tr>
+						<tr>
+							<td>Text 1</td>
+							<td>&nbsp;</td>
+							<td>Text 2</td>
+						</tr>
+					</tbody>
+				</table>
+				More text goes here.
+			]]>
+		</Html>
+	</Template>
+	<Template title="Text and Table" image="template3.gif">
+		<Description>A title with some text and a table.</Description>
+		<Html>
+			<![CDATA[
+				<table align="left" width="80%" border="0" cellspacing="0" cellpadding="0"><tr><td>
+					<h3>Title goes here</h3>
+					<p>
+					<table style="FLOAT: right" cellspacing="0" cellpadding="0" width="150" border="1">
+						<tbody>
+							<tr>
+								<td align="center" colspan="3"><strong>Table title</strong></td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+							<tr>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+								<td>&nbsp;</td>
+							</tr>
+						</tbody>
+					</table>
+					Type the text here</p>
+				</td></tr></table>
+			]]>
+		</Html>
+	</Template>
+		<Template title="红头文件" image="template3.gif">
+		<Description>红头文件常用格式</Description>
+		<Html>
+			<![CDATA[
+			<center>
+				<div align='center' style="width:795px;border:black 1px solid;">
+					<!--标题-->
+					<div style="margin-top:235px;">
+						<font style="color:red;font-size:45px;font-family:宋体;">
+							某某市人民政府办公室文件(<span style="color:black;font-family:宋体;font-size:25px;">通知</span>)
+						</font>
+					</div>
+					<!--文件号-->
+					<div style="margin-top:40px;">
+						<font style="font-size:20px;font-family:仿宋_GB2312;">某某发〔2010〕X号</font>
+					</div>
+					<!--红色分割线-->
+					<div style="margin-top:20px;width:82%;text-align:center;">
+						<center><hr style="border:red 1px solid;"/></center>
+					</div>
+					<!--标题-->
+					<div style="margin-top:40px;" align="center">
+						<font style="font-size:28px;font-family:新宋体;">
+						关于举办第九十四期学生入党积极分子
+						<br/>
+						暨第十期教职工入党积极分子培训班的通知
+						</font>
+					</div>
+					<!--内容-->
+					<div style="margin-left:100px;margin-top:40px;font-family:仿宋_GB2312;font-size:20px;" align="left">
+						XXX支部：<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;经党校研究决定，第九十四期学生入党积极分子暨第十期教<br/>
+						职工入党积极分子培训班将于2008—2009学年第一学期在盘旋<br/>
+						路校区举行。<br/>
+					</div>
+					<!--署名-->
+					<div  style="width:795px;margin-top:120px;font-family:仿宋_GB2312;font-size:20px;text-align:left;">
+						&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 中共兰州大学委员会党校
+					</div>
+					<!--时间-->
+					<div  style="width:795px;margin-top:5px;font-family:仿宋_GB2312;font-size:20px;text-align:left;">
+						&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 二〇〇八年八月二十八日
+					</div>
+					
+					<!--主题词-->
+					<div style="margin-top:315px;font-family:仿宋_GB2312;font-size:20px;margin-left:100px;text-align:left;">
+						<span style="font-family:黑体;font-size:20px;">主题词：</span><span>公文</span>
+					</div>
+					<!--黑色分割线-->
+					<div style="margin-top:5px;width:82%;text-align:center;">
+						<center><hr style="border:black 1px solid;"/></center>
+					</div>
+					<!--印发时间-->
+					<div style="font-family:仿宋_GB2312;font-size:20px;margin-left:100px;text-align:left;">
+						XXX办公室            2008年8月28日印发
+					</div>
+					<!--黑色分割线-->
+					<div style="margin-top:5px;width:82%;text-align:center;">
+						<center><hr style="border:black 1px solid;"/></center>
+					</div>
+				</div>
+			</center>	
+			]]>
+		</Html>
+	</Template>
+</Templates>

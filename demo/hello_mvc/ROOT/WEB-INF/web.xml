@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>Nutz demo:: hello Mvc</display-name>
+
+	<!--
+		将 Nutz.Mvc 框架挂接在任何 JSP/Servlet 容器中的办法之一就是显示的声明它。 它提供了一个 HttpServlet
+		(org.nutz.mvc.NutzServlet) 的实现，你需要为它 声明一个参数，这个参数指出一个类名，这个类就是你的应用的唯一配置。
+
+		这个类可以是一个普通的 POJO，上面声明了一些特殊的注解。详细情况，请打开 nutz.demo.mvc.HelloModules
+		的源文件，里面有详细的注释。
+	-->
+	<servlet>
+		<servlet-name>nutz-demo</servlet-name>
+		<servlet-class>org.nutz.mvc.NutServlet</servlet-class>
+		<init-param>
+			<param-name>modules</param-name>
+			<param-value>nutz.demo.mvc.MainModule</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>nutz-demo</servlet-name>
+		<url-pattern>*.nut</url-pattern>
+	</servlet-mapping>
+
+	<!--
+		Nutz.Mvc 还提供了一个过滤器，你可以用这个过滤器为所有的直接访问的 jsp 设置必要的 Request 属性。 比如 ${base}
+		以及 ${msg}
+	-->
+	<filter>
+		<filter-name>msgs</filter-name>
+		<filter-class>org.nutz.mvc.NutFilter</filter-class>
+		<init-param>
+			<param-name>skip-mode</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>msgs</filter-name>
+		<url-pattern>*.jsp</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>msgs</filter-name>
+		<url-pattern>*.jspx</url-pattern>
+	</filter-mapping>
+
+	<!--
+		如果你的应用，在 Session 中保存了一些需要注销的对象，比如你在 Ioc 容器中将一个 DataSource 对象的范围设成
+		"session"，那么请启用将下面的监听器，它会在一个 session 注销时，关闭 DataSource
+	-->
+	<!--
+		<listener>
+		<listener-class>org.nutz.mvc.NutSessionListener</listener-class>
+		</listener>
+	-->
+</web-app>

@@ -1,0 +1,16 @@
+t_pet {
+	id  INT +PK,
+	name VARCHAR(20) !UNIQUE,
+	race VARCHAR(20),
+	age INT,
+	mid INT !,
+	color VARCHAR(10),
+	photo VARCHAR(256)
+}
+
+t_master {
+  id  INT +PK,
+  name VARCHAR(20) !UNIQUE,
+  pwd VARCHAR(20) !,
+  birthday TIMESTAMP 
+}

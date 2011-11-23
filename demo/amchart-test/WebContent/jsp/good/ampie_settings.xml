@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <background>
+    <alpha>100</alpha>
+    <border_alpha>20</border_alpha>
+  </background>
+  <legend>
+    <enabled>0</enabled>
+    <align>center</align>
+  </legend>
+  <pie>
+    <y>50%</y>
+    <inner_radius>30</inner_radius>
+    <height>20</height>
+    <angle>20</angle>
+  </pie>
+  <data_labels>
+    <show><![CDATA[{title}: {percents}% ({value}) <br>{description}]]></show>
+    <max_width>140</max_width>
+  </data_labels>
+  <labels>
+    <label lid="0">
+      <text>情况分析</text>
+      <y>30</y>
+      <text_size>12</text_size>
+      <align>center</align>
+    </label>
+  </labels>
+</settings>

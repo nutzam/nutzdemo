@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+	<series>
+		<value xid="0">Xbox 360</value>
+		<value xid="1">PlayStation 3</value>
+		<value xid="2">Wii</value>
+	</series>
+	<graphs>
+		<graph gid="0" color="#BEDF66" gradient_fill_colors="#FFFFFF,#BEDF66">
+			<value xid="0" description="GDDR3 RAM (700 MHz)">512</value>
+			<value xid="1" description="XDR RAM (3.2GHz)">256</value>			
+			<value xid="2" description="GDDR3 RAM">64</value>
+		</graph>
+	</graphs>
+	
+  <labels>             
+    <label lid="0">
+      <x>0</x>                 
+      <y>20</y>                
+      <rotate></rotate>        
+      <width></width>          
+      <align>center</align>      
+      <text_color></text_color>
+      <text_size></text_size>  
+      <text>                   
+        <![CDATA[<b>Main System RAM</b>]]>
+      </text>        
+    </label>
+  </labels>
+     	
+</chart>

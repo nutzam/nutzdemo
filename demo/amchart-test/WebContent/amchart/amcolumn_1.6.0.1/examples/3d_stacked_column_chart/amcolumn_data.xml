@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chart>
+	<series>
+		<value xid="2002">2002</value>
+		<value xid="2004">2004</value>
+		<value xid="2005">2005</value>
+	</series>
+	<graphs>
+		<graph gid="Equities" title="Equities">
+			<value xid="2002">20</value>
+			<value xid="2004">28</value>			
+			<value xid="2005">30</value>
+		</graph>
+		<graph gid="Fixed Income" title="Fixed Income">
+			<value xid="2002">30</value>
+			<value xid="2004">24</value>			
+			<value xid="2005">21</value>
+		</graph>		
+		<graph gid="Cash/Deposits" title="Cash/Deposits">
+			<value xid="2002">25</value>
+			<value xid="2004">13</value>			
+			<value xid="2005">13</value>
+		</graph>		
+		<graph gid="Real Estate" title="Real Estate">
+			<value xid="2002">15</value>
+			<value xid="2004">16</value>			
+			<value xid="2005">16</value>
+		</graph>		    		
+		<graph gid="Alternative" title="Alternative">
+			<value xid="2002">10</value>
+			<value xid="2004">19</value>			
+			<value xid="2005">20</value>
+		</graph>				
+	</graphs>
+</chart>
