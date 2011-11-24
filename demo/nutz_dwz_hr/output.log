@@ -1,0 +1,794 @@
+2011-11-24 11:44:12,453 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - Loading by class org.nutz.mvc.impl.NutLoading
+2011-11-24 11:44:12,515 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz Version : 1.b.41 
+2011-11-24 11:44:12,515 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz.Mvc[nutz] is initializing ...
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading - Web Container Information:
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Default Charset : UTF-8
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Current . path  : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\.
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Java Version    : 1.6.0_13
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - File separator  : \
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Timezone        : Asia/Shanghai
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading - >> app.root = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot
+2011-11-24 11:44:12,515 [main] DEBUG org.nutz.mvc.impl.NutLoading - @IocBy(org.nutz.mvc.ioc.provider.ComboIocProvider)
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@552a2b
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,546 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,562 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,562 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,562 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,578 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,578 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,593 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,593 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,593 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:44:12,593 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\ioc , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:44:12,593 [main] DEBUG org.nutz.resource.Scans - Found 3 resource by src( ioc/ ) , regex( ^(.+[.])(js|json)$ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.ioc.loader.json.JsonLoader - Loaded 11 bean define from path=[ioc/]
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@552a2b
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:12,687 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\cn\nutz_dwz_hr , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:44:13,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.AccountEmployeeModule
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.AccountEmployeeModule as [accountEmployeeModule]
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.AccountModule
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.AccountModule as [accountModule]
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.HourlyWagesModule
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.HourlyWagesModule as [hourlyWagesModule]
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PayrollModule
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PayrollModule as [payrollModule]
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PieceRateModule
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PieceRateModule as [pieceRateModule]
+2011-11-24 11:44:13,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PreinstallProcessModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PreinstallProcessModule as [preinstallProcessModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.ProcessModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.ProcessModule as [processModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.ProductModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.ProductModule as [productModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule as [revenueInfoSetModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.SalaryItemModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.SalaryItemModule as [salaryItemModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.SalaryModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.SalaryModule as [salaryModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.TypeOfWorkModule
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.TypeOfWorkModule as [typeOfWorkModule]
+2011-11-24 11:44:13,250 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.UploadModule
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.UploadModule as [uploadModule]
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.WageInterfaceModule
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.WageInterfaceModule as [wageInterfaceModule]
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@552a2b
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 79 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,265 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,281 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,281 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 79 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,281 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,281 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:44:13,359 [main] DEBUG org.nutz.castor.Castors - Using 78 castor for Castors
+2011-11-24 11:44:13,359 [main] INFO  org.nutz.ioc.loader.annotation.AnnotationIocLoader - Scan complete ! Found 14 classes in 1 base-packages!
+beans = ["preinstallProcessModule", "salaryItemModule", "payrollModule", "wageInterfaceModule", "typeOfWorkModule", "hourlyWagesModule", "accountEmployeeModule", "productModule", "processModule", "uploadModule", "accountModule", "salaryModule", "pieceRateModule", "revenueInfoSetModule"]
+2011-11-24 11:44:13,375 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:44:13,375 [main] INFO  org.nutz.mvc.impl.NutLoading - Build URL mapping by org.nutz.mvc.impl.UrlMappingImpl ...
+2011-11-24 11:44:13,375 [main] DEBUG org.nutz.mvc.impl.NutLoading - @Views(DefaultViewMaker)
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.mvc.impl.NutLoading - @ChainBy(org.nutz.mvc.impl.NutActionChainMaker)
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.mvc.impl.Loadings -  > scan 'cn.nutz_dwz_hr'
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@552a2b
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:44:13,390 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\cn\nutz_dwz_hr , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.AccountEmployeeModule'
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.AccountModule'
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.HourlyWagesModule'
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PayrollModule'
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PieceRateModule'
+2011-11-24 11:44:13,406 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PreinstallProcessModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.ProcessModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.ProductModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.SalaryItemModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.SalaryModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.TypeOfWorkModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.UploadModule'
+2011-11-24 11:44:13,421 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.WageInterfaceModule'
+2011-11-24 11:44:13,437 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,437 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=json
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(json) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@fe2558)
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get '$aop'<interface org.nutz.ioc.aop.config.AopConfigration>
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=$aop
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject($aop) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@fe2558)
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'$aop'<interface org.nutz.ioc.aop.config.AopConfigration>
+2011-11-24 11:44:13,453 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object '$aop' to [app] 
+2011-11-24 11:44:13,484 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.view.UTF8JsonView , no config to enable AOP.
+2011-11-24 11:44:13,484 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'json' to [app] 
+2011-11-24 11:44:13,484 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.json.JsonFormat , no config to enable AOP.
+2011-11-24 11:44:13,484 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.json.JsonFormat , no config to enable AOP.
+2011-11-24 11:44:13,484 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/add'            >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/list'           >> list(...) : Object | @Ok(jsp:jsp.wage.pieceRate.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/delete'         >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/update'         >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/view'           >> view(...) : PieceRate | @Ok(jsp:jsp.wage.pieceRate.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/addui'          >> addUi(...) : void | @Ok(jsp:jsp.wage.pieceRate.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/editui'         >> editUi(...) : PieceRate | @Ok(jsp:jsp.wage.pieceRate.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/queryui'        >> queryUi(...) : void | @Ok(jsp:jsp.wage.pieceRate.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/delbyids'       >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/add'           >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/list'          >> list(...) : Object | @Ok(jsp:jsp.wage.salaryItem.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/delete'        >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/update'        >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/view'          >> view(...) : SalaryItem | @Ok(jsp:jsp.wage.salaryItem.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/addui'         >> addUi(...) : void | @Ok(jsp:jsp.wage.salaryItem.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/editui'        >> editUi(...) : SalaryItem | @Ok(jsp:jsp.wage.salaryItem.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/queryui'       >> queryUi(...) : void | @Ok(jsp:jsp.wage.salaryItem.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,515 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/delbyids'      >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.payroll.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/view'             >> view(...) : Payroll | @Ok(jsp:jsp.wage.payroll.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.payroll.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/editui'           >> editUi(...) : Payroll | @Ok(jsp:jsp.wage.payroll.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.payroll.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,531 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/add'           >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/list'          >> list(...) : Object | @Ok(jsp:jsp.wage.typeOfWork.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/delete'        >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/update'        >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/view'          >> view(...) : TypeOfWork | @Ok(jsp:jsp.wage.typeOfWork.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/addui'         >> addUi(...) : void | @Ok(jsp:jsp.wage.typeOfWork.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/editui'        >> editUi(...) : TypeOfWork | @Ok(jsp:jsp.wage.typeOfWork.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/queryui'       >> queryUi(...) : void | @Ok(jsp:jsp.wage.typeOfWork.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/delbyids'      >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/add'    >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/list'   >> list(...) : Object | @Ok(jsp:jsp.wage.preinstallProcess.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/delete' >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/update' >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/view'   >> view(...) : PreinstallProcess | @Ok(jsp:jsp.wage.preinstallProcess.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/addui'  >> addUi(...) : void | @Ok(jsp:jsp.wage.preinstallProcess.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/editui' >> editUi(...) : PreinstallProcess | @Ok(jsp:jsp.wage.preinstallProcess.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/queryui' >> queryUi(...) : void | @Ok(jsp:jsp.wage.preinstallProcess.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/delbyids' >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/add'      >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/list'     >> list(...) : Object | @Ok(jsp:jsp.wage.accountEmployee.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/delete'   >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/update'   >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/view'     >> view(...) : AccountEmployee | @Ok(jsp:jsp.wage.accountEmployee.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/addui'    >> addUi(...) : void | @Ok(jsp:jsp.wage.accountEmployee.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/editui'   >> editUi(...) : AccountEmployee | @Ok(jsp:jsp.wage.accountEmployee.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/queryui'  >> queryUi(...) : void | @Ok(jsp:jsp.wage.accountEmployee.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/delbyids' >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,578 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,578 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/add'               >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/list'              >> list(...) : Object | @Ok(jsp:jsp.wage.salary.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/delete'            >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,640 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,640 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/update'            >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,640 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/view'              >> view(...) : Salary | @Ok(jsp:jsp.wage.salary.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,640 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/addui'             >> addUi(...) : void | @Ok(jsp:jsp.wage.salary.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/editui'            >> editUi(...) : Salary | @Ok(jsp:jsp.wage.salary.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/queryui'           >> queryUi(...) : void | @Ok(jsp:jsp.wage.salary.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/delbyids'          >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.process.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/view'             >> view(...) : Process | @Ok(jsp:jsp.wage.process.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.process.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/editui'           >> editUi(...) : Process | @Ok(jsp:jsp.wage.process.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.process.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/add'       >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/list'      >> list(...) : Object | @Ok(jsp:jsp.wage.revenueInfoSet.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/delete'    >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/update'    >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/view'      >> view(...) : RevenueInfoSet | @Ok(jsp:jsp.wage.revenueInfoSet.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/addui'     >> addUi(...) : void | @Ok(jsp:jsp.wage.revenueInfoSet.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/editui'    >> editUi(...) : RevenueInfoSet | @Ok(jsp:jsp.wage.revenueInfoSet.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/queryui'   >> queryUi(...) : void | @Ok(jsp:jsp.wage.revenueInfoSet.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/delbyids'  >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/add'          >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/list'         >> list(...) : Object | @Ok(jsp:jsp.wage.hourlyWages.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/delete'       >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/update'       >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/view'         >> view(...) : HourlyWages | @Ok(jsp:jsp.wage.hourlyWages.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/addui'        >> addUi(...) : void | @Ok(jsp:jsp.wage.hourlyWages.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/editui'       >> editUi(...) : HourlyWages | @Ok(jsp:jsp.wage.hourlyWages.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/queryui'      >> queryUi(...) : void | @Ok(jsp:jsp.wage.hourlyWages.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/delbyids'     >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/add'        >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/list'       >> list(...) : Object | @Ok(jsp:jsp.wage.wageInterface.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/delete'     >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/update'     >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/view'       >> view(...) : WageInterface | @Ok(jsp:jsp.wage.wageInterface.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/addui'      >> addUi(...) : void | @Ok(jsp:jsp.wage.wageInterface.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/editui'     >> editUi(...) : WageInterface | @Ok(jsp:jsp.wage.wageInterface.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/queryui'    >> queryUi(...) : void | @Ok(jsp:jsp.wage.wageInterface.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/delbyids'   >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.account.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/view'             >> view(...) : Account | @Ok(jsp:jsp.wage.account.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.account.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/editui'           >> editUi(...) : Account | @Ok(jsp:jsp.wage.account.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.account.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.product.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/view'             >> view(...) : Product | @Ok(jsp:jsp.wage.product.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.product.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/editui'           >> editUi(...) : Product | @Ok(jsp:jsp.wage.product.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.product.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'upload'<class org.nutz.mvc.adaptor.PairAdaptor>
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=upload
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(upload) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@fe2558)
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'upload'<class org.nutz.mvc.adaptor.PairAdaptor>
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadAdaptor , no config to enable AOP.
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'upload' to [app] 
+2011-11-24 11:44:13,718 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadingContext , no config to enable AOP.
+2011-11-24 11:44:13,734 [main] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/tmp [2000]
+2011-11-24 11:44:13,734 [main] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\tmp'
+2011-11-24 11:44:13,734 [main] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadingContext , no config to enable AOP.
+2011-11-24 11:44:13,750 [main] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/tmp [2000]
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\tmp'
+2011-11-24 11:44:13,750 [main] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/upload/normal'            >> upload(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/upload/html5'             >> uploadHtml5(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.mvc.impl.NutLoading - Localization message: 'msg'
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@552a2b
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.40-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\lombok.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.14.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\db2jcc.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\msg , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.resource.Scans - Found 2 resource by src( msg ) , regex( ^.+[.]properties$ )
+2011-11-24 11:44:13,750 [main] DEBUG org.nutz.mvc.impl.NutMessageLoader - Load Messages in 2 resource : [[NutResource[blog.properties], NutResource[en_US/blog.properties]]]
+2011-11-24 11:44:13,765 [main] DEBUG org.nutz.mvc.impl.NutMessageLoader - Message Loaded, size = 2
+2011-11-24 11:44:13,765 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz.Mvc[nutz] is up in 1250ms
+2011-11-24 11:44:16,671 [qtp29087666-16 - /] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/'
+2011-11-24 11:44:16,703 [qtp29087666-16 - /] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/index'
+2011-11-24 11:44:17,109 [qtp29087666-17 - /dwz.frag.xml?_=1322106257109] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/dwz.frag'
+2011-11-24 11:44:17,421 [qtp29087666-15 - /favicon.ico] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/favicon'
+2011-11-24 11:44:40,843 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (DEFT&[]) for path '/Account/list'
+2011-11-24 11:44:40,843 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - Get 'accountModule'<class cn.nutz_dwz_hr.wage.module.AccountModule>
+2011-11-24 11:44:40,843 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:40,843 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(accountModule) in IocLoader(org.nutz.ioc.loader.annotation.AnnotationIocLoader@17d6c1)
+2011-11-24 11:44:40,843 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'accountModule'<class cn.nutz_dwz_hr.wage.module.AccountModule>
+2011-11-24 11:44:40,859 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class cn.nutz_dwz_hr.wage.module.AccountModule , no config to enable AOP.
+2011-11-24 11:44:40,859 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'accountModule' to [app] 
+2011-11-24 11:44:40,859 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.service.EntityService - Get TypeParams for self : cn.nutz_dwz_hr.wage.bean.Account
+2011-11-24 11:44:40,890 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - Get 'dao'<null>
+2011-11-24 11:44:40,890 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:40,890 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=dao
+2011-11-24 11:44:40,906 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(dao) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@fe2558)
+2011-11-24 11:44:40,906 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'dao'<null>
+2011-11-24 11:44:40,921 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.dao.impl.NutDao , no config to enable AOP.
+2011-11-24 11:44:40,921 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'dao' to [app] 
+2011-11-24 11:44:40,937 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - Get 'dataSource'<null>
+2011-11-24 11:44:40,937 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:44:40,937 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=dataSource
+2011-11-24 11:44:40,937 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(dataSource) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@fe2558)
+2011-11-24 11:44:40,937 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'dataSource'<null>
+2011-11-24 11:44:40,953 [qtp29087666-17 - /favicon.ico] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/favicon'
+2011-11-24 11:44:40,968 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.apache.commons.dbcp.BasicDataSource , no config to enable AOP.
+2011-11-24 11:44:40,968 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'dataSource' to [app] 
+2011-11-24 11:44:41,031 [qtp29087666-19 - /Account/list?_=1322106280834] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/.nutz/tmp/dao/ [2000]
+2011-11-24 11:44:41,031 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\.nutz\tmp\dao'
+2011-11-24 11:44:41,031 [qtp29087666-19 - /Account/list?_=1322106280834] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:44:44,390 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.mvc.impl.processor.ModuleProcessor - Handle URL[/Account/list] by Method[public java.lang.Object cn.nutz_dwz_hr.wage.module.AccountModule.list(int,int,cn.nutz_dwz_hr.wage.bean.Account)]
+2011-11-24 11:44:44,453 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.dao.impl.sql.run.NutDaoExecutor - SELECT * FROM HR_ACCOUNT  WHERE 1=? LIMIT 20 OFFSET 0 
+    | 1 |
+    |---|
+    | 1 |
+  For example:> "SELECT * FROM HR_ACCOUNT  WHERE 1=1 LIMIT 20 OFFSET 0 "
+2011-11-24 11:44:44,468 [qtp29087666-19 - /Account/list?_=1322106280834] DEBUG org.nutz.dao.impl.sql.run.NutDaoExecutor - SELECT COUNT(*) FROM HR_ACCOUNT  WHERE 1=?
+    | 1 |
+    |---|
+    | 1 |
+  For example:> "SELECT COUNT(*) FROM HR_ACCOUNT  WHERE 1=1"
+2011-11-24 11:50:05,031 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:50:05,062 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - Loading by class org.nutz.mvc.impl.NutLoading
+2011-11-24 11:50:05,062 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz Version : 1.b.41 
+2011-11-24 11:50:05,062 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz.Mvc[nutz] is initializing ...
+2011-11-24 11:50:05,062 [main] DEBUG org.nutz.mvc.impl.NutLoading - Web Container Information:
+2011-11-24 11:50:05,062 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Default Charset : UTF-8
+2011-11-24 11:50:05,062 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Current . path  : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\.
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Java Version    : 1.6.0_13
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - File separator  : \
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.impl.NutLoading -  - Timezone        : Asia/Shanghai
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.impl.NutLoading - >> app.root = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot
+2011-11-24 11:50:05,078 [main] DEBUG org.nutz.mvc.impl.NutLoading - @IocBy(org.nutz.mvc.ioc.provider.ComboIocProvider)
+2011-11-24 11:50:05,093 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@24c414
+2011-11-24 11:50:05,093 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,109 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,125 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,125 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^(.+[.])(js|json)$ ) base on src ( ioc/ )
+2011-11-24 11:50:05,125 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\ioc , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:50:05,125 [main] DEBUG org.nutz.resource.Scans - Found 3 resource by src( ioc/ ) , regex( ^(.+[.])(js|json)$ )
+2011-11-24 11:50:05,125 [main] DEBUG org.nutz.ioc.loader.json.JsonLoader - Loaded 11 bean define from path=[ioc/]
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@24c414
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,140 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\cn\nutz_dwz_hr , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:50:05,187 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.AccountEmployeeModule
+2011-11-24 11:50:05,203 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.AccountEmployeeModule as [accountEmployeeModule]
+2011-11-24 11:50:05,203 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.AccountModule
+2011-11-24 11:50:05,203 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.AccountModule as [accountModule]
+2011-11-24 11:50:05,203 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.HourlyWagesModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.HourlyWagesModule as [hourlyWagesModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PayrollModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PayrollModule as [payrollModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PieceRateModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PieceRateModule as [pieceRateModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.PreinstallProcessModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.PreinstallProcessModule as [preinstallProcessModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.ProcessModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.ProcessModule as [processModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.ProductModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.ProductModule as [productModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule as [revenueInfoSetModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.SalaryItemModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.SalaryItemModule as [salaryItemModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.SalaryModule
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.SalaryModule as [salaryModule]
+2011-11-24 11:50:05,218 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.TypeOfWorkModule
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.TypeOfWorkModule as [typeOfWorkModule]
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.UploadModule
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.UploadModule as [uploadModule]
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Found a Class with Ioc-Annotation : class cn.nutz_dwz_hr.wage.module.WageInterfaceModule
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.ioc.loader.annotation.AnnotationIocLoader - Processed Ioc Class : class cn.nutz_dwz_hr.wage.module.WageInterfaceModule as [wageInterfaceModule]
+2011-11-24 11:50:05,234 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@24c414
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 79 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,250 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( org/nutz/castor/castor/ )
+2011-11-24 11:50:05,312 [main] DEBUG org.nutz.castor.Castors - Using 78 castor for Castors
+2011-11-24 11:50:05,312 [main] INFO  org.nutz.ioc.loader.annotation.AnnotationIocLoader - Scan complete ! Found 14 classes in 1 base-packages!
+beans = ["preinstallProcessModule", "salaryItemModule", "payrollModule", "wageInterfaceModule", "typeOfWorkModule", "hourlyWagesModule", "accountEmployeeModule", "productModule", "processModule", "uploadModule", "accountModule", "salaryModule", "pieceRateModule", "revenueInfoSetModule"]
+2011-11-24 11:50:05,328 [main] DEBUG org.nutz.mvc.config.AbstractNutConfig - MainModule: <cn.nutz_dwz_hr.MainModule>
+2011-11-24 11:50:05,328 [main] INFO  org.nutz.mvc.impl.NutLoading - Build URL mapping by org.nutz.mvc.impl.UrlMappingImpl ...
+2011-11-24 11:50:05,328 [main] DEBUG org.nutz.mvc.impl.NutLoading - @Views(DefaultViewMaker)
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.mvc.impl.NutLoading - @ChainBy(org.nutz.mvc.impl.NutActionChainMaker)
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.mvc.impl.Loadings -  > scan 'cn.nutz_dwz_hr'
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@24c414
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]class$ ) base on src ( cn/nutz_dwz_hr/ )
+2011-11-24 11:50:05,343 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\cn\nutz_dwz_hr , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.AccountEmployeeModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.AccountModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.HourlyWagesModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PayrollModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PieceRateModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.PreinstallProcessModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.ProcessModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.ProductModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.RevenueInfoSetModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.SalaryItemModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.SalaryModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.TypeOfWorkModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.UploadModule'
+2011-11-24 11:50:05,375 [main] DEBUG org.nutz.mvc.impl.Loadings -    >> add 'cn.nutz_dwz_hr.wage.module.WageInterfaceModule'
+2011-11-24 11:50:05,390 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,390 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:05,390 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=json
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(json) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@83b00f)
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get '$aop'<interface org.nutz.ioc.aop.config.AopConfigration>
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=$aop
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject($aop) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@83b00f)
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'$aop'<interface org.nutz.ioc.aop.config.AopConfigration>
+2011-11-24 11:50:05,406 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object '$aop' to [app] 
+2011-11-24 11:50:05,421 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.view.UTF8JsonView , no config to enable AOP.
+2011-11-24 11:50:05,421 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'json' to [app] 
+2011-11-24 11:50:05,421 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.json.JsonFormat , no config to enable AOP.
+2011-11-24 11:50:05,421 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.json.JsonFormat , no config to enable AOP.
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/add'    >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/list'   >> list(...) : Object | @Ok(jsp:jsp.wage.preinstallProcess.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/delete' >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/update' >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/view'   >> view(...) : PreinstallProcess | @Ok(jsp:jsp.wage.preinstallProcess.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/addui'  >> addUi(...) : void | @Ok(jsp:jsp.wage.preinstallProcess.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/editui' >> editUi(...) : PreinstallProcess | @Ok(jsp:jsp.wage.preinstallProcess.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/queryui' >> queryUi(...) : void | @Ok(jsp:jsp.wage.preinstallProcess.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,437 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PreinstallProcess/delbyids' >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/add'           >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/list'          >> list(...) : Object | @Ok(jsp:jsp.wage.salaryItem.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/delete'        >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/update'        >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/view'          >> view(...) : SalaryItem | @Ok(jsp:jsp.wage.salaryItem.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,453 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/addui'         >> addUi(...) : void | @Ok(jsp:jsp.wage.salaryItem.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,468 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/editui'        >> editUi(...) : SalaryItem | @Ok(jsp:jsp.wage.salaryItem.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,468 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/queryui'       >> queryUi(...) : void | @Ok(jsp:jsp.wage.salaryItem.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,468 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,468 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/SalaryItem/delbyids'      >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,484 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,484 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/add'               >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,500 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/list'              >> list(...) : Object | @Ok(jsp:jsp.wage.salary.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,515 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,515 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/delete'            >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,546 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,546 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/update'            >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/view'              >> view(...) : Salary | @Ok(jsp:jsp.wage.salary.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,562 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/addui'             >> addUi(...) : void | @Ok(jsp:jsp.wage.salary.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/editui'            >> editUi(...) : Salary | @Ok(jsp:jsp.wage.salary.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/queryui'           >> queryUi(...) : void | @Ok(jsp:jsp.wage.salary.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Salary/delbyids'          >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,578 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/add'           >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/list'          >> list(...) : Object | @Ok(jsp:jsp.wage.typeOfWork.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/delete'        >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/update'        >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/view'          >> view(...) : TypeOfWork | @Ok(jsp:jsp.wage.typeOfWork.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/addui'         >> addUi(...) : void | @Ok(jsp:jsp.wage.typeOfWork.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/editui'        >> editUi(...) : TypeOfWork | @Ok(jsp:jsp.wage.typeOfWork.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/queryui'       >> queryUi(...) : void | @Ok(jsp:jsp.wage.typeOfWork.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/TypeOfWork/delbyids'      >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.product.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/view'             >> view(...) : Product | @Ok(jsp:jsp.wage.product.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.product.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,593 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/editui'           >> editUi(...) : Product | @Ok(jsp:jsp.wage.product.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.product.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Product/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/add'          >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/list'         >> list(...) : Object | @Ok(jsp:jsp.wage.hourlyWages.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/delete'       >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/update'       >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/view'         >> view(...) : HourlyWages | @Ok(jsp:jsp.wage.hourlyWages.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/addui'        >> addUi(...) : void | @Ok(jsp:jsp.wage.hourlyWages.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/editui'       >> editUi(...) : HourlyWages | @Ok(jsp:jsp.wage.hourlyWages.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/queryui'      >> queryUi(...) : void | @Ok(jsp:jsp.wage.hourlyWages.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/HourlyWages/delbyids'     >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.account.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,609 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/view'             >> view(...) : Account | @Ok(jsp:jsp.wage.account.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.account.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/editui'           >> editUi(...) : Account | @Ok(jsp:jsp.wage.account.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.account.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Account/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'upload'<class org.nutz.mvc.adaptor.PairAdaptor>
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=upload
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(upload) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@83b00f)
+2011-11-24 11:50:05,625 [main] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'upload'<class org.nutz.mvc.adaptor.PairAdaptor>
+2011-11-24 11:50:05,640 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadAdaptor , no config to enable AOP.
+2011-11-24 11:50:05,640 [main] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'upload' to [app] 
+2011-11-24 11:50:05,640 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadingContext , no config to enable AOP.
+2011-11-24 11:50:05,640 [main] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/tmp [2000]
+2011-11-24 11:50:05,640 [main] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\tmp'
+2011-11-24 11:50:05,640 [main] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.mvc.upload.UploadingContext , no config to enable AOP.
+2011-11-24 11:50:05,656 [main] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/tmp [2000]
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\tmp'
+2011-11-24 11:50:05,656 [main] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/upload/normal'            >> upload(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/upload/html5'             >> uploadHtml5(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/add'      >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/list'     >> list(...) : Object | @Ok(jsp:jsp.wage.accountEmployee.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/delete'   >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/update'   >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/view'     >> view(...) : AccountEmployee | @Ok(jsp:jsp.wage.accountEmployee.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/addui'    >> addUi(...) : void | @Ok(jsp:jsp.wage.accountEmployee.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/editui'   >> editUi(...) : AccountEmployee | @Ok(jsp:jsp.wage.accountEmployee.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/queryui'  >> queryUi(...) : void | @Ok(jsp:jsp.wage.accountEmployee.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/AccountEmployee/delbyids' >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.process.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,656 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/view'             >> view(...) : Process | @Ok(jsp:jsp.wage.process.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.process.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/editui'           >> editUi(...) : Process | @Ok(jsp:jsp.wage.process.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.process.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Process/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/add'       >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/list'      >> list(...) : Object | @Ok(jsp:jsp.wage.revenueInfoSet.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/delete'    >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/update'    >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/view'      >> view(...) : RevenueInfoSet | @Ok(jsp:jsp.wage.revenueInfoSet.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/addui'     >> addUi(...) : void | @Ok(jsp:jsp.wage.revenueInfoSet.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/editui'    >> editUi(...) : RevenueInfoSet | @Ok(jsp:jsp.wage.revenueInfoSet.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/queryui'   >> queryUi(...) : void | @Ok(jsp:jsp.wage.revenueInfoSet.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/RevenueInfoSet/delbyids'  >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/add'        >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/list'       >> list(...) : Object | @Ok(jsp:jsp.wage.wageInterface.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/delete'     >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/update'     >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/view'       >> view(...) : WageInterface | @Ok(jsp:jsp.wage.wageInterface.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,671 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/addui'      >> addUi(...) : void | @Ok(jsp:jsp.wage.wageInterface.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/editui'     >> editUi(...) : WageInterface | @Ok(jsp:jsp.wage.wageInterface.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/queryui'    >> queryUi(...) : void | @Ok(jsp:jsp.wage.wageInterface.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/WageInterface/delbyids'   >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/add'            >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/list'           >> list(...) : Object | @Ok(jsp:jsp.wage.pieceRate.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/delete'         >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/update'         >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/view'           >> view(...) : PieceRate | @Ok(jsp:jsp.wage.pieceRate.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/addui'          >> addUi(...) : void | @Ok(jsp:jsp.wage.pieceRate.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/editui'         >> editUi(...) : PieceRate | @Ok(jsp:jsp.wage.pieceRate.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/queryui'        >> queryUi(...) : void | @Ok(jsp:jsp.wage.pieceRate.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/PieceRate/delbyids'       >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,687 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/add'              >> add(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/list'             >> list(...) : Object | @Ok(jsp:jsp.wage.payroll.list) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/delete'           >> delete(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/update'           >> update(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/view'             >> view(...) : Payroll | @Ok(jsp:jsp.wage.payroll.view) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/addui'            >> addUi(...) : void | @Ok(jsp:jsp.wage.payroll.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/editui'           >> editUi(...) : Payroll | @Ok(jsp:jsp.wage.payroll.input) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/queryui'          >> queryUi(...) : void | @Ok(jsp:jsp.wage.payroll.query) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.ioc.impl.NutIoc - Get 'json'<interface org.nutz.mvc.View>
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.UrlMappingImpl -    '/Payroll/delbyids'         >> delByIds(...) : Object | @Ok(ioc:json) @Fail(json) | by 0 Filters | (I:UTF-8/O:UTF-8)
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.mvc.impl.NutLoading - Localization message: 'msg'
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.Scans - Scan Resource by org.nutz.resource.impl.WebResourceScan@24c414
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-pool-1.5.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\log4j-1.2.16.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-dbcp-1.4.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,703 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\commons-lang3-3.1.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Scan resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.AbstractResourceScan - Found 0 resources in JarFile( G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\lib\h2-1.3.161.jar ) by regex( ^.+[.]properties$ ) base on src ( msg/ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.impl.WebResourceScan - Scan in web classes : G:\nutz\nutzGit\nutzdemo\demo\nutz_dwz_hr\WebRoot\WEB-INF\classes\msg , base = G:/nutz/nutzGit/nutzdemo/demo/nutz_dwz_hr/WebRoot/WEB-INF/classes/
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.resource.Scans - Found 2 resource by src( msg ) , regex( ^.+[.]properties$ )
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.mvc.impl.NutMessageLoader - Load Messages in 2 resource : [[NutResource[blog.properties], NutResource[en_US/blog.properties]]]
+2011-11-24 11:50:05,718 [main] DEBUG org.nutz.mvc.impl.NutMessageLoader - Message Loaded, size = 2
+2011-11-24 11:50:05,718 [main] INFO  org.nutz.mvc.impl.NutLoading - Nutz.Mvc[nutz] is up in 640ms
+2011-11-24 11:50:07,921 [qtp21830977-20 - /] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/'
+2011-11-24 11:50:07,968 [qtp21830977-20 - /] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/index'
+2011-11-24 11:50:08,250 [qtp21830977-21 - /dwz.frag.xml?_=1322106608244] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/dwz.frag'
+2011-11-24 11:50:08,484 [qtp21830977-17 - /favicon.ico] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/favicon'
+2011-11-24 11:50:10,687 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (DEFT&[]) for path '/Account/list'
+2011-11-24 11:50:10,687 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - Get 'accountModule'<class cn.nutz_dwz_hr.wage.module.AccountModule>
+2011-11-24 11:50:10,687 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:10,687 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(accountModule) in IocLoader(org.nutz.ioc.loader.annotation.AnnotationIocLoader@ee558f)
+2011-11-24 11:50:10,687 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'accountModule'<class cn.nutz_dwz_hr.wage.module.AccountModule>
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class cn.nutz_dwz_hr.wage.module.AccountModule , no config to enable AOP.
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'accountModule' to [app] 
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.service.EntityService - Get TypeParams for self : cn.nutz_dwz_hr.wage.bean.Account
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - Get 'dao'<null>
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=dao
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(dao) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@83b00f)
+2011-11-24 11:50:10,703 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'dao'<null>
+2011-11-24 11:50:10,734 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.nutz.dao.impl.NutDao , no config to enable AOP.
+2011-11-24 11:50:10,734 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'dao' to [app] 
+2011-11-24 11:50:10,765 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - Get 'dataSource'<null>
+2011-11-24 11:50:10,765 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Load definition
+2011-11-24 11:50:10,765 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.loader.map.MapLoader - Loading define for name=dataSource
+2011-11-24 11:50:10,765 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.loader.combo.ComboIocLoader - Found IocObject(dataSource) in IocLoader(org.nutz.ioc.loader.json.JsonLoader@83b00f)
+2011-11-24 11:50:10,765 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.NutIoc - 	 >> Make...'dataSource'<null>
+2011-11-24 11:50:10,781 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.aop.impl.DefaultMirrorFactory - class org.apache.commons.dbcp.BasicDataSource , no config to enable AOP.
+2011-11-24 11:50:10,781 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.ioc.impl.ScopeContext - Save object 'dataSource' to [app] 
+2011-11-24 11:50:10,828 [qtp21830977-17 - /favicon.ico] DEBUG org.nutz.mvc.impl.UrlMappingImpl - find mapping (null) for path '/favicon'
+2011-11-24 11:50:10,828 [qtp21830977-21 - /Account/list?_=1322106610676] INFO  org.nutz.filepool.NutFilePool - Init file-pool by: ~/.nutz/tmp/dao/ [2000]
+2011-11-24 11:50:10,843 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.filepool.NutFilePool - file-pool.home: 'D:\我的文档\.nutz\tmp\dao'
+2011-11-24 11:50:10,843 [qtp21830977-21 - /Account/list?_=1322106610676] INFO  org.nutz.filepool.NutFilePool - file-pool.cursor: 0
+2011-11-24 11:50:13,953 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.mvc.impl.processor.ModuleProcessor - Handle URL[/Account/list] by Method[public java.lang.Object cn.nutz_dwz_hr.wage.module.AccountModule.list(int,int,cn.nutz_dwz_hr.wage.bean.Account)]
+2011-11-24 11:50:14,031 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.dao.impl.sql.run.NutDaoExecutor - SELECT * FROM HR_ACCOUNT  WHERE 1=? LIMIT 20 OFFSET 0 
+    | 1 |
+    |---|
+    | 1 |
+  For example:> "SELECT * FROM HR_ACCOUNT  WHERE 1=1 LIMIT 20 OFFSET 0 "
+2011-11-24 11:50:14,031 [qtp21830977-21 - /Account/list?_=1322106610676] DEBUG org.nutz.dao.impl.sql.run.NutDaoExecutor - SELECT COUNT(*) FROM HR_ACCOUNT  WHERE 1=?
+    | 1 |
+    |---|
+    | 1 |
+  For example:> "SELECT COUNT(*) FROM HR_ACCOUNT  WHERE 1=1"
