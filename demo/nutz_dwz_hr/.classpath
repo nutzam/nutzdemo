@@ -5,16 +5,41 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-dbcp-1.4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-pool-1.5.4.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/db2jcc.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/log4j-1.2.14.jar"/>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/nutz-1.b.40-jdk6.jar" sourcepath="G:/nutz/Nutz-1.b.40-新手包/nutz-1.b.40-sources.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/G:/nutz/Nutz-1.b.40-新手包/nutz-1.b.40-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/lombok.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang3-3.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/nutz-1.b.41-snapshot-20111117_0146PM-jdk6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/h2-1.3.161.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/com.sun.el_1.0.0.v201004190952.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/ecj-3.6.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/javax.el_2.1.0.v201004190952.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/javax.servlet.jsp_2.1.0.v201004190952.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/javax.servlet.jsp.jstl_1.2.0.v201004190952.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-ajp-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-all-7.5.4.v20111024-javadoc.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-annotations-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-client-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-continuation-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-deploy-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-http-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-io-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-jmx-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-jndi-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-jsp-2.1-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-overlay-deployer-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-plus-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-policy-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-rewrite-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-security-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-server-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-servlet-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-servlets-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-util-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-webapp-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-websocket-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jetty-xml-7.5.4.v20111024.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/jsp-impl-2.1.3-b10.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/org.apache.taglibs.standard.glassfish_1.2.0.v201004190952.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/jetty-7.5.4/servlet-api-2.5.jar"/>
 	<classpathentry kind="src" path="run"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jetty7.5.4"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

@@ -10,7 +10,7 @@ public class JettyUtils {
 	
 
 	/**
-	 * 创建用于正常运行调试的Jetty Server, 以E:/ycsx/WebRoot为Web应用目录.
+	 * 创建用于正常运行调试的Jetty Server, 以weApp为Web应用目录.
 	 */
 	public static Server buildNormalServer(int port, String contextPath,String weApp) {
 		Server server = new Server(port);
@@ -24,7 +24,7 @@ public class JettyUtils {
 
 	/**
 	 * 创建用于Functional Test的Jetty Server:
-	 * 1.以E:/ycsx/WebRoot为Web应用目录.
+	 * 1.以weApp为Web应用目录.
 	 * 2.以conf/web.xml指向applicationContext-test.xml创建测试环境.
 	 */
 	public static Server buildTestServer(int port, String contextPath,String weApp) {

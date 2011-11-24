@@ -5,10 +5,10 @@ var ioc = {
 			depose :"close"
 		},
 		fields : {
-			driverClassName : 'com.ibm.db2.jcc.DB2Driver',
-			url             : 'jdbc:db2://192.168.1.110:50000/ychr',
-			username        : 'db2admin',
-			password        : 'db2admin',
+			driverClassName : 'org.h2.Driver',
+			url             : 'jdbc:h2:~/nutz_dwz_hr',
+			username        : 'nutz',
+			password        : 'dwz',
 			initialSize     : 10,
 			maxActive       : 100,
 			minIdle         : 10,

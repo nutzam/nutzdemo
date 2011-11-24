@@ -1,0 +1,6 @@
+现在用nutz+dwz简单做了个crud
+后边我会抽时间尽量把功能都实现下
+后台框架:nutz
+前台框架:dwz
+数据库:h2，用户名:nutz 密码:dwz
+数据库文件在项目的date目录下，请自己把它放到合适的位置，并修改/nutz_dwz_hr/conf/ioc/dao.js中的url
