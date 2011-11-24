@@ -4,3 +4,6 @@
 前台框架:dwz
 数据库:h2，用户名:nutz 密码:dwz
 数据库文件在项目的date目录下，请自己把它放到合适的位置，并修改/nutz_dwz_hr/conf/ioc/dao.js中的url
+ide:eclipse
+服务器:jetty7.5.4
+运行方式:直接运行/nutz_dwz_hr/run/jetty7up/NutzDwzHrStart.java
