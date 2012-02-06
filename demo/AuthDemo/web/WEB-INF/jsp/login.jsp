@@ -6,6 +6,10 @@
 	<title>登录</title>
 </head>
 <body>
-	<h1>登录</h1>
+	<h1>已登录</h1>
+	<ul>
+		<li><a href="index">首页</a></li>
+		<li><a href="logout">退出</a></li>
+	</ul>
 </body>
 </html>

@@ -6,6 +6,9 @@
 	<title>退出</title>
 </head>
 <body>
-	<h1>退出</h1>
+	<h1>已退出</h1>
+	<ul>
+		<li><a href="index">首页</a></li>
+	</ul>
 </body>
 </html>

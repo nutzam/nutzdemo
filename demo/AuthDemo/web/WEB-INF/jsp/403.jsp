@@ -6,6 +6,9 @@
 	<title>未授权</title>
 </head>
 <body>
-	<h1>未授权,请先<a href="login">登录</a></h1>
+	<h1>未授权</h1>
+	<ul>
+		<li><a href="login">登录</a></li>
+	</ul>
 </body>
 </html>

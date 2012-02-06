@@ -7,5 +7,8 @@
 </head>
 <body>
 	<h1>首页</h1>
+	<ul>
+		<li><a href="logout">退出</a></li>
+	</ul>
 </body>
 </html>
