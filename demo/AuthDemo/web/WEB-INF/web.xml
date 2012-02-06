@@ -17,11 +17,11 @@
     <filter-name>dispatcher</filter-name>
     <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <welcome-file-list>
+    <welcome-file>index</welcome-file>
+  </welcome-file-list>
   <error-page>
   	<error-code>403</error-code>
   	<location>/WEB-INF/jsp/403.jsp</location>
   </error-page>
-  <welcome-file-list>
-    <welcome-file>index</welcome-file>
-  </welcome-file-list>
 </web-app>
