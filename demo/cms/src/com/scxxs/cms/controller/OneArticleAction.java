@@ -135,7 +135,7 @@ public class OneArticleAction extends BaseAction {
 	 */
 	@SuppressWarnings("unchecked")
 	@At("/admin/onearticle/upload")
-	@AdaptBy(type=UploadAdaptor.class)
+	@AdaptBy(type=UploadAdaptor.class, args = { "${app.root}/WEB-INF/tmp" })
 	public void shangchuan(@Param("..") Map<String,Object> allFields,HttpServletResponse resp,ServletContext context) throws IOException{
 		
 		String dizhi = context.getRealPath("/");
