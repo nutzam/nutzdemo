@@ -1,0 +1,58 @@
+﻿/*全局定义*/
+html,body {
+    font-size:12px;
+    line-height: 1.5;
+	background:#FFF;
+    /*overflow-x:hidden;*/
+	font-family:"宋体" , Arial, Helvetica, sans-serif;
+	background:url(../images/badybg.jpg) repeat-x;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{
+	margin:0;padding:0;
+}
+ul{list-style:none}
+input,button,textarea,select,optgroup,option{
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+}
+input,button,textarea,select{
+	*font-size:100%;
+} 
+td,th,div,p {
+	word-break:break-all;
+	word-wrap:break-word;
+}
+fieldset,img{
+	border:none;
+}
+a,a:hover{
+	outline:none;
+	color:#333;
+    text-decoration:none;
+}
+a:hover {
+	color:#000;
+}
+.clear{ 
+    clear:both;
+	}
+.fl_left,.fl_left2 div{
+    float:left;
+}
+.fl_right{
+	float:right;
+}
+/* 禁止换行 */
+.nowrap a{word-break:keep-all;white-space:nowrap;}
+/* 强制换行 */
+.break{word-break:break-all;}
+.mar{
+	margin-top:5px;
+}
+.mar1{
+	margin-top:30px;
+}
+.mar2{
+	margin-top:10px;
+}

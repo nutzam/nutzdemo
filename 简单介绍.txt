@@ -1,0 +1,9 @@
+demo中的项目,是Eclipse 3.7 JavaEE工程,文件编码全部为UTF-8,均为JDK 1.6, tomcat 6.0
+
+部分demo需要先导入sql文件,并修改相应的数据库参数.
+
+cms是比较全的一个demo,但包含了一些错误用法, 请对照手册来学习.
+
+
+另有一个优化版的CMS Demo
+https://github.com/Rekoe/Rk_Cms

@@ -1,0 +1,7 @@
+<classpath>
+  <container id="AuthDemo!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="H:/Nutz-1.b.43-新手包/demo示例 1.b.43/demo/AuthDemo/WebContent/WEB-INF/lib/nutz-1.b.43-jdk6.jar">
+      <source-attachment-path>H:/Nutz-1.b.43-新手包/nutz-1.b.43-sources.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>
