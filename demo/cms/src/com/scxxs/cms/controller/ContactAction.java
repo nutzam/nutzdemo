@@ -65,7 +65,7 @@ public class ContactAction extends BaseAction {
 	 */
 	@SuppressWarnings("unchecked")
 	@At("/admin/contact/upload")
-	@AdaptBy(type = UploadAdaptor.class)
+	@AdaptBy(type = UploadAdaptor.class, args = { "${app.root}/WEB-INF/tmp" })
 	public void upload(@Param("..") Map<String, Object> allFields,
 			HttpServletResponse resp, ServletContext context)
 			throws IOException {
