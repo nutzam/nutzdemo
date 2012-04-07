@@ -199,7 +199,7 @@
       <balloon_text></balloon_text>                           <!-- [balloon.show] ({title} {value} {series} {description} {percents}) You can format any balloon text: {title} will be replaced with real title, {value} - with value and so on. You can add your own text or html code too. -->      
       <visible_in_legend></visible_in_legend>                 <!-- [true] (true / false) whether to show legend entry for this graph or not -->
     </graph>   
-
+</graphs>
   
 	<!-- DATA can also be set in settings file. Just place data in CSV or XML format between <data></data> -->
 	<!--

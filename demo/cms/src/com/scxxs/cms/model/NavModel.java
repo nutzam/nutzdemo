@@ -141,7 +141,6 @@ public class NavModel implements Serializable{
 			//把List进行排序处理
 			Collections.sort(children, new Comparator<NavModel>() {
 
-				@Override
 				public int compare(NavModel o1, NavModel o2) {
 					
 					if(o1.getSortNumber()==o2.getSortNumber()){

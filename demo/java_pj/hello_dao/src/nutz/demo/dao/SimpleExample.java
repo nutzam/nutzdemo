@@ -1,7 +1,7 @@
 package nutz.demo.dao;
 
-import java.io.File;
-import java.sql.SQLException;
+import static java.lang.System.out;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,44 +14,12 @@ import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.dao.impl.NutDao;
 import org.nutz.dao.pager.Pager;
-import org.nutz.dao.tools.Tables;
-import org.nutz.lang.Files;
 import org.nutz.lang.Strings;
 import org.nutz.lang.random.R;
 import org.nutz.lang.random.StringGenerator;
 
-import static java.lang.System.*;
-
 /**
  * 本例子将展示如何使用 Nutz.Dao 做基本的增删改查
- * <p>
- * 运行任何一个例子前，请确保你创建了数据库 daodemo 以及数据库里有数据表：
- * <p>
- * <b>t_pet</b>
- * <table border=1>
- * <tr>
- * <td>ID</td>
- * <td>Name</td>
- * <td>Age</td>
- * </tr>
- * <tr>
- * <td>1</td>
- * <td>XiaoBai</td>
- * <td>8</td>
- * </tr>
- * <tr>
- * <td>2</td>
- * <td>XiaoHei</td>
- * <td>5</td>
- * </tr>
- * <tr>
- * <td>3</td>
- * <td>Manto</td>
- * <td>11</td>
- * </tr>
- * </table>
- * </table> <br>
- * 如果你没有创建这个数据表，请通过调用函数 prepareData() 来创建
  * 
  * @author zozoh(zozohtnt@gmail.com)
  */
@@ -72,7 +40,7 @@ public class SimpleExample {
 	 */
 	public static void prepareData() {
 		Dao dao = getDao();
-		dao.create(Pet.class, false);
+		dao.create(Pet.class, true);
 
 		dao.insert(pet("XiaoBai", 8));
 		dao.insert(pet("XiaoHei", 5));
@@ -104,9 +72,7 @@ public class SimpleExample {
 	 */
 	public static void closeDataSource() {
 		if (null != ds)
-			try {
-				ds.dispose();
-			} catch (SQLException e) {}
+			ds.dispose();
 	}
 
 	/**

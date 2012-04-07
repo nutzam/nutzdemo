@@ -1,48 +1,41 @@
 package org.nutz.extras.mvc.init;
 
 import java.lang.reflect.Method;
-import java.util.List;
 
 import org.nutz.extras.mvc.annotation.Authority;
-import org.nutz.lang.util.Context;
 import org.nutz.log.Log;
 import org.nutz.log.Logs;
-import org.nutz.mvc.ViewMaker;
-import org.nutz.mvc.init.NutConfig;
-import org.nutz.mvc.init.UrlMapImpl;
-
+import org.nutz.mvc.ActionChainMaker;
+import org.nutz.mvc.ActionInfo;
+import org.nutz.mvc.NutConfig;
+import org.nutz.mvc.impl.UrlMappingImpl;
 
 /**
- * @author <a href="mailto:json.shen@gmail.com">Json Shen</a>
- * 2010-7-18 下午02:44:08
+ * @author <a href="mailto:json.shen@gmail.com">Json Shen</a> 2010-7-18
+ *         下午02:44:08
  */
-public class MyUrlMapImpl extends UrlMapImpl {
-	
-	private static final Log log = Logs.getLog(MyUrlMapImpl.class);
+public class MyUrlMapImpl extends UrlMappingImpl {
 
-	public MyUrlMapImpl(NutConfig config, Context context, Class<?> mainModule) {
-		super(config, context, mainModule);
-	}
+	private static final Log log = Logs.getLog(MyUrlMapImpl.class);
 
 	/**
 	 * 添加URL时初始化权限
 	 */
 	@Override
-	public boolean add(List<ViewMaker> makers, Class<?> moduleType) {
-		boolean isModule = super.add(makers, moduleType);
-		for (Method method : moduleType.getMethods()) {
-			Authority a = method.getAnnotation(Authority.class);
-			if(null == a){
-				continue;
-			}
-			String id = a.value();
-			String module = a.module();
-			String desc = a.desc();
-			boolean isDefault = a.isDefault();
-			
-			//在这里可以把权限写入数据库以及其它操作,此处为运行demo简单只写日志.
-			log.infof("AuthID=%s Module=%s Default=%s Desc=%s", id,module,isDefault,desc);
+	public void add(ActionChainMaker maker, ActionInfo ai, NutConfig config) {
+		super.add(maker, ai, config);
+		Method method = ai.getMethod();
+		Authority a = method.getAnnotation(Authority.class);
+		if (null == a) {
+			return;
 		}
-		return isModule;
+		String id = a.value();
+		String module = a.module();
+		String desc = a.desc();
+		boolean isDefault = a.isDefault();
+
+		// 在这里可以把权限写入数据库以及其它操作,此处为运行demo简单只写日志.
+		log.infof("AuthID=%s Module=%s Default=%s Desc=%s", id, module,
+				isDefault, desc);
 	}
 }

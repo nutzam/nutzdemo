@@ -8,9 +8,10 @@
 	</series>
 	<graphs>
 		<graph gid="0" title="Schedule" gradient_fill_colors="#33CCFF, #003366">
-		<value xid="John" start="8">11</value>
-		<value xid="Joe" start="10">13</value>
-		<value xid="Susan" start="11">18</value>
-		<value xid="Eaton"start="15">19</value>
-   </graph>
+			<value xid="John" start="8">11</value>
+			<value xid="Joe" start="10">13</value>
+			<value xid="Susan" start="11">18</value>
+			<value xid="Eaton" start="15">19</value>
+		</graph>
+   </graphs>
 </chart>

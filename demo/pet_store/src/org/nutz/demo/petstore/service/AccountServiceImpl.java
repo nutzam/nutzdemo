@@ -9,22 +9,22 @@ import org.nutz.demo.petstore.domain.Signon;
 import org.nutz.service.NameEntityService;
 
 public class AccountServiceImpl extends NameEntityService<Account> implements AccountService {
-	@Override
+	
 	public void addAccount(Account account) {
 		this.dao().insertWith(account, "signon");
 	}
 
-	@Override
+	
 	public Account getAccountByUserid(String userid) {
 		return this.fetch(userid);
 	}
 
-	@Override
+	
 	public List<Account> getAllAccounts() {
 		return this.query(null, null);
 	}
 
-	@Override
+	
 	public void updateAccount(Account account, String olduserid) {
 		String newUserid=account.getUserid();
 		if(newUserid.equals(olduserid)){
@@ -36,13 +36,13 @@ public class AccountServiceImpl extends NameEntityService<Account> implements Ac
 			this.dao().update(Signon.class,Chain.make("password", account.getSignon().getPassword()).add("username", newUserid), Cnd.where("username","=",olduserid));
 		}
 	}
-	@Override
+	
 	public void deleteAccountByUserid(String userid) {
 		this.delete(userid);
 		this.dao().delete(Signon.class,userid);
 	}
 
-	@Override
+	
 	public void updateAccount(Account account) {
 		this.dao().update(account);
 	}

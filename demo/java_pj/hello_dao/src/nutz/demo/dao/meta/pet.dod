@@ -1,5 +1,0 @@
-t_pet{
-	id INT +PK,
-	name VARCHAR(50) !UNIQUE,
-	age INT
-}

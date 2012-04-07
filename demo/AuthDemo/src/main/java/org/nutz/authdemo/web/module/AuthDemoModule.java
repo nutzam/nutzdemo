@@ -19,7 +19,7 @@ public class AuthDemoModule{
 	
 	@At("/index")
 	@Ok("jsp:jsp.index")
-	@Authority(value="A001",desc="首页")
+	//@Authority(value="A001",desc="首页")
 	public void index(){
 	}
 	

@@ -65,7 +65,7 @@ public class GoodModule {
 	 * @throws IOException
 	 */
 	@At
-	@AdaptBy(type = UploadAdaptor.class, args = {"D:/tmp/demo/upload", "10"})
+	@AdaptBy(type = UploadAdaptor.class, args = {"D:/tmp/demo/upload", "8192"})
 	@Ok("redirect:/good/all.nut")
 	public void uploadImg(@Param("id") int id, @Param("img") File f, ServletContext context)
 			throws IOException {

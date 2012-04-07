@@ -9,9 +9,7 @@ AuthDemo 是nutz mvc中的一个权限验证的demo.
 	
 实现:
 	org.nutz.extras.mvc.annotation.Authority 自定义权限注解
-	org.nutz.extras.mvc.annotation.UrlMapBy  UrlMap接口实现定义注解,用法见MainModule
 	
-	org.nutz.extras.mvc.init.MyLoading 初始化载入实现
 	org.nutz.extras.mvc.init.MyUrlMapImpl UrlMap接口实现
 	
 	org.nutz.authdemo.web.filter.AuthorityFilter 权限检查Filter实现
