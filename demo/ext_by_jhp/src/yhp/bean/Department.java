@@ -1,13 +1,11 @@
 package yhp.bean;
 
-import org.nutz.dao.entity.annotation.*;
-
-import lombok.Data;
+import org.nutz.dao.entity.annotation.Column;
+import org.nutz.dao.entity.annotation.Table;
 
 /**
 * 
 */
-@Data
 @Table("t_department")
 public class Department {
 
@@ -21,4 +19,21 @@ public class Department {
 	 */
 	@Column("name")
 	private String name;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

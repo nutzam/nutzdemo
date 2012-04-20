@@ -1,7 +1,6 @@
 package yhp;
 
 import org.nutz.dao.Dao;
-import org.nutz.dao.impl.NutDao;
 import org.nutz.mvc.NutConfig;
 import org.nutz.mvc.Setup;
 
@@ -9,47 +8,47 @@ import yhp.bean.Application;
 import yhp.bean.Department;
 import yhp.bean.Item;
 
-
 public class AppSetup implements Setup {
 
 	public void destroy(NutConfig config) {
-	
 	}
 
 	public void init(NutConfig config) {
-		NutDao dao = (NutDao) config.getIoc().get(Dao.class);
-		dao.create(Application.class, true);
-		dao.create(Department.class, true);
-		dao.create(Item.class, true);
-		Department department = new Department();
-		department.setName("²ÆÎñ¿Æ");
-		department.setId(1);
-		dao.insert(department);
-		
-		department.setName("°ì¹«ÊÒ");
-		department.setId(2);
-		dao.insert(department);
-		
-		Item item = new Item();
-		item.setDepartment("²ÆÎñ¿Æ");
-		item.setName("ÒûË®»ú");
-		item.setVersion("APC-SC10001");
-		item.setId(1);
-		item.setPrice(260);
-		dao.insert(item);
-		
-		item.setDepartment("°ì¹«ÊÒ");
-		item.setName("ÎÄ¼ş¹ñ");
-		item.setVersion("APC-SC10001");
-		item.setId(2);
-		item.setPrice(1980);
-		dao.insert(item);
-		
-		item.setDepartment("°ì¹«ÊÒ");
-		item.setName("ÆëĞÄËéÖ½»ú");
-		item.setVersion("APC-SC10001");
-		item.setId(3);
-		item.setPrice(700);
-		dao.insert(item);
+		Dao dao = config.getIoc().get(Dao.class);
+		if (!dao.exists(Application.class)) {
+			dao.create(Application.class, true);
+			dao.create(Department.class, true);
+			dao.create(Item.class, true);
+			Department department = new Department();
+			department.setName("è´¢åŠ¡ç§‘");
+			department.setId(1);
+			dao.insert(department);
+
+			department.setName("åŠå…¬å®¤");
+			department.setId(2);
+			dao.insert(department);
+
+			Item item = new Item();
+			item.setDepartment("è´¢åŠ¡ç§‘");
+			item.setName("é¥®æ°´æœº");
+			item.setVersion("APC-SC10001");
+			item.setId(1);
+			item.setPrice(260);
+			dao.insert(item);
+
+			item.setDepartment("åŠå…¬å®¤");
+			item.setName("æ–‡ä»¶æŸœ");
+			item.setVersion("APC-SC10001");
+			item.setId(2);
+			item.setPrice(1980);
+			dao.insert(item);
+
+			item.setDepartment("åŠå…¬å®¤");
+			item.setName("é½å¿ƒç¢çº¸æœº");
+			item.setVersion("APC-SC10001");
+			item.setId(3);
+			item.setPrice(700);
+			dao.insert(item);
+		}
 	}
 }
