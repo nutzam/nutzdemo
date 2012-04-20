@@ -1,0 +1,34 @@
+10
+
+dir
+75
+svn://10.62.2.20/supervision/WebRoot/resources
+svn://10.62.2.20/supervision
+
+
+
+2011-08-10T02:11:18.876199Z
+1
+sheva.wen
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+448961f2-c2f2-11e0-9eef-295d36b77e02
+
+css
+dir
+
+themes
+dir
+

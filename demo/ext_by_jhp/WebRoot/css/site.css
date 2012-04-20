@@ -1,0 +1,33 @@
+body
+{
+    padding-left: 4px;
+    padding-right: 4px;
+    font-family: Tahoma, Arial, sans-serif;
+    font-size: 75%;
+    color: #666666;
+    background-color: #FFFFFF;
+    background-image: url('../images/background_top.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+body h1
+{
+    padding-bottom: 12px;
+    border-bottom: 1px dotted #bbbbbb;
+    font-size: 2.2em;
+    font-family: Trebuchet MS, Arial, sans-serif;
+    color: #000;
+    /*display:none;*/
+}
+div.back 
+{
+	line-height:32px;
+}
+div.back a:link, div.back a:visited {
+	color: #839CE7;
+	text-decoration: none;
+	background-color: white;
+	padding-right: 8px;
+	top: -.2em;
+	left: .25em;
+}
