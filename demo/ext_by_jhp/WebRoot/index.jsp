@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>低值易耗品管理   神华销售集团有限公司华北能源贸易分公司朔西办事处 </title>
+<title>神一样的Ext+Nutz实例</title>
 <link rel="stylesheet" href="resources/css/ext-all.css" type="text/css"></link>
 <link rel="stylesheet" href="css/site.css" type="text/css"></link>
 <link rel="stylesheet" href="css/GridFilters.css" type="text/css"></link>
