@@ -3,7 +3,9 @@
 <c:set var="dataSources" value="${obj}"></c:set>
 <html>
 <head>
-	<title>帐号管理</title>
+	<title>数据库DataSource状态</title>
+	<style type="text/css" style="${base}/css/bootstrap.css"></style>
+	<script type="text/javascript" src="${base}/js/jquery-1.7.2.js"></script>
 	<script>
 		$(document).ready(function() {
 			//聚焦第一个输入框
