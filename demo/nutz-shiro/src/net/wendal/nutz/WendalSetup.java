@@ -1,5 +1,8 @@
 package net.wendal.nutz;
 
+import org.apache.shiro.crypto.RandomNumberGenerator;
+import org.apache.shiro.crypto.SecureRandomNumberGenerator;
+import org.apache.shiro.crypto.hash.Sha256Hash;
 import org.nutz.dao.Dao;
 import org.nutz.dao.entity.annotation.Table;
 import org.nutz.integration.shiro.realm.bean.User;
@@ -17,7 +20,7 @@ public class WendalSetup implements Setup {
 	public void init(NutConfig config) {
 		
 		Dao dao = config.getIoc().get(Dao.class);
-		//鑷姩寤鸿〃,杩欓噷浠呭缓绔嬩簡nutz-shiro鎵�闇�鐨勮〃
+		//自动建表,这里仅建立了nutz-shiro所需的表
 		for (Class<?> klass : Scans.me().scanPackage(User.class.getPackage().getName())) {
 			if (null != klass.getAnnotation(Table.class))
 				dao.create(klass, false);
@@ -25,7 +28,10 @@ public class WendalSetup implements Setup {
 		
 		if (dao.count(User.class) == 0) {
 			log.debug("Create Admin user");
-			dao.insert(Json.fromJson(User.class, "{name:'admin',passwd:'123456'}"));
+			RandomNumberGenerator rng = new SecureRandomNumberGenerator();
+			String salt = rng.nextBytes().toBase64();
+			String hashedPasswordBase64 = new Sha256Hash("123", salt, 1024).toBase64();
+			dao.insert(Json.fromJson(User.class, "{name:'admin',passwd:'"+hashedPasswordBase64+"',salt:'"+ salt +"'}"));
 		}
 	}
 
