@@ -1,0 +1,536 @@
+@charset "utf-8";
+
+/***
+ *	SHOP++ Base Style
+ *
+ *	http://www.shopxx.net
+ *
+ *	Copyright © 2010 shopxx.net All Rights Reserved.
+ **/
+
+/* ---------- Form ---------- */
+
+input.formText {
+	width: 180px;
+	padding: 5px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+input.formText:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+input.formText:focus {
+	background-color: #fff8ef;
+}
+
+textarea.formTextarea {
+	width: 350px;
+	height: 120px;
+	padding: 5px;
+	border-top: 1px solid #999999;
+	border-right: 1px solid #e1e1e1;
+	border-bottom: 1px solid #e1e1e1;
+	border-left: 1px solid #999999;
+}
+
+textarea.formTextarea:hover {
+	border: 1px solid #ff9b1f;
+	background-color: #fefbf7;
+}
+
+textarea.formTextarea:focus {
+	background-color: #fff8ef;
+}
+
+.formButton {
+	width: 70px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: #555555;
+	font-size: 12px;
+	outline: none;
+	border: none;
+	background: url(../images/base_button.gif) 0px 0px no-repeat;
+}
+
+.formButton:hover {
+	color: #ff9900;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+a.formButton {
+	display: inline-block;
+	display: -moz-inline-stack;
+	*display: inline;
+	zoom: 1;
+}
+
+a.formButton:hover {
+	color: #000000;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+textarea.editor {
+	width: 100%;
+}
+
+/* ---------- Icon ---------- */
+
+.trueIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px 0px;
+}
+
+.falseIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px -60px;
+}
+
+.addIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -120px;
+}
+
+.removeIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -180px;
+}
+
+.upIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -240px;
+}
+
+.downIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -300px;
+}
+
+.deleteIcon {
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	cursor: pointer;
+	background: url(../images/base_icon.gif) no-repeat 0px -360px;
+}
+
+.warnIcon {
+	width: 16px;
+	height: 29px;
+	line-height: 29px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_icon.gif) no-repeat 0px -480px;
+}
+
+.loadingIcon {
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_loading_icon.gif) center no-repeat;
+}
+
+/* ---------- Dialog ---------- */
+
+.dialogOverlay {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 99;
+	filter: alpha(opacity = 50);
+	-moz-opacity: 0.50;
+	opacity: 0.50;
+	zoom: 1;
+	background: url(../images/base_overlay_bg.png);
+}
+
+* html .dialogOverlay {
+	position: absolute;
+	top: 0;
+}
+
+.baseDialog {
+	padding: 5px;
+	display: none;
+	position: fixed;
+	top: 25%;
+	left: 50%;
+	z-index: 100;
+	overflow: hidden;
+}
+
+* html .baseDialog {
+	position: absolute;
+	top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(25 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+.baseDialog .dialogWrap {
+	width: 1000px;
+	height: 1000px;
+	position: absolute;
+	z-index: -1;
+	left: 0;
+	top: 0;
+	filter: alpha(opacity = 15);
+	-moz-opacity: 0.15;
+	opacity: 0.15;
+	background-color: #000000;
+}
+
+.baseDialog .dialogMain {
+	border: 1px solid #779cb0;
+	background: url(../images/base_x_bg.gif) 0px -120px #ffffff repeat-x;
+}
+
+.baseDialog .dialogTitle {
+	height: 40px;
+	line-height: 40px;
+	clear: both;
+	padding-left: 10px;
+	color: #666666;
+	font-weight: bold;
+	cursor: move;
+	background: url(../images/base_x_bg.gif) 0px 0px repeat-x;
+}
+
+.baseDialog .dialogClose {
+	width: 25px;
+	height: 19px;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	background: url(../images/base_button.gif) -180px 0px no-repeat;
+}
+
+.baseDialog .dialogClose:hover {
+	background-position: -240px 0px;
+}
+
+.baseDialog .dialogContent {
+	line-height: 30px;
+	clear: both;
+	margin: 40px 50px;
+}
+
+.baseDialog .dialogwarnIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.baseDialog .dialogsuccessIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -740px no-repeat;
+}
+
+.baseDialog .dialogerrorIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -940px no-repeat;
+}
+
+.baseDialog .dialogButtonArea {
+	height: 34px;
+	padding-top: 6px;
+	clear: both;
+	text-align: center;
+	background: url(../images/base_x_bg.gif) 0px -60px repeat-x;
+}
+
+.baseDialog .dialogButtonArea input {
+	margin: 0px 10px;
+}
+
+.baseDialog .dialogButtonArea .formButton {
+	width: 70px;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: #000000;
+	font-size: 12px;
+	border: none;
+	background: url(../images/base_button.gif) 0px 0px no-repeat;
+}
+
+.baseDialog .dialogButtonArea .formButton:hover {
+	color: #ff9900;
+	background: url(../images/base_button.gif) -90px 0px no-repeat;
+}
+
+.baseDialog .dialogIframe {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	filter: Alpha(Opacity = 0);
+}
+
+/* ---------- Message ---------- */
+
+.baseMessage {
+	padding: 5px 15px 5px 10px;
+	display: none;
+	position: fixed;
+	top: 35%;
+	left: 50%;
+	z-index: 1000;
+	color: #000000;
+	border: 2px solid #ffaa71;
+	background-color: #fff5ee;
+}
+
+* html .baseMessage {
+	position: absolute;
+	top: expression((document.documentElement.scrollTop || document.body.scrollTop) + Math.round(35 * (document.documentElement.offsetHeight || document.body.clientHeight) / 100) + 'px');
+}
+
+
+.baseMessage .messagewarnIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.baseMessage .messagesuccessIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -740px no-repeat;
+}
+
+.baseMessage .messageerrorIcon {
+	padding-left: 30px;
+	background: url(../images/base_icon.gif) 0px -940px no-repeat;
+}
+
+.baseMessage .messageContent {
+	line-height: 30px;
+}
+
+.baseMessage .messageIframe {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: -1;
+	filter: Alpha(Opacity = 0);
+}
+
+/* ---------- Validate ---------- */
+
+.validateErrorContainer {
+	line-height: 20px;
+	display: none;
+	clear: both;
+	padding: 5px 8px;
+	margin: 5px;
+	border: 1px solid #febe8f;
+	background-color: #fff8d9;
+}
+
+.validateErrorContainer .validateErrorTitle {
+	height: 30px;
+	line-height: 30px;
+	clear: both;
+	font-weight: bold;
+	padding-left: 35px;
+	background: url(../images/base_icon.gif) 0px -540px no-repeat;
+}
+
+.validateErrorContainer li {
+	padding-left: 35px;
+}
+
+
+input.validateError {
+	background-color: #fff8ef;
+	border: dotted 1px #ff9b10;
+}
+
+select.validateError {
+	background-color: #fff8ef;
+	border: dotted 1px #ff9b10;
+}
+
+/* ---------- Other ---------- */
+
+.warnInfo {
+	line-height: 30px;
+	padding: 5px 5px 5px 20px;
+	border: 1px solid #ffca80;
+	background: url(../images/base_icon.gif) no-repeat 0px -420px #fffee2;
+}
+
+.loadingBar {
+	width: 208px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+	background: url(../images/base_loading_bar.gif) center no-repeat;
+}
+
+/* ---------- Common ---------- */
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font: 12px tahoma, Arial, "宋体", Verdana, sans-serif;
+	background-color: #ffffff;
+}
+
+*html, *html body {
+	background-image: url(about:blank);
+	background-attachment: fixed;
+}
+
+a {
+	color: #656d77;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6600;
+	text-decoration: none;
+}
+
+img {
+	border: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul {
+	list-style-type: none;
+}
+
+input, select, label {
+	vertical-align: middle
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -pre-wrap;
+	white-space: -o-pre-wrap;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.white {
+	color: white;
+}
+
+.black {
+	color: black;
+}
+
+.gray {
+	color: gray;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: green;
+}
+
+.red {
+	color: red;
+}
+
+.blank {
+	width: 100%;
+	height: 10px;
+	clear: both;
+	overflow: hidden;
+}
+
+.clear {
+	width: 100%;
+	height: 0px;
+	clear: both;
+	overflow: hidden;
+}
+
+.hidden {
+	display: none;
+}
+
+.lineThrough {
+	text-decoration: line-through;
+}
+
+.pointer {
+	cursor: pointer;
+}

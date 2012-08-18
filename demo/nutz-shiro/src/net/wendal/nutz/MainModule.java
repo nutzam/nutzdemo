@@ -5,10 +5,14 @@ import org.nutz.mvc.annotation.By;
 import org.nutz.mvc.annotation.Fail;
 import org.nutz.mvc.annotation.Filters;
 import org.nutz.mvc.annotation.IocBy;
+import org.nutz.mvc.annotation.Localization;
 import org.nutz.mvc.annotation.Modules;
 import org.nutz.mvc.annotation.Ok;
 import org.nutz.mvc.annotation.SetupBy;
+import org.nutz.mvc.annotation.Views;
 import org.nutz.mvc.ioc.provider.ComboIocProvider;
+import org.nutz.mvc.view.FreemarkerViewMaker;
+import org.nutz.mvc.view.JPEGViewMaker;
 
 @Modules(scanPackage=true)
 @Ok("json")
@@ -19,6 +23,8 @@ import org.nutz.mvc.ioc.provider.ComboIocProvider;
 })
 @SetupBy(value=WendalSetup.class)
 @Filters(@By(type=ShiroActionFilter.class, args="/index.jsp")) //全局的Shiro注解过滤器
+@Localization("msg")
+@Views({FreemarkerViewMaker.class,JPEGViewMaker.class})
 public class MainModule {
 
 }

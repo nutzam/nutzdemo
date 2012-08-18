@@ -1,0 +1,675 @@
+@charset "utf-8";
+
+/***
+ *	SHOP++ Admin Style
+ *
+ *	http://www.shopxx.net
+ *
+ *	Copyright © 2010 shopxx.net All Rights Reserved.
+ **/
+
+/* ---------- Common ---------- */
+
+body {
+	_width: expression(document.body.clientWidth <= 850 ? "850px": "auto");
+	min-width: 850px;
+	color: #666666;
+}
+
+.bar {
+	height: 30px;
+	line-height: 28px;
+	clear: both;
+	padding-left: 10px;
+	color: #444444;
+	background: url(../images/admin_x_bg.gif) 0px 0px repeat-x;
+}
+
+/* ---------- Login ---------- */
+
+.login .body {
+	width: 515px;
+	height: 267px;
+	padding: 110px 139px 35px 185px;
+	margin: 0px auto;
+	overflow: hidden;
+	background: url(../images/admin_bg.png) no-repeat 0px 0px;
+}
+
+.login .loginTable {
+	width: 479px;
+	height: 212px;
+}
+
+.login .captcha {
+	width: 90px;
+	text-transform: uppercase;
+}
+
+.login .captchaImage {
+	margin-left: 5px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.login .homeButton {
+	width: 37px;
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	border: none;
+	background: url(../images/admin_button.gif) -90px -90px no-repeat;
+}
+
+.login .submitButton {
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	color: #476b89;
+	cursor: pointer;
+	border: none;
+	background: url(../images/admin_button.gif) -127px -90px no-repeat;
+}
+
+.login .powered {
+	height: 30px;
+	line-height: 30px;
+	padding-right: 10px;
+	text-align: right;
+	font-size: 9px;
+	color: #999999;
+}
+
+.login .link {
+	height: 30px;
+	line-height: 30px;
+	padding-right: 7px;
+	text-align: right;
+	color: #888888;
+}
+
+.login .link a {
+	color: #888888;
+	margin: 0px 3px;
+}
+
+/* ---------- Header ---------- */
+
+.header {
+	height: 60px;
+	background: url(../images/admin_bg.png) 0px -480px no-repeat;
+}
+
+.header .logo {
+	width: 150px;
+	height: 60px;
+	background: url(../images/header_logo.gif) 0px 0px no-repeat;
+}
+
+.header .bodyLeft {
+	width: 150px;
+	height: 60px;
+	float: left;
+}
+
+.header .bodyRight {
+	height: 60px;
+	float: left;
+}
+
+.header .link {
+	height: 27px;
+	line-height: 27px;
+	clear: both;
+	float: right;
+}
+
+.header .link a {
+	padding: 0px 5px;
+}
+
+.header .menu {
+	height: 28px;
+	line-height: 28px;
+	clear: both;
+}
+
+.header .menu ul {
+	height: 28px;
+	display: block;
+	float: left;
+}
+
+.header .menu li {
+	width: 90px;
+	height: 28px;
+	line-height: 28px;
+	float: left;
+	text-align: center;
+	background: url(../images/admin_icon.gif) right 0px no-repeat;
+}
+
+.header .menu li a {
+	width: 80px;
+	height: 28px;
+	line-height: 28px;
+	display: block;
+	text-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: "Microsoft YaHei";
+	color: #666666;
+}
+
+.header .menu li a:hover {
+	background: url(../images/admin_bg.gif) -90px 0px no-repeat;
+}
+
+.header .menu li.current a {
+	color: #ffffff;
+	font-weight: normal;
+	background: url(../images/admin_bg.gif) 0px 0px no-repeat;
+}
+
+.header .menu li.home {
+	padding: 3px 5px;
+	background: none;
+}
+
+.header .menu li.home a {
+	width: 60px;
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	padding: 0px;
+	text-align: center;
+	color: #cd4604;
+	font-size: 12px;
+	font-weight: normal;
+	outline: none;
+	background: url(../images/admin_button.gif) 0px 0px no-repeat;
+}
+
+.header .menu li.home a:hover {
+	color: #a20200;
+	background: url(../images/admin_button.gif) 0px 0px no-repeat;
+}
+
+.header .menu .info {
+	float: right;
+}
+
+.header .menu .info .profile {
+	line-height: 24px;
+	padding-left: 15px;
+	margin-right: 5px;
+	background: url(../images/admin_icon.gif) 0px -60px no-repeat;
+}
+
+.header .menu .info .logout {
+	line-height: 24px;
+	padding-left: 15px;
+	margin-right: 5px;
+	background: url(../images/admin_icon.gif) 0px -120px no-repeat;
+}
+
+/* ---------- Menu ---------- */
+
+body.menu {
+	overflow: hidden;
+	background: url(../images/admin_y_bg.gif) 0px 0px repeat-y;
+}
+
+.menu dt {
+	width: 100px;
+	height: 24px;
+	line-height: 24px;
+	clear: both;
+	padding-left: 20px;
+	margin: 5px;
+	color: #2366a6;
+	background: url(../images/admin_bg.gif) 0px -30px no-repeat;
+}
+
+.menu dd {
+	width: 120px;
+	height: 18px;
+	line-height: 18px;
+	clear: both;
+	padding-left: 10px;
+	margin: 5px;
+	color: #444444;
+}
+
+/* ---------- Middle ---------- */
+
+.middle .main {
+	width: 6px;
+	height: 100%;
+	cursor: pointer;
+}
+
+.middle .leftArrow {
+	width: 5px;
+	border-right: 1px solid #94b7d3;
+	background: url(../images/middle_bg.gif) #e9f2f8 -6px center no-repeat;
+}
+
+.middle .leftArrow:hover {
+	background-color: #d7e7f6;
+}
+
+.middle .rightArrow {
+	width: 5px;
+	border-right: 1px solid #94b7d3;
+	background: url(../images/middle_bg.gif) #e9f2f8 -18px center no-repeat;
+}
+
+.middle .rightArrow:hover {
+	background-color: #d7e7f6;
+}
+
+/* ---------- Index ---------- */
+
+.index .body {
+	padding: 10px;
+}
+
+.index .bodyLeft {
+	width: 50%;
+	float: left;
+}
+
+.index .bodyRight {
+	width: 49%;
+	float: right;
+}
+
+.index .listTable {
+	width: 100%;
+	border: 1px solid #c9dff5;
+}
+
+.index .listTable th {
+	height: 30px;
+	line-height: 30px;
+	padding: 0px 10px;
+	color: #444444;
+	text-align: left;
+	background: url(../images/admin_x_bg.gif) 0px -60px repeat-x;
+}
+
+.index .listTable td {
+	line-height: 30px;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px dotted #d0dde5;
+}
+
+.index .copyright {
+	line-height: 30px;
+	clear: both;
+	text-align: right;
+	font-size: 12px;
+	color: #444444;
+}
+
+/* ---------- List ---------- */
+
+.list .listBar {
+	padding: 3px 8px;
+	clear: both;
+	background-color: #e9f0f4;
+}
+
+.list .listTable {
+	width: 100%;
+	clear: both;
+}
+
+.list .listTable tr:hover {
+	background-color: #f6fafd;
+}
+
+.list .listTable tr.checked {
+	background-color: #fff8e4;
+}
+
+.list .listTable th {
+	height: 24px;
+	line-height: 24px;
+	text-align: left;
+	color: #5b5b5b;
+	font-weight: normal;
+	border-top: solid 1px #d8deea;
+	border-bottom: solid 1px #c6c9ca;
+	border-right: solid 1px #c6c9ca;
+	background: url(../images/admin_bg.gif) 0px -60px repeat-x;
+}
+
+.list .listTable th a, .list .listTable th span {
+	padding: 0px 8px;
+}
+
+.list .listTable .check {
+	width: 21px;
+	padding: 0px 5px;
+}
+
+.list .listTable .sort {
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	outline: none;
+}
+
+.list .listTable .sort:hover {
+	color: #000000;
+	background: url(../images/admin_bg.gif) 0px -90px repeat-x;
+}
+
+.list .listTable .desc, .list .listTable .desc:hover {
+	background: url(../images/admin_icon.gif) right -180px no-repeat;
+}
+
+.list .listTable .asc, .list .listTable .asc:hover {
+	background: url(../images/admin_icon.gif) right -240px no-repeat;
+}
+
+.list .listTable td {
+	line-height: 35px;
+	padding-left: 5px;
+	border-bottom: 1px solid #ececec;
+}
+
+.list .listTable td a {
+	color: #336699;
+}
+
+.list .listTable td a:hover {
+	color: #ff6600;
+}
+
+.list .pagerBar {
+	height: 30px;
+	line-height: 30px;
+	padding: 3px 8px;
+	clear: both;
+	border-bottom: 1px solid #d8deea;
+	background-color: #e9f0f4;
+}
+
+.list .pagerBar .delete {
+	float: left;
+}
+
+.list .pagerBar .pager {
+	float: right;
+	padding-top: 5px;
+}
+
+.list #pager .pages {
+	float: right;
+	font-size: 12px;
+	text-transform: uppercase;
+	border: none;
+}
+
+.list #pager .pages li {
+	line-height: 16px;
+	float: left;
+	padding: 2px 5px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: 1px solid #cccccc;
+}
+
+.list #pager .pages li:hover {
+	border: 1px solid #003f7e;
+}
+
+.list #pager .pages .pgEmpty {
+	color: #cfcfcf;
+	padding: 2px 5px;
+	cursor: default;
+	border: 1px solid #cfcfcf;
+}
+
+.list #pager .pages .pgCurrent {
+	color: #00000;
+	font-weight: bold;
+	border: 1px solid #003f7e;
+	background-color: #eeeeee;
+}
+
+.list .noRecord {
+	height: 30px;
+	line-height: 30px;
+	clear: both;
+	color: red;
+	text-align: center;
+	border-bottom: 1px solid #cccccc;
+}
+
+/* ---------- Input ---------- */
+
+.input .body {
+	padding-bottom: 30px;
+}
+
+.input .tab {
+	height: 30px;
+	padding-left: 160px;
+	margin: 10px 0px 5px 0px;
+	background: url(../images/admin_x_bg.gif) 0px -120px repeat-x;
+}
+
+.input .tab li {
+	float: left;
+	margin-right: 5px;
+}
+
+.input .tab li input {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #666666;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: url(../images/admin_button.gif) -120px -30px no-repeat;
+}
+
+.input .tab li input:hover {
+	color: #ff9b1f;
+}
+
+.input ul.tab li input.current {
+	color: #000000;
+	font-weight: bold;
+	background: url(../images/admin_button.gif) 0px -30px no-repeat;
+}
+
+.input .inputTable {
+	width: 100%;
+	word-break: break-all;
+}
+
+.input .inputTable th {
+	width: 150px;
+	line-height: 25px;
+	padding: 5px 10px 5px 0px;
+	text-align: right;
+	font-weight: normal;
+	color: #333333;
+	border-bottom: 1px solid #dde9f5;
+	background-color: #f9fbfd;
+}
+
+.input .inputTable tr:hover {
+	background-color: #f6fafd;
+}
+
+.input .inputTable tr:hover th {
+	background-color: #ecf3f9;
+}
+
+.input .inputTable tr.noneHover:hover {
+	background-color: #ffffff;
+}
+
+.input .inputTable tr.noneHover:hover th {
+	background-color: #ffffff;
+}
+
+.input .inputTable .title th, .input .inputTable .title td {
+	text-align: left;
+	padding-left: 5px;
+	background-color: #ecf3f9;
+}
+
+.input .inputTable td {
+	line-height: 25px;
+	padding: 5px;
+	color: #666666;
+	border-bottom: 1px solid #dde9f5;
+}
+
+.input .tableItem {
+	padding: 5px;
+}
+
+.input .tableItem .inputTable {
+	border: 1px solid #94b7d3;
+}
+
+.input .tableItem .inputTable .title {
+	font-weight: bold;
+	background-color: #ecf3f9;
+}
+
+.input .ke-container tr:hover {
+	background-color: #f0f0ee;
+}
+
+.input .ke-container td {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+.input .buttonArea {
+	padding: 10px 0px 10px 165px;
+	line-height: 25px;
+}
+
+.input .fieldTitle {
+	height: 29px;
+	line-height: 29px;
+	padding-right: 5px;
+}
+
+/* ---------- InstantMessaging ---------- */
+
+.instantMessaging .instantMessagingType {
+	width: 40px;
+	display: inline-block;
+	display: -moz-inline-stack;
+	zoom: 1;
+	*display: inline;
+}
+
+/* ---------- PaymentConfig ---------- */
+
+.paymentConfig .listTable td {
+	padding: 10px 20px;
+}
+
+.paymentConfig .listTable td img {
+	width: 60px;
+	height: 22px;
+	padding: 2px;
+	border: 1px solid #e8e8e8;
+}
+
+/* ---------- Admin ---------- */
+
+.admin .roleList label {
+	width: 130px;
+	display: block;
+	float: left;
+	padding-right: 5px;
+}
+
+/* ---------- Role ---------- */
+
+.role .authorityList label {
+	width: 150px;
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	float: left;
+	padding: 0px 3px;
+}
+
+/* ---------- Message ---------- */
+
+.message .messageContentTr {
+	display: none;
+	background-color: #fafafa;
+}
+
+/* ---------- ArticleCategory ---------- */
+
+.articleCategory .firstCategory {
+	padding-left: 10px;
+	background: url(../images/admin_icon.gif) 0px -300px no-repeat;
+}
+
+.articleCategory .category {
+	padding-left: 10px;
+	background: url(../images/admin_icon.gif) 0px -360px no-repeat;
+}
+
+/* ---------- GoodsCategory ---------- */
+
+.goodsCategory .firstCategory {
+	padding-left: 10px;
+	background: url(../images/admin_icon.gif) 0px -300px no-repeat;
+}
+
+.goodsCategory .category {
+	padding-left: 10px;
+	background: url(../images/admin_icon.gif) 0px -360px no-repeat;
+}
+
+/* ---------- GoodsType ---------- */
+
+.goodsType .brandSelect {
+	height: 120px;
+	padding: 5px;
+	overflow-y: scroll;
+	border: 1px solid #cccccc;
+}
+
+.goodsType .brandSelect li {
+	float: left;
+	min-width: 150px;
+	_width: 200px;
+}
+
+/* ---------- Goods ---------- */
+
+.goods .specificationSelect {
+	height: 100px;
+	padding: 5px;
+	overflow-y: scroll;
+	border: 1px solid #cccccc;
+}
+
+.goods .specificationSelect li {
+	float: left;
+	min-width: 150px;
+	_width: 200px;
+}
