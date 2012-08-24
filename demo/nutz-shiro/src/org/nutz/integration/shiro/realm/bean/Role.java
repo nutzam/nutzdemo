@@ -26,40 +26,51 @@ public class Role {
 	@Column("is_system")
 	@ColDefine(type = ColType.BOOLEAN, width = 1)
 	private boolean system;
-	
+
 	public boolean getSystem() {
 		return system;
 	}
+
 	public void setSystem(boolean system) {
 		this.system = system;
 	}
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
+
 	public String getDescription() {
 		return description;
 	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
 	public List<User> getUsers() {
 		return users;
 	}
+
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+
 	public List<Permission> getPermissions() {
 		return permissions;
 	}
+
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
 	}

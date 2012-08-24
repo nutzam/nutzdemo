@@ -6,8 +6,9 @@ import org.nutz.mvc.ViewMaker;
 
 public class FreemarkerViewMaker implements ViewMaker {
 
+	@Override
 	public View make(Ioc ioc, String type, String value) {
-		if("fm".equalsIgnoreCase(type)){
+		if ("fm".equalsIgnoreCase(type)) {
 			return new FreemarkerView(value);
 		}
 		return null;

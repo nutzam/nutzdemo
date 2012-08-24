@@ -3,7 +3,7 @@ var ioc = {
 		type : "freemarker.template.Configuration"
 	},
 	freeMarkerConfigurer: {
-		type : "net.wendal.nutz.freemarker.model.FreeMarkerConfigurer",
+		type : "com.rekoe.freemarker.model.FreeMarkerConfigurer",
 		args : [ {
 			refer : "configuration"
 		} ]

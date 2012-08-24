@@ -51,6 +51,9 @@ $().ready(function() {
 						<li class="menuItem">
 							<a href="${base}/admin/menu/admin" target="menuFrame" hidefocus>管理员</a>
 						</li>
+						<li class="menuItem">
+							<a href="${base}/admin/menu/content" target="menuFrame" hidefocus>页面内容</a>
+						</li>
 					</@shiro.hasRole>
 					<li class="home">
 						<a href="${base}/" target="_blank" hidefocus>网站首页</a>

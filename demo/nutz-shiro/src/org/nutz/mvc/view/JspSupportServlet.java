@@ -8,13 +8,14 @@ import javax.servlet.http.HttpServlet;
  */
 public class JspSupportServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 8302309812391541933L;
+	private static final long serialVersionUID = 8302309812391541933L;
 
-    public static JspSupportServlet jspSupportServlet;
+	public static JspSupportServlet jspSupportServlet;
 
-    public void init(ServletConfig servletConfig) throws ServletException {
-        super.init(servletConfig);
+	@Override
+	public void init(ServletConfig servletConfig) throws ServletException {
+		super.init(servletConfig);
 
-        jspSupportServlet = this;
-    }
+		jspSupportServlet = this;
+	}
 }

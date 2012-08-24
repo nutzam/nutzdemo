@@ -1,0 +1,20 @@
+var ioc = {
+	dataSource : {
+		type : "org.apache.commons.dbcp.BasicDataSource",
+		events : {
+			depose : 'close'
+		},
+		fields : {
+			driverClassName : 'com.mysql.jdbc.Driver',
+			url : 'jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf-8',
+			username : 'root',
+			password : 'root',
+			validationQuery : 'select 1'
+		}
+	}
+,
+	dao : {
+		type : "org.nutz.dao.impl.NutDao",
+		args : [{refer:'dataSource'}]
+	}
+};

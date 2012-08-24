@@ -2,9 +2,6 @@ package org.nutz.integration.shiro.realm;
 
 import java.util.List;
 
-import net.wendal.nutz.service.RoleService;
-import net.wendal.nutz.service.UserService;
-
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -25,20 +22,25 @@ import org.nutz.ioc.Ioc;
 import org.nutz.lang.Lang;
 import org.nutz.lang.Strings;
 
+import com.rekoe.service.RoleService;
+import com.rekoe.service.UserService;
+
 /**
  * 用NutDao来实现Shiro的Realm
- * <p/> 可以通过配置文件注入数据源
- * <p/> 在Web环境中也可以通过自动搜索来获取NutDao
+ * <p/>
+ * 可以通过配置文件注入数据源
+ * <p/>
+ * 在Web环境中也可以通过自动搜索来获取NutDao
+ * 
  * @author wendal
- *
+ * 
  */
 public class NutDaoRealm extends AuthorizingRealm {
-	
+
 	private UserService userService;
 	private RoleService roleService;
-	
-	private RoleService getRoleService()
-	{
+
+	private RoleService getRoleService() {
 		if (roleService == null) {
 			Ioc ioc = Webs.ioc();
 			roleService = ioc.get(RoleService.class);
@@ -46,9 +48,8 @@ public class NutDaoRealm extends AuthorizingRealm {
 		}
 		return roleService;
 	}
-	
-	private UserService getUserService()
-	{
+
+	private UserService getUserService() {
 		if (userService == null) {
 			Ioc ioc = Webs.ioc();
 			userService = ioc.get(UserService.class);
@@ -56,43 +57,52 @@ public class NutDaoRealm extends AuthorizingRealm {
 		}
 		return userService;
 	}
-	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+
+	@Override
+	protected AuthorizationInfo doGetAuthorizationInfo(
+			PrincipalCollection principalCollection) {
 		String username = principalCollection.getPrimaryPrincipal().toString();
 		User user = getUserService().fetchByName(username);
-        if (user == null)
-            return null;
-        if (user.getAccountLocked()) 
-          throw new LockedAccountException("Account [" + username + "] is locked.");
-        SimpleAuthorizationInfo auth = new SimpleAuthorizationInfo();
-        List<String> roleNameList = getUserService().getRoleNameList(user);
-        auth.addRoles(roleNameList);
+		if (user == null)
+			return null;
+		if (user.getAccountLocked())
+			throw new LockedAccountException("Account [" + username
+					+ "] is locked.");
+		SimpleAuthorizationInfo auth = new SimpleAuthorizationInfo();
+		List<String> roleNameList = getUserService().getRoleNameList(user);
+		auth.addRoles(roleNameList);
 		for (Role role : user.getRoles()) {
-			auth.addStringPermissions(getRoleService().getPermissionNameList(role));
+			auth.addStringPermissions(getRoleService().getPermissionNameList(
+					role));
 		}
-        return auth;
+		return auth;
 	}
 
-	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+	@Override
+	protected AuthenticationInfo doGetAuthenticationInfo(
+			AuthenticationToken token) throws AuthenticationException {
 		UsernamePasswordToken upToken = (UsernamePasswordToken) token;
 		User user = getUserService().fetchByName(upToken.getUsername());
-        if (Lang.isEmpty(user))
-            return null;
-        if (user.getAccountLocked()) 
-           throw new LockedAccountException("Account [" + upToken.getUsername() + "] is locked.");
-        SimpleAuthenticationInfo account = new SimpleAuthenticationInfo(user.getName(), user.getPassword(), getName());
-		if(!Strings.isEmpty(user.getSalt()))
-		{
+		if (Lang.isEmpty(user))
+			return null;
+		if (user.getAccountLocked())
+			throw new LockedAccountException("Account ["
+					+ upToken.getUsername() + "] is locked.");
+		SimpleAuthenticationInfo account = new SimpleAuthenticationInfo(
+				user.getName(), user.getPassword(), getName());
+		if (!Strings.isEmpty(user.getSalt())) {
 			ByteSource salt = ByteSource.Util.bytes(user.getSalt());
 			account.setCredentialsSalt(salt);
 		}
-        return account;
+		return account;
 	}
-	
+
 	/**
 	 * 更新用户授权信息缓存.
 	 */
 	public void clearCachedAuthorizationInfo(String principal) {
-		SimplePrincipalCollection principals = new SimplePrincipalCollection(principal, getName());
+		SimplePrincipalCollection principals = new SimplePrincipalCollection(
+				principal, getName());
 		clearCachedAuthorizationInfo(principals);
 	}
 
