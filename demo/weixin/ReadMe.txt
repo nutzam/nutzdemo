@@ -1,11 +1,12 @@
-NutzĞ´µÄÎ¢ĞÅ¿ò¼Ü
+Nutzå†™çš„å¾®ä¿¡æ¡†æ¶
 http://nutz.cn
 
-Ê¹ÓÃËµÃ÷:
-ĞŞ¸Äµôcn.nutz.module.WechatModuleÀïµÄTOKEN¼´¿ÉÊ¹ÓÃ
-conf/ioc/dao.jsÀïµÄÊı¾İ¿âÅäÖÃÎÄ¼ş °´Ğè×ÔĞĞĞŞ¸Ä
+ä½¿ç”¨è¯´æ˜:
+ä¿®æ”¹æ‰cn.nutz.module.WechatModuleé‡Œçš„TOKENå³å¯ä½¿ç”¨
+conf/ioc/dao.jsé‡Œçš„æ•°æ®åº“é…ç½®æ–‡ä»¶ æŒ‰éœ€è‡ªè¡Œä¿®æ”¹
 
 
 PS:
-²»°üÉ¨Î²¹¤×÷
+ä¸åŒ…æ‰«å°¾å·¥ä½œ
 http://weibo.com/howechiang
+é€é’±åœ°å€: https://me.alipay.com/tenpay
