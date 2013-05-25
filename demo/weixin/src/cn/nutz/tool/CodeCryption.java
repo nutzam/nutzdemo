@@ -68,10 +68,7 @@ public class CodeCryption {
 			return new String(
 					org.apache.commons.codec.binary.Base64.encodeBase64(str
 							.getBytes("UTF-8"))).replaceAll("\r", "")
-					.replaceAll("\n", "").replaceAll("\r\n", "")
-					.replaceAll("\n\r", "").replaceAll("\r", "")
-					.replaceAll("\n", "").replaceAll("\r\n", "")
-					.replaceAll("\n\r", "");
+					.replaceAll("\n", "");
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 			return null;
